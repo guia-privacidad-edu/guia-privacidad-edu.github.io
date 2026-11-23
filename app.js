@@ -331,9 +331,9 @@
     if (!ambitoId || ambitoId === "todos") return true;
     var amb = AMBITOS_ASISTENTE.find(function (a) { return a.id === ambitoId; });
     if (!amb || !amb.palabras.length) return true;
-    var catUp = (h.categoria || "").toUpperCase();
+    var catNorm = normalizarTexto(h.categoria);
     return amb.palabras.some(function (kw) {
-      return catUp.indexOf(kw) !== -1;
+      return catNorm.indexOf(normalizarTexto(kw)) !== -1;
     });
   }
 

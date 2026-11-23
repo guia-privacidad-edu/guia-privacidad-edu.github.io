@@ -13,7 +13,20 @@ module.exports = async (page, info) => {
     throw new Error(`Esperaba 24 tarjetas en página 1, hay ${tarjetasIniciales}`);
   }
 
-  // 2. Buscar una herramienta con dos escenarios (Educaplay) y abrir su ficha
+  // 2. Comprobar insensibilidad a tildes y mayúsculas en el buscador
+  await page.fill("#buscador", "MATEMÁTICAS");
+  await page.waitForFunction(() => {
+    const el = document.getElementById("contador-resultados");
+    return el && el.textContent.includes("31 de");
+  }, { timeout: 5000 });
+
+  await page.fill("#buscador", "matematicas");
+  await page.waitForFunction(() => {
+    const el = document.getElementById("contador-resultados");
+    return el && el.textContent.includes("31 de");
+  }, { timeout: 5000 });
+
+  // 3. Buscar una herramienta con dos escenarios (Educaplay) y abrir su ficha
   await page.fill("#buscador", "Educaplay");
   await page.waitForFunction(() => {
     const cards = document.querySelectorAll("#lista-tarjetas .tarjeta");
