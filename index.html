@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Guía de privacidad de herramientas educativas · Orientaciones INTEF v3.0</title>
-  <meta name="description" content="Buscador sencillo de las 1.144 herramientas digitales analizadas por el INTEF (v3.0, junio 2026) según su protección de datos y uso con alumnado y profesorado.">
+  <title>Guía de privacidad de herramientas educativas · Orientaciones INTEF v3.0 y VCE</title>
+  <meta name="description" content="Buscador sencillo de las 1.144 herramientas digitales analizadas por el INTEF (v3.0, junio 2026) y 360 aplicaciones del Repositorio VCE evaluadas de forma orientativa con el Anexo I.">
   <link rel="canonical" href="https://guia-privacidad-edu.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Guía de privacidad de herramientas educativas">
   <meta property="og:title" content="Guía de privacidad de herramientas educativas">
-  <meta property="og:description" content="Consulta rápida y clara de las 1.144 herramientas analizadas en las Orientaciones de protección de datos del INTEF (v3.0).">
+  <meta property="og:description" content="Consulta rápida de las 1.144 herramientas del INTEF (v3.0) y 360 aplicaciones del Repositorio VCE evaluadas con el Anexo I.">
   <meta property="og:url" content="https://guia-privacidad-edu.github.io/">
   <meta property="og:image" content="https://guia-privacidad-edu.github.io/og.png">
   <meta property="og:image:width" content="1200">
@@ -48,7 +48,7 @@
           <img src="favicon.svg" alt="" width="34" height="34" class="marca-logo">
           <div>
             <span class="marca-titulo" data-i18n="brandTitle">Guía de privacidad de herramientas educativas</span>
-            <span class="marca-sub" data-i18n="brandSub">Consulta interactiva de las Orientaciones v3.0 del INTEF (junio 2026)</span>
+            <span class="marca-sub" data-i18n="brandSub">Orientaciones v3.0 del INTEF (junio 2026) y evaluación técnica del Repositorio VCE</span>
           </div>
         </a>
       </div>
@@ -87,7 +87,7 @@
       <div class="hero-top">
         <div>
           <h1 data-i18n="heroTitle">Consulta si puedes usar una herramienta digital en clase</h1>
-          <p class="hero-desc" data-i18n-html="heroDesc">Reúne las <strong>1.144 herramientas</strong> analizadas por el INTEF según la protección de datos. Escribe un nombre o una tarea, o elige filtros sencillos.</p>
+          <p class="hero-desc" data-i18n-html="heroDesc">Comprueba si una herramienta cumple la protección de datos en el aula. Reúne <strong>1.144 herramientas</strong> evaluadas por el INTEF (Ministerio de Educación) y <strong>360 aplicaciones docentes</strong> de Vibe Coding Educativo (VCE).</p>
           <p id="nota-idioma-oficial" class="nota-idioma-oficial" hidden></p>
         </div>
       </div>
@@ -101,6 +101,34 @@
             <button type="button" id="btn-limpiar-busq" class="btn-limpiar-busq" title="Borrar búsqueda" aria-label="Borrar búsqueda" hidden>
               <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </button>
+          </div>
+        </div>
+
+        <div class="filtros-bloque">
+          <div class="grupo-filtro" role="group" aria-label="Origen de la evaluación">
+            <span class="grupo-rotulo" data-i18n="filterSource">Origen:</span>
+            <button type="button" class="chip" data-fuente="TODAS" aria-pressed="true">
+              <span data-i18n="sourceAll">Todas</span>
+              <span class="chip-num" id="num-src-todas"></span>
+            </button>
+            <button type="button" class="chip" data-fuente="INTEF" aria-pressed="false">
+              <span data-i18n="sourceIntef">Guía INTEF</span>
+              <span class="chip-num" id="num-src-intef"></span>
+            </button>
+            <button type="button" class="chip" data-fuente="VCE" aria-pressed="false">
+              <span data-i18n="sourceVce">Repositorio VCE</span>
+              <span class="chip-num" id="num-src-vce"></span>
+            </button>
+          </div>
+          <div class="leyenda-origen" id="leyenda-origen" data-fuente-activa="TODAS">
+            <div class="origen-info origen-info-intef">
+              <span class="etq-origen etq-origen-intef" data-i18n="badgeIntef">INTEF</span>
+              <p data-i18n-html="sourceIntefDesc"><strong>Guía INTEF (oficial):</strong> herramientas evaluadas por el Instituto Nacional de Tecnologías Educativas y de Formación del Profesorado (Ministerio de Educación) en sus <em>Orientaciones v3.0</em>.</p>
+            </div>
+            <div class="origen-info origen-info-vce">
+              <span class="etq-origen etq-origen-vce" data-i18n="badgeVce">VCE</span>
+              <p data-i18n-html="sourceVceDesc"><strong>Repositorio VCE (orientativa, no oficial):</strong> aplicaciones educativas creadas por docentes en <a href="https://vibe-coding-educativo.github.io/app_edu/" target="_blank" rel="noopener">Vibe Coding Educativo</a>, revisadas técnicamente aplicando el Anexo I del INTEF. Las 3 coincidencias figuran en ambas listas como <strong>INTEF + VCE</strong>.</p>
+            </div>
           </div>
         </div>
 
@@ -134,11 +162,21 @@
         </div>
 
         <div class="filtros-secundarios">
-          <div class="campo-select">
-            <label for="sel-categoria" data-i18n="filterCat">Categoría:</label>
-            <select id="sel-categoria">
-              <option value="">Todas las categorías (87)</option>
-            </select>
+          <div class="campo-select categoria-wrap">
+            <span class="campo-rotulo" id="rotulo-categoria" data-i18n="filterCat">Categoría:</span>
+            <div class="cat-desplegable">
+              <button type="button" id="btn-categoria" class="cat-btn" aria-expanded="false" aria-controls="panel-categoria" aria-labelledby="rotulo-categoria cat-actual-texto">
+                <span id="cat-actual-texto" class="cat-btn-texto">Todas las categorías (97)</span>
+                <svg class="ico cat-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div id="panel-categoria" class="cat-panel" hidden>
+                <div class="cat-panel-busq">
+                  <label for="busq-categoria" class="solo-lector" data-i18n="catFilterPlaceholder">Filtrar categoría…</label>
+                  <input id="busq-categoria" type="search" autocomplete="off" placeholder="Filtrar categoría…">
+                </div>
+                <div id="lista-categorias" class="cat-lista"></div>
+              </div>
+            </div>
           </div>
 
           <div class="grupo-filtro" role="group" aria-label="Condiciones prácticas">
@@ -194,7 +232,7 @@
 
       <div id="estado-vacio" class="estado-vacio" hidden>
         <h2 data-i18n="emptyTitle">No hay herramientas que cumplan todos esos criterios</h2>
-        <p data-i18n-html="emptyText">Prueba a quitar algún filtro o buscar con una palabra más general. Si la herramienta que buscas no aparece en las 1.144 analizadas por el INTEF, consulta las <strong>Advertencias y guía</strong> para saber cómo evaluarla junto a tu centro.</p>
+        <p data-i18n-html="emptyText">Prueba a quitar algún filtro o buscar con una palabra más general. Si la herramienta que buscas no aparece en el catálogo (INTEF y VCE), consulta las <strong>Advertencias y guía</strong> para saber cómo evaluarla junto a tu centro.</p>
         <p>
           <button type="button" id="btn-vacio-limpiar" class="btn btn-primario" data-i18n="emptyBtn">Ver todas las herramientas</button>
         </p>
@@ -302,25 +340,30 @@
 
   <footer class="pie">
     <div class="contenedor pie-interior">
-      <p data-i18n-html="footerDisclaimer"><strong>Aplicación independiente sin vinculación oficial con el Ministerio de Educación, Formación Profesional y Deportes.</strong> El documento tiene carácter orientativo, no prescriptivo; la interpretación y el uso de cada herramienta es responsabilidad única del docente.</p>
-      <p data-i18n-html="footerSource">Datos procedentes de <a href="https://intef.es/Noticias/actualizacion-de-las-orientaciones-sobre-el-uso-de-herramientas-digitales-en-el-ambito-educativo-desde-la-perspectiva-de-la-proteccion-de-datos/" target="_blank" rel="noopener"><em>Orientaciones sobre el uso de herramientas digitales en el ámbito educativo desde la perspectiva de la protección de datos</em></a> (INTEF, v3.0, junio 2026, NIPO 164-26-013-9, <a href="https://intef.es/wp-content/uploads/2026/07/Orientaciones_sobre_el_uso_de_herramientas_digital.pdf" target="_blank" rel="noopener">PDF oficial</a>), bajo licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Los enlaces directos de acceso a cada aplicación se han añadido y verificado aparte.</p>
-      <p class="pie-enlaces">
-        <span data-i18n="footerVersion">Versión 1.1.0</span>
-        <span aria-hidden="true">·</span>
-        <span data-i18n-html="footerAuthor">Dirección y revisión: <a href="https://bilateria.org" target="_blank" rel="noopener">Juan José de Haro</a></span>
-        <span aria-hidden="true">·</span>
-        <span data-i18n-html="footerAi">Cocreación con IA (<a href="https://jjdeharo.github.io/miae/?nivel=4" target="_blank" rel="noopener">MIAE nivel 4</a>, noviembre 2026; dirección, criterios y revisión funcional por el autor)</span>
-        <span aria-hidden="true">·</span>
-        <span data-i18n-html="footerCode">Código <a href="LICENSE" target="_blank" rel="noopener">AGPL v3</a></span>
-        <span aria-hidden="true">·</span>
-        <span data-i18n-html="footerIcons">Iconos <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a> (ISC)</span>
-        <span aria-hidden="true">·</span>
-        <span data-i18n-html="footerVcer"><a href="https://vibe-coding-educativo.github.io/vibe-responsable/vcer/?r=recomendable&amp;p=100&amp;f=2026-11&amp;v=1.1.0&amp;t=Gu%C3%ADa%20de%20privacidad%20de%20herramientas%20educativas&amp;u=https%3A%2F%2Fguia-privacidad-edu.github.io%2F" target="_blank" rel="noopener">Evaluación VCER (v1.1.0): Recomendable (100 %), noviembre de 2026</a></span>
-        <span aria-hidden="true">·</span>
-        <a href="privacidad.html" data-i18n="footerPrivacy">Privacidad</a>
-        <span aria-hidden="true">·</span>
-        <a href="datos/guia-intef.json" target="_blank" rel="noopener" data-i18n="footerJson">Datos JSON</a>
-      </p>
+      <div class="pie-grid">
+        <div class="pie-bloque">
+          <p class="pie-aviso" data-i18n-html="footerDisclaimer"><strong>Aplicación independiente sin vinculación oficial con el Ministerio de Educación, Formación Profesional y Deportes.</strong> El documento tiene carácter orientativo, no prescriptivo; la interpretación y el uso de cada herramienta es responsabilidad única del docente.</p>
+          <p class="pie-fuentes" data-i18n-html="footerSource">Datos oficiales de <a href="https://intef.es/Noticias/actualizacion-de-las-orientaciones-sobre-el-uso-de-herramientas-digitales-en-el-ambito-educativo-desde-la-perspectiva-de-la-proteccion-de-datos/" target="_blank" rel="noopener"><em>Orientaciones sobre el uso de herramientas digitales en el ámbito educativo desde la perspectiva de la protección de datos</em></a> (INTEF, v3.0, junio 2026, NIPO 164-26-013-9, <a href="https://intef.es/wp-content/uploads/2026/07/Orientaciones_sobre_el_uso_de_herramientas_digital.pdf" target="_blank" rel="noopener">PDF oficial</a>), bajo licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Incluye además aplicaciones del <a href="https://vibe-coding-educativo.github.io/app_edu/" target="_blank" rel="noopener">Repositorio de Vibe Coding Educativo</a> con evaluación técnica orientativa aplicando el Anexo I del INTEF (no oficial). Los enlaces directos se han verificado aparte.</p>
+        </div>
+        <div class="pie-bloque pie-credito">
+          <p data-i18n-html="footerAuthor">Dirección y revisión: <a href="https://bilateria.org" target="_blank" rel="noopener">Juan José de Haro</a></p>
+          <p data-i18n-html="footerAi">Cocreación con IA (<a href="https://jjdeharo.github.io/miae/?nivel=4" target="_blank" rel="noopener">MIAE nivel 4</a>, noviembre 2026; dirección, criterios y revisión funcional por el autor)</p>
+          <p class="pie-vcer" data-i18n-html="footerVcer"><a href="https://vibe-coding-educativo.github.io/vibe-responsable/vcer/?r=recomendable&amp;p=100&amp;f=2026-11&amp;v=1.2.0&amp;t=Gu%C3%ADa%20de%20privacidad%20de%20herramientas%20educativas&amp;u=https%3A%2F%2Fguia-privacidad-edu.github.io%2F" target="_blank" rel="noopener">Evaluación VCER (v1.2.0): Recomendable (100 %), noviembre de 2026</a></p>
+        </div>
+      </div>
+
+      <div class="pie-barra">
+        <div class="pie-meta">
+          <span class="pie-version" data-i18n="footerVersion">Versión 1.2.0</span>
+          <span data-i18n-html="footerCode">Código <a href="LICENSE" target="_blank" rel="noopener">AGPL v3</a></span>
+          <span data-i18n-html="footerIcons">Iconos <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a> (ISC)</span>
+        </div>
+        <nav class="pie-utilidades" aria-label="Privacidad y datos">
+          <a href="privacidad.html" data-i18n="footerPrivacy">Privacidad</a>
+          <a href="datos/guia-intef.json" target="_blank" rel="noopener" data-i18n="footerJson">Datos INTEF (JSON)</a>
+          <a href="datos/vce-evaluadas.json" target="_blank" rel="noopener" data-i18n="footerJsonVce">Datos VCE (JSON)</a>
+        </nav>
+      </div>
     </div>
   </footer>
 

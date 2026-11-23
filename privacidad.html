@@ -41,7 +41,7 @@
           <img src="favicon.svg" alt="" width="34" height="34" class="marca-logo">
           <div>
             <span class="marca-titulo" data-i18n="brandTitle">Guía de privacidad de herramientas educativas</span>
-            <span class="marca-sub" data-i18n="brandSub">Consulta interactiva de las Orientaciones v3.0 del INTEF (junio 2026)</span>
+            <span class="marca-sub" data-i18n="brandSub">Orientaciones v3.0 del INTEF (junio 2026) y evaluación técnica del Repositorio VCE</span>
           </div>
         </a>
       </div>
@@ -73,7 +73,7 @@
     <p class="entradilla" data-i18n="privLead">Esta aplicación no pide registro, no utiliza cookies, no incorpora publicidad ni analítica y no envía tus búsquedas a ningún servidor.</p>
 
     <h2 data-i18n="privH2How">Cómo funciona la consulta</h2>
-    <p data-i18n="privPHow">Al abrir la web, tu navegador descarga el catálogo estructurado en formato JSON y realiza todas las búsquedas y filtros directamente en tu dispositivo. Nada de lo que escribes en el buscador ni los filtros que eliges salen de tu navegador.</p>
+    <p data-i18n="privPHow">Al abrir la web, tu navegador descarga los archivos JSON del catálogo y realiza todas las búsquedas y filtros directamente en tu dispositivo. Nada de lo que escribes en el buscador ni los filtros que eliges salen de tu navegador.</p>
 
     <h2 data-i18n="privH2Local">Datos guardados en tu dispositivo</h2>
     <p data-i18n-html="privPLocal">El navegador guarda únicamente tus preferencias si las cambias a mano (tema claro/oscuro en <code>gpe.tema</code> e idioma en <code>gpe.idioma</code>) y una copia en caché de los archivos de la web para poder consultarla sin conexión. Nada de esto sale de tu dispositivo.</p>
@@ -87,16 +87,17 @@
 
   <footer class="pie">
     <div class="contenedor pie-interior">
-      <p data-i18n-html="footerDisclaimer"><strong>Aplicación independiente sin vinculación oficial con el Ministerio de Educación, Formación Profesional y Deportes.</strong> El documento tiene carácter orientativo, no prescriptivo; la interpretación y el uso de cada herramienta es responsabilidad única del docente.</p>
-      <p class="pie-enlaces">
-        <span data-i18n="footerVersion">Versión 1.1.0</span>
-        <span aria-hidden="true">·</span>
-        <span data-i18n-html="footerCode">Código <a href="LICENSE" target="_blank" rel="noopener">AGPL v3</a></span>
-        <span aria-hidden="true">·</span>
-        <span data-i18n-html="footerIcons">Iconos <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a> (ISC)</span>
-        <span aria-hidden="true">·</span>
-        <a href="privacidad.html" aria-current="page" data-i18n="footerPrivacy">Privacidad</a>
-      </p>
+      <p class="pie-aviso" data-i18n-html="footerDisclaimer"><strong>Aplicación independiente sin vinculación oficial con el Ministerio de Educación, Formación Profesional y Deportes.</strong> El documento tiene carácter orientativo, no prescriptivo; la interpretación y el uso de cada herramienta es responsabilidad única del docente.</p>
+      <div class="pie-barra">
+        <div class="pie-meta">
+          <span class="pie-version" data-i18n="footerVersion">Versión 1.2.0</span>
+          <span data-i18n-html="footerCode">Código <a href="LICENSE" target="_blank" rel="noopener">AGPL v3</a></span>
+          <span data-i18n-html="footerIcons">Iconos <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a> (ISC)</span>
+        </div>
+        <nav class="pie-utilidades" aria-label="Privacidad y datos">
+          <a href="privacidad.html" aria-current="page" data-i18n="footerPrivacy">Privacidad</a>
+        </nav>
+      </div>
     </div>
   </footer>
 

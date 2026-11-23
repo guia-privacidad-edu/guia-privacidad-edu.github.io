@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 /*
  * Service worker para consulta sin conexión de la Guía de privacidad de herramientas educativas.
- * Precarga la aplicación y los dos archivos JSON locales; actualiza en segundo plano cuando hay red.
+ * Precarga la aplicación y los archivos JSON locales; actualiza en segundo plano cuando hay red.
  */
 
-const CACHE_NOMBRE = "gpe-v1.1.0";
+const CACHE_NOMBRE = "gpe-v1.2.0";
 const ARCHIVOS_BASE = [
   "./",
   "./index.html",
@@ -15,7 +15,8 @@ const ARCHIVOS_BASE = [
   "./favicon.svg",
   "./manifest.webmanifest",
   "./datos/guia-intef.json",
-  "./datos/enlaces-herramientas.json"
+  "./datos/enlaces-herramientas.json",
+  "./datos/vce-evaluadas.json"
 ];
 
 self.addEventListener("install", (ev) => {

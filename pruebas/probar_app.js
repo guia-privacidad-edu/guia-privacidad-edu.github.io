@@ -2,11 +2,11 @@
 // Script de pruebas funcionales para probar-web (-s pruebas/probar_app.js)
 
 module.exports = async (page, info) => {
-  // 1. Esperar a que carguen las 1144 herramientas (en es-ES, 4 dígitos puede ir con o sin punto)
+  // 1. Esperar a que carguen las 1.504 herramientas (1.144 INTEF + 360 VCE)
   await page.waitForFunction(() => {
     const el = document.getElementById("contador-resultados");
-    return el && /1\.?144/.test(el.textContent);
-  }, { timeout: 10000 });
+    return el && /1[.,]?504/.test(el.textContent);
+  }, undefined, { timeout: 10000 });
 
   const tarjetasIniciales = await page.locator("#lista-tarjetas .tarjeta").count();
   if (tarjetasIniciales !== 24) {
@@ -16,15 +16,16 @@ module.exports = async (page, info) => {
   // 2. Comprobar insensibilidad a tildes y mayúsculas en el buscador
   await page.fill("#buscador", "MATEMÁTICAS");
   await page.waitForFunction(() => {
-    const el = document.getElementById("contador-resultados");
-    return el && el.textContent.includes("31 de");
-  }, { timeout: 5000 });
+    const s = document.querySelector("#contador-resultados strong");
+    return s && !/1[.,]?504/.test(s.textContent);
+  }, undefined, { timeout: 5000 });
+  const esperado = await page.locator("#contador-resultados").textContent();
 
   await page.fill("#buscador", "matematicas");
-  await page.waitForFunction(() => {
+  await page.waitForFunction((txt) => {
     const el = document.getElementById("contador-resultados");
-    return el && el.textContent.includes("31 de");
-  }, { timeout: 5000 });
+    return el && el.textContent === txt;
+  }, esperado, { timeout: 5000 });
 
   // 3. Buscar una herramienta con dos escenarios (Educaplay) y abrir su ficha
   await page.fill("#buscador", "Educaplay");
@@ -60,6 +61,6 @@ module.exports = async (page, info) => {
   await page.click("#btn-restablecer");
   await page.waitForFunction(() => {
     const el = document.getElementById("contador-resultados");
-    return el && /1\.?144/.test(el.textContent);
-  });
+    return el && /1[.,]?504/.test(el.textContent);
+  }, undefined, { timeout: 5000 });
 };
