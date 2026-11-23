@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 /*
  * Guía de privacidad de herramientas educativas
- * Lógica de consulta, filtrado, asistente guiado y ficha detallada.
+ * Lógica de consulta, filtrado, asistente guiado, ficha detallada e interfaz multilingüe.
  * Funciona íntegramente en el navegador sobre datos/guia-intef.json
  * y datos/enlaces-herramientas.json sin enviar datos a ningún servidor.
  */
@@ -10,21 +10,23 @@
   "use strict";
 
   const POR_PAGINA = 24;
+  const IDIOMAS_SOPORTADOS = ["es", "ca", "gl", "eu", "en"];
 
-  // Ámbitos cotidianos para el asistente «Ayúdame a elegir» (agrupan varias categorías por palabra clave)
+  // Ámbitos cotidianos para el asistente «Ayúdame a elegir»
   const AMBITOS_ASISTENTE = [
-    { id: "todos", etiqueta: "Cualquier tipo de herramienta", palabras: [] },
-    { id: "actividades", etiqueta: "Actividades interactivas, juegos y cuestionarios", palabras: ["ACTIVIDADES INTERACTIVAS", "CUESTIONARIOS", "GAMIFICACIÓN", "EVALUACIÓN"] },
-    { id: "ia", etiqueta: "Inteligencia artificial (IA)", palabras: ["INTELIGENCIA ARTIFICIAL", "DETECTORES DE IA", "CHATBOT"] },
-    { id: "presentaciones", etiqueta: "Presentaciones, infografías y murales", palabras: ["PRESENTACIONES", "INFOGRAFÍAS", "MUROS", "PIZARRAS", "LÍNEAS DEL TIEMPO", "MAPAS MENTALES", "DIAGRAMAS"] },
-    { id: "multimedia", etiqueta: "Vídeo, audio, pódcast e imagen", palabras: ["VÍDEO", "AUDIO", "IMAGEN", "FOTOGRAFÍA", "ANIMACIÓN", "GRABACIÓN DE PANTALLA", "CÓMICS", "AVATARES"] },
-    { id: "documentos", etiqueta: "Documentos, lectura, idiomas y escritura", palabras: ["DOCUMENTOS", "IDIOMAS", "OFIMÁTICA", "CURACIÓN", "GESTIÓN DE REFERENCIAS", "DICTADO", "TEXTO", "EDICIÓN EPUB"] },
-    { id: "ciencias", etiqueta: "Ciencias, matemáticas, geografía y mapas", palabras: ["CIENCIAS", "MATEMÁTICAS", "ASTRONOMÍA", "GEOGRAFÍA", "MAPAS", "ANÁLISIS ESTADÍSTICO", "ELECTRÓNICA"] },
-    { id: "programacion", etiqueta: "Programación, web, robótica y 3D", palabras: ["PROGRAMACIÓN", "ROBÓTICA", "CREACIÓN, DISEÑO Y PUBLICACIÓN WEB", "EDICIÓN DE PÁGINAS WEB", "REALIDAD AUMENTADA", "DIBUJO, DISEÑO", "EDICIÓN DE GRÁFICOS"] },
-    { id: "organizacion", etiqueta: "Organización, aula, debate y accesibilidad", palabras: ["ACCESIBILIDAD", "DEBATE", "ORGANIZACIÓN", "GESTIÓN DE AULA", "CIBERSEGURIDAD", "CÓDIGOS QR", "MOTORES DE BÚSQUEDA"] }
+    { id: "todos", palabras: [] },
+    { id: "actividades", palabras: ["ACTIVIDADES INTERACTIVAS", "CUESTIONARIOS", "GAMIFICACIÓN", "EVALUACIÓN"] },
+    { id: "ia", palabras: ["INTELIGENCIA ARTIFICIAL", "DETECTORES DE IA", "CHATBOT"] },
+    { id: "presentaciones", palabras: ["PRESENTACIONES", "INFOGRAFÍAS", "MUROS", "PIZARRAS", "LÍNEAS DEL TIEMPO", "MAPAS MENTALES", "DIAGRAMAS"] },
+    { id: "multimedia", palabras: ["VÍDEO", "AUDIO", "IMAGEN", "FOTOGRAFÍA", "ANIMACIÓN", "GRABACIÓN DE PANTALLA", "CÓMICS", "AVATARES"] },
+    { id: "documentos", palabras: ["DOCUMENTOS", "IDIOMAS", "OFIMÁTICA", "CURACIÓN", "GESTIÓN DE REFERENCIAS", "DICTADO", "TEXTO", "EDICIÓN EPUB"] },
+    { id: "ciencias", palabras: ["CIENCIAS", "MATEMÁTICAS", "ASTRONOMÍA", "GEOGRAFÍA", "MAPAS", "ANÁLISIS ESTADÍSTICO", "ELECTRÓNICA"] },
+    { id: "programacion", palabras: ["PROGRAMACIÓN", "ROBÓTICA", "CREACIÓN, DISEÑO Y PUBLICACIÓN WEB", "EDICIÓN DE PÁGINAS WEB", "REALIDAD AUMENTADA", "DIBUJO, DISEÑO", "EDICIÓN DE GRÁFICOS"] },
+    { id: "organizacion", palabras: ["ACCESIBILIDAD", "DEBATE", "ORGANIZACIÓN", "GESTIÓN DE AULA", "CIBERSEGURIDAD", "CÓDIGOS QR", "MOTORES DE BÚSQUEDA"] }
   ];
 
   const estado = {
+    idioma: "es",
     datos: null,
     enlaces: {},
     herramientas: [],
@@ -34,7 +36,7 @@
     semaforo: "TODOS",       // TODOS | VERDE | AMARILLO | ROJO
     uso: "TODOS",            // TODOS | ALUMNADO_VERDE | SOLO_DOCENTE
     categoria: "",           // categoria_id o ""
-    ambito: "",              // id de AMBITOS_ASISTENTE (opcional, desde el asistente)
+    ambito: "",              // id de AMBITOS_ASISTENTE
     extras: {
       sin_registro: false,
       software_libre: false,
@@ -46,7 +48,6 @@
     fichaAbiertaId: null
   };
 
-  // Referencias al DOM
   const dom = {
     buscador: document.getElementById("buscador"),
     btnLimpiarBusq: document.getElementById("btn-limpiar-busq"),
@@ -54,6 +55,7 @@
     selOrden: document.getElementById("sel-orden"),
     contador: document.getElementById("contador-resultados"),
     avisoCategoria: document.getElementById("aviso-categoria"),
+    notaIdiomaOficial: document.getElementById("nota-idioma-oficial"),
     lista: document.getElementById("lista-tarjetas"),
     vacio: document.getElementById("estado-vacio"),
     paginacion: document.getElementById("paginacion"),
@@ -63,6 +65,9 @@
     btnAsistente: document.getElementById("btn-asistente"),
     btnMarco: document.getElementById("btn-marco"),
     btnTema: document.getElementById("btn-tema"),
+    btnIdioma: document.getElementById("btn-idioma"),
+    menuIdiomas: document.getElementById("menu-idiomas"),
+    idiomaActualCod: document.getElementById("idioma-actual-cod"),
     enlaceInicio: document.getElementById("enlace-inicio"),
     numVerde: document.getElementById("num-verde"),
     numAmarillo: document.getElementById("num-amarillo"),
@@ -81,6 +86,104 @@
   };
 
   let temporizadorToast = null;
+
+  function t(clave, params) {
+    var dicc = (window.GPE_I18N && (window.GPE_I18N[estado.idioma] || window.GPE_I18N.es)) || {};
+    var val = dicc[clave] !== undefined ? dicc[clave] : (window.GPE_I18N && window.GPE_I18N.es[clave]) || clave;
+    if (params && typeof val === "string") {
+      Object.keys(params).forEach(function (k) {
+        val = val.replace(new RegExp("\\{" + k + "\\}", "g"), String(params[k]));
+      });
+    }
+    return val;
+  }
+
+  function idiomaNavegador() {
+    var langs = navigator.languages || [navigator.language || "es"];
+    for (var i = 0; i < langs.length; i++) {
+      var cod = String(langs[i] || "").slice(0, 2).toLowerCase();
+      if (IDIOMAS_SOPORTADOS.indexOf(cod) !== -1) return cod;
+    }
+    return "es";
+  }
+
+  function detectarIdiomaInicial() {
+    var p = new URLSearchParams(window.location.search);
+    var qLang = (p.get("lang") || "").toLowerCase();
+    if (IDIOMAS_SOPORTADOS.indexOf(qLang) !== -1) return qLang;
+    try {
+      var guardado = localStorage.getItem("gpe.idioma");
+      if (guardado && IDIOMAS_SOPORTADOS.indexOf(guardado) !== -1) return guardado;
+    } catch (_) {}
+    return idiomaNavegador();
+  }
+
+  function aplicarIdiomaInterfaz(cod, repintar) {
+    estado.idioma = IDIOMAS_SOPORTADOS.indexOf(cod) !== -1 ? cod : "es";
+    var dicc = (window.GPE_I18N && (window.GPE_I18N[estado.idioma] || window.GPE_I18N.es)) || {};
+
+    document.documentElement.lang = estado.idioma;
+    document.title = t("pageTitle");
+
+    if (dom.idiomaActualCod) dom.idiomaActualCod.textContent = t("langCode");
+    if (dom.btnIdioma) {
+      dom.btnIdioma.title = t("btnLangTitle");
+      dom.btnIdioma.setAttribute("aria-label", t("btnLangTitle"));
+    }
+    if (dom.btnTema) {
+      dom.btnTema.title = t("btnThemeTitle");
+      dom.btnTema.setAttribute("aria-label", t("btnThemeTitle"));
+    }
+    if (dom.buscador) dom.buscador.placeholder = t("searchPlaceholder");
+    if (dom.btnLimpiarBusq) {
+      dom.btnLimpiarBusq.title = t("searchClear");
+      dom.btnLimpiarBusq.setAttribute("aria-label", t("searchClear"));
+    }
+
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var k = el.dataset.i18n;
+      if (dicc[k] !== undefined) el.textContent = dicc[k];
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
+      var k = el.dataset.i18nHtml;
+      if (dicc[k] !== undefined) el.innerHTML = dicc[k];
+    });
+    document.querySelectorAll("[data-cerrar]").forEach(function (el) {
+      if (el.classList.contains("btn-icono")) {
+        el.title = t("closeLabel");
+        el.setAttribute("aria-label", t("closeLabel"));
+      }
+    });
+    document.querySelectorAll("[data-elegir-idioma]").forEach(function (b) {
+      b.setAttribute("aria-current", b.dataset.elegirIdioma === estado.idioma ? "true" : "false");
+    });
+
+    // Nota discreta sobre idioma original del documento oficial en ca/gl/eu/en
+    var nota = t("officialLangNote");
+    if (dom.notaIdiomaOficial) {
+      if (nota) {
+        dom.notaIdiomaOficial.innerHTML = nota;
+        dom.notaIdiomaOficial.hidden = false;
+      } else {
+        dom.notaIdiomaOficial.hidden = true;
+      }
+    }
+
+    // Actualizar primera opción del selector de categorías
+    if (dom.selCategoria && dom.selCategoria.options.length > 0) {
+      var nCats = estado.datos && estado.datos.categorias ? estado.datos.categorias.length : 87;
+      dom.selCategoria.options[0].textContent = t("allCats") + " (" + nCats + ")";
+    }
+
+    pintarOpcionesAsistente();
+    if (repintar && estado.datos) {
+      pintarMarcoOficial();
+      pintarResultados();
+      if (estado.fichaAbiertaId && dom.modalFicha.open) {
+        abrirFicha(estado.fichaAbiertaId, true);
+      }
+    }
+  }
 
   function normalizarTexto(txt) {
     return (txt || "")
@@ -109,7 +212,6 @@
     }, 3200);
   }
 
-  // Tema claro/oscuro siguiendo el sistema y recordando solo si se cambia a mano
   function iniciarTema() {
     var raiz = document.documentElement;
     var sistema = window.matchMedia("(prefers-color-scheme: dark)");
@@ -142,7 +244,6 @@
     }
   }
 
-  // Metadatos derivados para filtrado rápido y comprensible
   function prepararHerramienta(h) {
     var escenarios = h.escenarios || [];
     var colores = [];
@@ -150,7 +251,6 @@
       if (e.semaforo && colores.indexOf(e.semaforo) === -1) colores.push(e.semaforo);
     });
 
-    // Prioridad para ordenar: VERDE (0) < AMARILLO (1) < ROJO (2)
     var mejorColor = colores.indexOf("VERDE") !== -1 ? 0 : colores.indexOf("AMARILLO") !== -1 ? 1 : 2;
 
     var permiteSinRegistro = escenarios.some(function (e) {
@@ -164,27 +264,19 @@
       );
     });
 
-    var esSoftwareLibre = escenarios.some(function (e) {
-      return e.software_libre === "SI";
-    });
-
-    var esEmbebible = escenarios.some(function (e) {
-      return e.embebible === "SI";
-    });
-
+    var esSoftwareLibre = escenarios.some(function (e) { return e.software_libre === "SI"; });
+    var esEmbebible = escenarios.some(function (e) { return e.embebible === "SI"; });
     var tieneAccesibilidad = escenarios.some(function (e) {
       var txt = (e.accesibilidad_texto || "").trim();
       return (e.enlaces_accesibilidad && e.enlaces_accesibilidad.length > 0) || (txt && txt.toUpperCase() !== "X");
     });
 
-    // ¿Tiene algún escenario en verde utilizable con alumnado (sin prohibición "NO")?
     var alumnadoVerde = escenarios.some(function (e) {
       if (e.semaforo !== "VERDE") return false;
       var al = normalizarTexto(e.alumnado);
       return al.indexOf("no,") !== 0 && al !== "no";
     });
 
-    // ¿Permite uso por el docente o que el alumnado solo visualice producciones creadas por el docente?
     var soloDocente = escenarios.some(function (e) {
       var al = normalizarTexto(e.alumnado);
       var pr = normalizarTexto(e.profesorado);
@@ -196,7 +288,6 @@
       );
     });
 
-    // Fecha más reciente (YYYYMMDD para ordenación)
     var mejorFechaNum = 0;
     var mejorFechaStr = "";
     escenarios.forEach(function (e) {
@@ -210,7 +301,6 @@
       }
     });
 
-    // Índice de búsqueda libre (nombre, descripción, categoría, subcategoría, observaciones)
     var textoBusqueda = normalizarTexto(
       [
         h.nombre,
@@ -222,7 +312,12 @@
     );
 
     var enlaceInfo = estado.enlaces[h.id] || null;
-    var urlAcceso = enlaceInfo && enlaceInfo.url && enlaceInfo.estado !== "revisar" ? enlaceInfo.url : null;
+    var urlAcceso =
+      enlaceInfo &&
+      enlaceInfo.url &&
+      (enlaceInfo.estado === "verificado" || enlaceInfo.estado === "bloqueado_bot")
+        ? enlaceInfo.url
+        : null;
 
     return Object.assign({}, h, {
       _colores: colores,
@@ -243,9 +338,16 @@
   }
 
   function textoSemaforoCorto(color) {
-    if (color === "VERDE") return "Verde · Sin datos personales";
-    if (color === "AMARILLO") return "Amarillo · Requiere autorización";
-    if (color === "ROJO") return "Rojo · No cumple RGPD";
+    if (color === "VERDE") return t("semShortVERDE");
+    if (color === "AMARILLO") return t("semShortAMARILLO");
+    if (color === "ROJO") return t("semShortROJO");
+    return color;
+  }
+
+  function etiquetaColor(color) {
+    if (color === "VERDE") return t("semVerde").toUpperCase();
+    if (color === "AMARILLO") return t("semAmarillo").toUpperCase();
+    if (color === "ROJO") return t("semRojo").toUpperCase();
     return color;
   }
 
@@ -274,6 +376,7 @@
 
   function construirUrlActual(incluirFichaId) {
     var p = new URLSearchParams();
+    if (estado.idioma !== "es") p.set("lang", estado.idioma);
     if (estado.busqueda.trim()) p.set("q", estado.busqueda.trim());
     if (estado.semaforo !== "TODOS") p.set("sem", estado.semaforo.toLowerCase());
     if (estado.uso !== "TODOS") p.set("uso", estado.uso.toLowerCase());
@@ -358,9 +461,7 @@
       return true;
     });
 
-    // Ordenación
     res.sort(function (a, b) {
-      // Si hay búsqueda exacta en el nombre, priorizarla
       if (terminos.length) {
         var qNorm = terminos.join(" ");
         var aIni = a._nombreNorm.indexOf(qNorm) === 0 ? 0 : a._nombreNorm.indexOf(qNorm) !== -1 ? 1 : 2;
@@ -406,9 +507,10 @@
     if (estado.ambito) {
       var amb = AMBITOS_ASISTENTE.find(function (a) { return a.id === estado.ambito; });
       if (amb) {
+        var ambLabel = (t("ambitos") && t("ambitos")[amb.id]) || amb.id;
         dom.avisoCategoria.innerHTML =
-          "<strong>Selección del asistente: " + escaparHtml(amb.etiqueta) + "</strong>" +
-          "<span>Puedes ajustar cualquier filtro o pulsar «Limpiar filtros» para volver al listado completo.</span>";
+          "<strong>" + escaparHtml(t("wizardBanner", { label: ambLabel })) + "</strong>" +
+          "<span>" + escaparHtml(t("wizardBannerSub")) + "</span>";
         dom.avisoCategoria.hidden = false;
         return;
       }
@@ -419,13 +521,15 @@
   function pintarResultados() {
     var total = estado.filtradas.length;
     var totalGlobal = estado.herramientas.length;
+    var loc = estado.idioma === "en" ? "en-US" : "es-ES";
 
     if (total === totalGlobal) {
-      dom.contador.innerHTML = "Mostrando <strong>" + total.toLocaleString("es-ES") + "</strong> herramientas analizadas";
+      dom.contador.innerHTML = t("showingAll", { total: total.toLocaleString(loc) });
     } else {
-      dom.contador.innerHTML =
-        "<strong>" + total.toLocaleString("es-ES") + "</strong> de " +
-        totalGlobal.toLocaleString("es-ES") + " herramientas cumplen estos criterios";
+      dom.contador.innerHTML = t("showingFiltered", {
+        count: total.toLocaleString(loc),
+        total: totalGlobal.toLocaleString(loc)
+      });
     }
 
     pintarAvisoCategoria();
@@ -444,20 +548,20 @@
     var htmlTarjetas = porcion.map(function (h) {
       var badges = h._colores.map(function (c) {
         var simbolo = c === "VERDE" ? "✓" : c === "AMARILLO" ? "!" : "✕";
-        return '<span class="insignia insignia-' + c + '"><span aria-hidden="true">' + simbolo + '</span> ' + c + "</span>";
+        return '<span class="insignia insignia-' + c + '"><span aria-hidden="true">' + simbolo + '</span> ' + escaparHtml(etiquetaColor(c)) + "</span>";
       }).join("");
 
       var etiquetas = [];
       if (h.escenarios.length > 1) {
-        etiquetas.push('<span class="etq etq-aviso">' + h.escenarios.length + " modos de uso</span>");
+        etiquetas.push('<span class="etq etq-aviso">' + escaparHtml(t("cardModes", { n: h.escenarios.length })) + "</span>");
       }
-      if (h._sinRegistro) etiquetas.push('<span class="etq">Sin registro</span>');
-      if (h._softwareLibre) etiquetas.push('<span class="etq">Software libre</span>');
-      if (h._embebible) etiquetas.push('<span class="etq">Embebible</span>');
+      if (h._sinRegistro) etiquetas.push('<span class="etq">' + escaparHtml(t("extraNoReg")) + "</span>");
+      if (h._softwareLibre) etiquetas.push('<span class="etq">' + escaparHtml(t("extraFreeSw")) + "</span>");
+      if (h._embebible) etiquetas.push('<span class="etq">' + escaparHtml(t("extraEmbed")) + "</span>");
 
       var catTexto = h.categoria + (h.subcategoria ? " · " + h.subcategoria : "");
       var btnWeb = h._urlAcceso
-        ? '<a class="btn btn-suave" href="' + escaparHtml(h._urlAcceso) + '" target="_blank" rel="noopener">Abrir web ' + iconoExterno() + "</a>"
+        ? '<a class="btn btn-suave" href="' + escaparHtml(h._urlAcceso) + '" target="_blank" rel="noopener">' + escaparHtml(t("cardOpenWeb")) + " " + iconoExterno() + "</a>"
         : "";
 
       return (
@@ -467,10 +571,10 @@
             '<div class="badges-semaforo">' + badges + "</div>" +
           "</div>" +
           '<p class="tarjeta-cat">' + escaparHtml(catTexto) + "</p>" +
-          '<p class="tarjeta-desc">' + escaparHtml(h.descripcion || "Sin descripción en el documento.") + "</p>" +
+          '<p class="tarjeta-desc">' + escaparHtml(h.descripcion || t("cardNoDesc")) + "</p>" +
           (etiquetas.length ? '<div class="tarjeta-etiquetas">' + etiquetas.join("") + "</div>" : "") +
           '<div class="tarjeta-pie">' +
-            '<button type="button" class="btn btn-secundario" data-abrir-ficha="' + escaparHtml(h.id) + '">Ver indicaciones</button>' +
+            '<button type="button" class="btn btn-secundario" data-abrir-ficha="' + escaparHtml(h.id) + '">' + escaparHtml(t("cardViewDetails")) + "</button>" +
             btnWeb +
           "</div>" +
         "</article>"
@@ -493,10 +597,9 @@
 
     partes.push(
       '<button type="button" class="btn" data-pag="' + (actual - 1) + '"' +
-      (actual <= 1 ? " disabled" : "") + ">← Anterior</button>"
+      (actual <= 1 ? " disabled" : "") + ">" + escaparHtml(t("prevPage")) + "</button>"
     );
 
-    // Mostrar primera, última y entorno de la actual
     var paginas = new Set([1, totalPags, actual - 1, actual, actual + 1]);
     var ordenadas = Array.from(paginas).filter(function (p) {
       return p >= 1 && p <= totalPags;
@@ -516,24 +619,20 @@
 
     partes.push(
       '<button type="button" class="btn" data-pag="' + (actual + 1) + '"' +
-      (actual >= totalPags ? " disabled" : "") + ">Siguiente →</button>"
+      (actual >= totalPags ? " disabled" : "") + ">" + escaparHtml(t("nextPage")) + "</button>"
     );
 
     dom.paginacion.innerHTML = partes.join("");
   }
 
   function textoCampoSiX(valor, tipo) {
-    if (valor === "SI") return { texto: "Sí", nota: "" };
-    if (valor === "NO") return { texto: "No", nota: "" };
+    if (valor === "SI") return { texto: t("valYes"), nota: "" };
+    if (valor === "NO") return { texto: t("valNo"), nota: "" };
     if (valor === "X") {
-      if (tipo === "sw") {
-        return { texto: "No consta (X)", nota: "Según el INTEF, «X» puede indicar que no es libre o que no pudo confirmarse." };
-      }
-      if (tipo === "emb") {
-        return { texto: "No consta (X)", nota: "Según el INTEF, «X» puede indicar que no es embebible, no en versión gratuita o requiere código avanzado." };
-      }
+      if (tipo === "sw") return { texto: t("valUnknownX"), nota: t("noteSwX") };
+      if (tipo === "emb") return { texto: t("valUnknownX"), nota: t("noteEmbedX") };
     }
-    return { texto: valor || "No consta", nota: "" };
+    return { texto: valor || t("valUnknown"), nota: "" };
   }
 
   function esFechaAntigua(fechaStr) {
@@ -557,7 +656,7 @@
     );
   }
 
-  function abrirFicha(idHerramienta) {
+  function abrirFicha(idHerramienta, yaAbierto) {
     var h = estado.herramientas.find(function (x) { return x.id === idHerramienta; });
     if (!h) return;
 
@@ -568,22 +667,20 @@
     dom.fichaSub.textContent =
       h.categoria +
       (h.subcategoria ? " · " + h.subcategoria : "") +
-      " · Ficha n.º " + h.numero + " (pág. " + h.pagina + " del PDF del INTEF)";
+      " · " + t("cardRecordMeta", { num: h.numero, pag: h.pagina });
 
     var bloques = [];
-
-    // Descripción + acceso directo a la herramienta si hay URL verificada
-    bloques.push("<p style=\"margin:0\">" + escaparHtml(h.descripcion) + "</p>");
+    bloques.push('<p style="margin:0">' + escaparHtml(h.descripcion) + "</p>");
 
     if (h._urlAcceso) {
-      var fechaUrl = h._enlaceInfo && h._enlaceInfo.comprobado ? " · comprobado " + h._enlaceInfo.comprobado : "";
+      var fechaUrl = h._enlaceInfo && h._enlaceInfo.comprobado ? " · " + t("cardCheckedOn") + " " + h._enlaceInfo.comprobado : "";
       bloques.push(
         '<div class="ficha-barra-web">' +
-          '<div>' +
-            '<strong>Acceso directo a la herramienta</strong>' +
-            '<p class="ficha-web-nota">Enlace añadido y verificado aparte del PDF del INTEF' + escaparHtml(fechaUrl) + ".</p>" +
+          "<div>" +
+            "<strong>" + escaparHtml(t("cardDirectAccess")) + "</strong>" +
+            '<p class="ficha-web-nota">' + escaparHtml(t("cardDirectNote") + fechaUrl) + ".</p>" +
           "</div>" +
-          '<a class="btn btn-primario" href="' + escaparHtml(h._urlAcceso) + '" target="_blank" rel="noopener">Abrir herramienta ' + iconoExterno() + "</a>" +
+          '<a class="btn btn-primario" href="' + escaparHtml(h._urlAcceso) + '" target="_blank" rel="noopener">' + escaparHtml(t("cardOpenTool")) + " " + iconoExterno() + "</a>" +
         "</div>"
       );
     }
@@ -591,8 +688,8 @@
     if (h.escenarios.length > 1) {
       bloques.push(
         '<div class="aviso-categoria" style="margin:0">' +
-          "<strong>Esta herramienta tiene " + h.escenarios.length + " modos de uso analizados</strong>" +
-          "<span>El semáforo cambia según cómo se utilice (por ejemplo, con registro o sin registro). Revisa cada bloque.</span>" +
+          "<strong>" + escaparHtml(t("cardMultiTitle", { n: h.escenarios.length })) + "</strong>" +
+          "<span>" + escaparHtml(t("cardMultiSub")) + "</span>" +
         "</div>"
       );
     }
@@ -602,16 +699,16 @@
       var sw = textoCampoSiX(esc.software_libre, "sw");
       var emb = textoCampoSiX(esc.embebible, "emb");
       var fechaNota = esFechaAntigua(esc.fecha_comprobacion)
-        ? '<span class="dato-nota">Revisión de ' + escaparHtml(esc.fecha_comprobacion) + ": conviene comprobar si la política ha cambiado.</span>"
+        ? '<span class="dato-nota">' + escaparHtml(t("noteOldDate", { fecha: esc.fecha_comprobacion })) + "</span>"
         : "";
 
       var tituloEsc =
-        (h.escenarios.length > 1 ? "Modo " + (idx + 1) + " · " : "") +
+        (h.escenarios.length > 1 ? t("modePrefix", { n: idx + 1 }) : "") +
         textoSemaforoCorto(sem);
 
-      var linksPriv = renderListaEnlaces(esc.enlaces_privacidad, "Política de privacidad");
-      var linksAcc = renderListaEnlaces(esc.enlaces_accesibilidad, "Información de accesibilidad");
-      var linksOtros = renderListaEnlaces(esc.enlaces_otros, "Enlace citado en la guía");
+      var linksPriv = renderListaEnlaces(esc.enlaces_privacidad, t("linkPrivacy"));
+      var linksAcc = renderListaEnlaces(esc.enlaces_accesibilidad, t("linkAccess"));
+      var linksOtros = renderListaEnlaces(esc.enlaces_otros, t("linkCited"));
 
       var textoOtros = (esc.otros || "").replace(/https?:\/\/\S+/g, "").replace(/\s+/g, " ").trim();
       var textoAcc = (esc.accesibilidad_texto || "").replace(/https?:\/\/\S+/g, "").replace(/\s+/g, " ").trim();
@@ -621,50 +718,50 @@
         '<section class="escenario-caja">' +
           '<div class="escenario-cab sem-' + sem + '">' +
             '<span class="escenario-titulo">' + escaparHtml(tituloEsc) + "</span>" +
-            '<span class="escenario-fecha">Comprobado: ' + escaparHtml(esc.fecha_comprobacion || "sin fecha") + "</span>" +
+            '<span class="escenario-fecha">' + escaparHtml(t("checkedLabel") + " " + (esc.fecha_comprobacion || t("noDate"))) + "</span>" +
           "</div>" +
           '<div class="escenario-cuerpo">' +
             '<div class="roles-rejilla">' +
               '<div class="rol-caja">' +
-                "<h4>Para el profesorado</h4>" +
-                "<p>" + escaparHtml(esc.profesorado || "Sin indicaciones específicas.") + "</p>" +
+                "<h4>" + escaparHtml(t("forTeachers")) + "</h4>" +
+                "<p>" + escaparHtml(esc.profesorado || t("noSpecificNotes")) + "</p>" +
               "</div>" +
               '<div class="rol-caja">' +
-                "<h4>Para el alumnado</h4>" +
-                "<p>" + escaparHtml(esc.alumnado || "Sin indicaciones específicas.") + "</p>" +
+                "<h4>" + escaparHtml(t("forStudents")) + "</h4>" +
+                "<p>" + escaparHtml(esc.alumnado || t("noSpecificNotes")) + "</p>" +
               "</div>" +
             "</div>" +
 
             '<div class="datos-tabla">' +
               '<div class="dato-item">' +
-                '<span class="dato-clave">¿Requiere registro?</span>' +
-                "<span>" + escaparHtml(esc.requiere_registro || "No consta") + "</span>" +
+                '<span class="dato-clave">' + escaparHtml(t("fieldReg")) + "</span>" +
+                "<span>" + escaparHtml(esc.requiere_registro || t("valUnknown")) + "</span>" +
               "</div>" +
               '<div class="dato-item">' +
-                '<span class="dato-clave">Software libre / código abierto</span>' +
+                '<span class="dato-clave">' + escaparHtml(t("fieldFreeSw")) + "</span>" +
                 "<span>" + escaparHtml(sw.texto) + "</span>" +
                 (sw.nota ? '<span class="dato-nota">' + escaparHtml(sw.nota) + "</span>" : "") +
               "</div>" +
               '<div class="dato-item">' +
-                '<span class="dato-clave">Embebible</span>' +
+                '<span class="dato-clave">' + escaparHtml(t("fieldEmbed")) + "</span>" +
                 "<span>" + escaparHtml(emb.texto) + "</span>" +
                 (emb.nota ? '<span class="dato-nota">' + escaparHtml(emb.nota) + "</span>" : "") +
               "</div>" +
               '<div class="dato-item">' +
-                '<span class="dato-clave">Fecha de comprobación</span>' +
-                "<span>" + escaparHtml(esc.fecha_comprobacion || "No consta") + "</span>" +
+                '<span class="dato-clave">' + escaparHtml(t("fieldDate")) + "</span>" +
+                "<span>" + escaparHtml(esc.fecha_comprobacion || t("valUnknown")) + "</span>" +
                 fechaNota +
               "</div>" +
             "</div>" +
 
             (textoOtros || linksOtros
-              ? '<div><strong>Observaciones de la guía:</strong> ' +
+              ? "<div><strong>" + escaparHtml(t("fieldOthers")) + "</strong> " +
                 (textoOtros ? "<span>" + escaparHtml(textoOtros) + "</span>" : "") +
                 linksOtros + "</div>"
               : "") +
 
             (linksPriv || linksAcc || textoAcc
-              ? '<div><strong>Documentación oficial revisada por el INTEF:</strong>' +
+              ? "<div><strong>" + escaparHtml(t("fieldOfficialDocs")) + "</strong>" +
                 linksPriv +
                 linksAcc +
                 (textoAcc ? '<p class="ficha-web-nota">' + escaparHtml(textoAcc) + "</p>" : "") +
@@ -675,63 +772,65 @@
       );
     });
 
-    // Desplegable contextual con las Advertencias y Orientaciones sin salir de la ficha
     if (estado.datos && estado.datos.marco) {
       var m = estado.datos.marco;
       var advHtml = "<ol>" + m.advertencias.map(function (a) { return "<li>" + escaparHtml(a) + "</li>"; }).join("") + "</ol>";
       bloques.push(
         '<details class="desplegable">' +
-          "<summary>Consultar las 11 advertencias oficiales del INTEF (referenciadas en esta ficha)</summary>" +
+          "<summary>" + escaparHtml(t("cardWarnSummary")) + "</summary>" +
           '<div class="desplegable-contenido">' + advHtml + "</div>" +
         "</details>"
       );
     }
 
     dom.fichaCuerpo.innerHTML = bloques.join("");
-    dom.modalFicha.showModal();
+    if (!yaAbierto && !dom.modalFicha.open) {
+      dom.modalFicha.showModal();
+    }
   }
 
   function pintarMarcoOficial() {
     if (!estado.datos || !estado.datos.marco) return;
     var m = estado.datos.marco;
     var f = estado.datos.fuente;
+    var pdfUrl = estado.idioma === "en" && f.url_pdf_en ? f.url_pdf_en : f.url_pdf;
 
     var partes = [
-      '<div class="aviso-categoria" style="margin:0"><strong>Aviso importante del INTEF</strong><span>' + escaparHtml(m.importante) + "</span></div>",
+      '<div class="aviso-categoria" style="margin:0"><strong>' + escaparHtml(t("guideImportant")) + "</strong><span>" + escaparHtml(m.importante) + "</span></div>",
       '<details class="desplegable" open>' +
-        "<summary>11 advertencias generales antes de usar cualquier herramienta</summary>" +
+        "<summary>" + escaparHtml(t("guideWarn11")) + "</summary>" +
         '<div class="desplegable-contenido"><ol>' +
         m.advertencias.map(function (a) { return "<li>" + escaparHtml(a) + "</li>"; }).join("") +
         "</ol></div>" +
       "</details>",
       '<details class="desplegable">' +
-        "<summary>Orientaciones: herramientas sin datos personales (verde)</summary>" +
+        "<summary>" + escaparHtml(t("guideOriGreen")) + "</summary>" +
         '<div class="desplegable-contenido">' +
         m.orientaciones.sin_datos_personales.map(function (p) { return "<p>" + escaparHtml(p) + "</p>"; }).join("") +
         "</div>" +
       "</details>",
       '<details class="desplegable">' +
-        "<summary>Orientaciones: tratamiento anonimizado o seudonimizado</summary>" +
+        "<summary>" + escaparHtml(t("guideOriAnon")) + "</summary>" +
         '<div class="desplegable-contenido">' +
         m.orientaciones.anonimizado.map(function (p) { return "<p>" + escaparHtml(p) + "</p>"; }).join("") +
         "</div>" +
       "</details>",
       '<details class="desplegable">' +
-        "<summary>Orientaciones: tratamiento no anonimizado (amarillo / rojo)</summary>" +
+        "<summary>" + escaparHtml(t("guideOriNoAnon")) + "</summary>" +
         '<div class="desplegable-contenido">' +
         m.orientaciones.no_anonimizado.map(function (p) { return "<p>" + escaparHtml(p) + "</p>"; }).join("") +
         "</div>" +
       "</details>",
       '<details class="desplegable">' +
-        "<summary>Qué significa la «X» en Software libre y Embebible</summary>" +
+        "<summary>" + escaparHtml(t("guideMeanX")) + "</summary>" +
         '<div class="desplegable-contenido">' +
-          "<p><strong>Software libre y/o código abierto:</strong> " + escaparHtml(m.aclaracion_software_libre) + "</p>" +
-          "<p><strong>Embebible:</strong> " + escaparHtml(m.aclaracion_embebible) + "</p>" +
+          "<p><strong>" + escaparHtml(t("fieldFreeSw")) + ":</strong> " + escaparHtml(m.aclaracion_software_libre) + "</p>" +
+          "<p><strong>" + escaparHtml(t("fieldEmbed")) + ":</strong> " + escaparHtml(m.aclaracion_embebible) + "</p>" +
         "</div>" +
       "</details>",
       '<div class="ficha-barra-web">' +
-        '<div><strong>¿Tu herramienta no está en la guía?</strong><p class="ficha-web-nota">El Anexo I del PDF oficial del INTEF (págs. 200–209) ofrece un modelo de evaluación para consultar a la Delegación de Protección de Datos de tu centro o administración.</p></div>' +
-        '<a class="btn btn-primario" href="' + escaparHtml(f.url_pdf) + '" target="_blank" rel="noopener">Abrir PDF oficial ' + iconoExterno() + "</a>" +
+        "<div><strong>" + escaparHtml(t("guideNotListedTitle")) + '</strong><p class="ficha-web-nota">' + escaparHtml(t("guideNotListedText")) + "</p></div>" +
+        '<a class="btn btn-primario" href="' + escaparHtml(pdfUrl) + '" target="_blank" rel="noopener">' + escaparHtml(t("guideOpenPdf")) + " " + iconoExterno() + "</a>" +
       "</div>"
     ];
 
@@ -739,11 +838,15 @@
   }
 
   function pintarOpcionesAsistente() {
-    dom.asistenteAmbitos.innerHTML = AMBITOS_ASISTENTE.map(function (amb, idx) {
+    var diccAmb = t("ambitos") || {};
+    var checkedPrev = dom.asistenteAmbitos.querySelector("input:checked");
+    var seleccionado = checkedPrev ? checkedPrev.value : "todos";
+    dom.asistenteAmbitos.innerHTML = AMBITOS_ASISTENTE.map(function (amb) {
+      var label = diccAmb[amb.id] || amb.id;
       return (
         '<label class="asistente-radio">' +
-          '<input type="radio" name="asist_ambito" value="' + escaparHtml(amb.id) + '"' + (idx === 0 ? " checked" : "") + ">" +
-          "<span>" + escaparHtml(amb.etiqueta) + "</span>" +
+          '<input type="radio" name="asist_ambito" value="' + escaparHtml(amb.id) + '"' + (amb.id === seleccionado ? " checked" : "") + ">" +
+          "<span>" + escaparHtml(label) + "</span>" +
         "</label>"
       );
     }).join("");
@@ -756,9 +859,9 @@
     }
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(url).then(function () {
-        mostrarToast("Enlace copiado al portapapeles");
+        mostrarToast(t("toastCopied"));
       }).catch(function () {
-        mostrarToast("No se pudo copiar el enlace");
+        mostrarToast(t("toastCopyFail"));
       });
     } else {
       var ta = document.createElement("textarea");
@@ -770,7 +873,7 @@
       ta.select();
       try {
         document.execCommand("copy");
-        mostrarToast("Enlace copiado al portapapeles");
+        mostrarToast(t("toastCopied"));
       } catch (_) {}
       ta.remove();
     }
@@ -856,6 +959,46 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
+    // Menú de idioma accesible
+    if (dom.btnIdioma && dom.menuIdiomas) {
+      function toggleMenuIdiomas(abre) {
+        dom.menuIdiomas.hidden = !abre;
+        dom.btnIdioma.setAttribute("aria-expanded", abre ? "true" : "false");
+        if (abre) {
+          var actual = dom.menuIdiomas.querySelector('[aria-current="true"]') || dom.menuIdiomas.querySelector("button");
+          if (actual) actual.focus();
+        }
+      }
+      dom.btnIdioma.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        toggleMenuIdiomas(dom.menuIdiomas.hidden);
+      });
+      document.addEventListener("click", function (ev) {
+        if (!dom.menuIdiomas.hidden && !dom.menuIdiomas.contains(ev.target)) {
+          toggleMenuIdiomas(false);
+        }
+      });
+      document.addEventListener("keydown", function (ev) {
+        if (ev.key === "Escape" && !dom.menuIdiomas.hidden) {
+          toggleMenuIdiomas(false);
+          dom.btnIdioma.focus();
+        }
+      });
+      dom.menuIdiomas.querySelectorAll("[data-elegir-idioma]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var cod = b.dataset.elegirIdioma;
+          try {
+            if (cod === idiomaNavegador()) localStorage.removeItem("gpe.idioma");
+            else localStorage.setItem("gpe.idioma", cod);
+          } catch (_) {}
+          aplicarIdiomaInterfaz(cod, true);
+          sincronizarUrl();
+          toggleMenuIdiomas(false);
+          dom.btnIdioma.focus();
+        });
+      });
+    }
+
     dom.lista.addEventListener("click", function (ev) {
       if (ev.target.closest("a")) return;
       var btn = ev.target.closest("[data-abrir-ficha]");
@@ -886,8 +1029,11 @@
     dom.btnCompartirFicha.addEventListener("click", function () {
       if (!estado.fichaAbiertaId) return;
       var h = estado.herramientas.find(function (x) { return x.id === estado.fichaAbiertaId; });
-      var url = window.location.origin + window.location.pathname + "?h=" + encodeURIComponent(estado.fichaAbiertaId);
-      compartirEnlace(url, (h ? h.nombre + " · " : "") + "Guía de privacidad de herramientas educativas");
+      var p = new URLSearchParams();
+      if (estado.idioma !== "es") p.set("lang", estado.idioma);
+      p.set("h", estado.fichaAbiertaId);
+      var url = window.location.origin + window.location.pathname + "?" + p.toString();
+      compartirEnlace(url, (h ? h.nombre + " · " : "") + t("brandTitle"));
     });
 
     dom.btnAsistente.addEventListener("click", function () {
@@ -921,7 +1067,6 @@
       document.getElementById("resultados").scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
-    // Cerrar diálogos con botones o clic en el fondo
     document.querySelectorAll("[data-cerrar]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var dlg = document.getElementById(btn.dataset.cerrar);
@@ -940,17 +1085,24 @@
       sincronizarUrl();
     });
 
-    // Cerrar el toast al tocarlo
     dom.toast.addEventListener("click", function () {
       dom.toast.hidden = true;
     });
   }
 
+  function registrarServiceWorker() {
+    if ("serviceWorker" in navigator && window.top === window && window.isSecureContext) {
+      navigator.serviceWorker.register("sw.js").catch(function () {});
+    }
+  }
+
   async function iniciar() {
     iniciarTema();
-    pintarOpcionesAsistente();
+    estado.idioma = detectarIdiomaInicial();
+    aplicarIdiomaInterfaz(estado.idioma, false);
     vincularEventos();
     leerEstadoDesdeUrl();
+    registrarServiceWorker();
 
     try {
       var [respGuia, respEnlaces] = await Promise.all([
@@ -966,7 +1118,6 @@
         estado.enlaces = datosEnlaces.enlaces || {};
       }
 
-      // Poblar mapa y selector de categorías con recuento real
       var cuentasCat = {};
       (estado.datos.herramientas || []).forEach(function (h) {
         cuentasCat[h.categoria_id] = (cuentasCat[h.categoria_id] || 0) + 1;
@@ -981,10 +1132,10 @@
         frag.appendChild(opt);
       });
       dom.selCategoria.appendChild(frag);
+      dom.selCategoria.options[0].textContent = t("allCats") + " (" + estado.datos.categorias.length + ")";
 
       estado.herramientas = (estado.datos.herramientas || []).map(prepararHerramienta);
 
-      // Contadores de semáforo (cuántas herramientas tienen al menos un modo en cada color)
       var nVerde = estado.herramientas.filter(function (h) { return h._colores.indexOf("VERDE") !== -1; }).length;
       var nAmarillo = estado.herramientas.filter(function (h) { return h._colores.indexOf("AMARILLO") !== -1; }).length;
       var nRojo = estado.herramientas.filter(function (h) { return h._colores.indexOf("ROJO") !== -1; }).length;
@@ -999,7 +1150,7 @@
         abrirFicha(estado.fichaAbiertaId);
       }
     } catch (err) {
-      dom.contador.textContent = "No se pudieron cargar los datos de la guía.";
+      dom.contador.textContent = t("loadError");
       console.error("Error cargando la guía:", err);
     }
   }

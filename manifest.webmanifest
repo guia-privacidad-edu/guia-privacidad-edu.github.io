@@ -1,0 +1,24 @@
+{
+  "name": "Guía de privacidad de herramientas educativas",
+  "short_name": "Privacidad Edu",
+  "description": "Consulta interactiva de las 1.144 herramientas digitales analizadas por el INTEF (v3.0, junio 2026).",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f8fa",
+  "theme_color": "#0f5266",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

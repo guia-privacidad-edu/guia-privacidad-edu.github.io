@@ -1,9 +1,9 @@
 {
   "actualizado": "2026-11-23",
   "total_herramientas": 1144,
-  "verificados": 1016,
+  "verificados": 1019,
   "bloqueados_bot": 104,
-  "por_revisar": 24,
+  "por_revisar": 0,
   "pendientes_count": 0,
   "enlaces": {
     "digiread": {
@@ -1243,7 +1243,7 @@
       "origen": "pdf-dominio-privacidad",
       "http": 0,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "digibunch": {
@@ -2303,7 +2303,7 @@
       "origen": "pdf-otros",
       "http": 410,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "yeschat-ai-creacion-de-curriculums-con-resume-copilot": {
@@ -2313,7 +2313,7 @@
       "origen": "pdf-otros",
       "http": 410,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "yeschat-ai-recruit-copilot": {
@@ -2323,7 +2323,7 @@
       "origen": "pdf-otros",
       "http": 410,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "yeschat-ai-resume-cover-letter": {
@@ -2333,7 +2333,7 @@
       "origen": "pdf-otros",
       "http": 410,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "dafont": {
@@ -2583,7 +2583,7 @@
       "origen": "resolucion-directa",
       "http": 402,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "murf-ai": {
@@ -2613,7 +2613,7 @@
       "origen": "resolucion-directa",
       "http": 0,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "resemble-ai": {
@@ -2728,12 +2728,12 @@
     },
     "gvsig": {
       "nombre": "gvSIG",
-      "url": "https://www.gvsig.com/es",
-      "url_inicial": "https://www.gvsig.com/es",
+      "url": "https://www.gvsig-services.com/es",
+      "url_inicial": "https://www.gvsig-services.com/es",
       "origen": "resolucion-directa",
-      "http": 0,
-      "titulo": "",
-      "estado": "revisar",
+      "http": 200,
+      "titulo": "gvSIG",
+      "estado": "verificado",
       "comprobado": "2026-11-23"
     },
     "idedidactica-primaria-secundaria-y-bachillerato": {
@@ -3400,10 +3400,10 @@
       "nombre": "Slick Write",
       "url": "https://www.slickwrite.com/",
       "url_inicial": "https://www.slickwrite.com/",
-      "origen": "pdf-dominio-privacidad",
-      "http": 0,
-      "titulo": "",
-      "estado": "revisar",
+      "origen": "resolucion-directa",
+      "http": 200,
+      "titulo": "Slick Write",
+      "estado": "verificado",
       "comprobado": "2026-11-23"
     },
     "spellboy": {
@@ -3733,7 +3733,7 @@
       "origen": "pdf-dominio-privacidad",
       "http": 0,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "tailor-brands": {
@@ -4073,7 +4073,7 @@
       "origen": "pdf-otros",
       "http": 0,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "pixnova-ai": {
@@ -4583,7 +4583,7 @@
       "origen": "pdf-dominio-privacidad",
       "http": 404,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "schoolai-tools": {
@@ -4703,7 +4703,7 @@
       "origen": "pdf-otros",
       "http": 410,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "yeschat-ai-creador-de-examenes": {
@@ -4713,7 +4713,7 @@
       "origen": "pdf-otros",
       "http": 410,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "yippity": {
@@ -5233,7 +5233,7 @@
       "origen": "pdf-otros",
       "http": 404,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "ai-poem-generator": {
@@ -7593,7 +7593,7 @@
       "origen": "pdf-dominio-privacidad",
       "http": 0,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "the-teacher-s-room": {
@@ -8633,7 +8633,7 @@
       "origen": "resolucion-directa",
       "http": 0,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "actionbound": {
@@ -9173,7 +9173,7 @@
       "origen": "pdf-otros",
       "http": 0,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "openverse": {
@@ -9923,7 +9923,7 @@
       "origen": "pdf-otros",
       "http": 0,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "musely-generador-de-rubricas": {
@@ -10173,7 +10173,7 @@
       "origen": "resolucion-directa",
       "http": 410,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "yeschat-ai-accessibility-coach": {
@@ -10183,7 +10183,7 @@
       "origen": "resolucion-directa",
       "http": 410,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "yeschat-ai-accessibility-helper": {
@@ -10193,7 +10193,7 @@
       "origen": "resolucion-directa",
       "http": 410,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "yeschat-ai-evaluador-de-accesibilidad-web": {
@@ -10258,12 +10258,12 @@
     },
     "esa-kids": {
       "nombre": "ESA Kids",
-      "url": "https://www.esa.int/kids/es/",
-      "url_inicial": "https://www.esa.int/kids/es/",
+      "url": "https://kids.esa.int/",
+      "url_inicial": "https://kids.esa.int/",
       "origen": "resolucion-directa",
-      "http": 404,
-      "titulo": "",
-      "estado": "revisar",
+      "http": 200,
+      "titulo": "ESA Kids",
+      "estado": "verificado",
       "comprobado": "2026-11-23"
     },
     "google-maps-en-el-espacio": {
@@ -11353,7 +11353,7 @@
       "origen": "resolucion-directa",
       "http": 0,
       "titulo": "",
-      "estado": "revisar",
+      "estado": "no_disponible",
       "comprobado": "2026-11-23"
     },
     "teaching-lab-ai": {
@@ -11447,5 +11447,6 @@
       "comprobado": "2026-11-23"
     }
   },
-  "pendientes": []
+  "pendientes": [],
+  "no_disponibles": 21
 }

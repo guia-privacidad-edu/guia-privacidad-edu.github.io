@@ -6,7 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacidad · Guía de privacidad de herramientas educativas</title>
   <meta name="description" content="Esta aplicación no recoge datos personales, no usa cookies ni analítica y funciona íntegramente en tu navegador.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Privacidad · Guía de privacidad de herramientas educativas">
+  <meta property="og:image" content="https://guia-privacidad-edu.github.io/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0f5266">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
   <script>
     (function () {
       try {
@@ -24,7 +32,7 @@
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body class="pag-texto">
-  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <a class="saltar" href="#contenido" data-i18n="skipToMain">Saltar al contenido</a>
 
   <header class="cabecera">
     <div class="contenedor cabecera-interior">
@@ -32,13 +40,26 @@
         <a href="./" class="marca-enlace">
           <img src="favicon.svg" alt="" width="34" height="34" class="marca-logo">
           <div>
-            <span class="marca-titulo">Guía de privacidad de herramientas educativas</span>
-            <span class="marca-sub">Basada en las Orientaciones v3.0 del INTEF (junio 2026)</span>
+            <span class="marca-titulo" data-i18n="brandTitle">Guía de privacidad de herramientas educativas</span>
+            <span class="marca-sub" data-i18n="brandSub">Consulta interactiva de las Orientaciones v3.0 del INTEF (junio 2026)</span>
           </div>
         </a>
       </div>
       <div class="cabecera-acciones">
-        <a href="./" class="btn btn-secundario">Volver al buscador</a>
+        <a href="./" class="btn btn-secundario" id="btn-asistente" data-i18n="btnBackSearch">Volver al buscador</a>
+        <div class="idiomas-wrap">
+          <button type="button" id="btn-idioma" class="idioma-btn" aria-expanded="false" aria-controls="menu-idiomas" title="Cambiar de idioma" aria-label="Cambiar de idioma">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+            <span id="idioma-actual-cod" aria-hidden="true">ES</span>
+          </button>
+          <ul id="menu-idiomas" class="idioma-menu" hidden>
+            <li><button type="button" data-elegir-idioma="es" lang="es" aria-current="true"><span>Castellano</span><span>ES</span></button></li>
+            <li><button type="button" data-elegir-idioma="ca" lang="ca"><span>Català</span><span>CA</span></button></li>
+            <li><button type="button" data-elegir-idioma="gl" lang="gl"><span>Galego</span><span>GL</span></button></li>
+            <li><button type="button" data-elegir-idioma="eu" lang="eu"><span>Euskara</span><span>EU</span></button></li>
+            <li><button type="button" data-elegir-idioma="en" lang="en"><span>English</span><span>EN</span></button></li>
+          </ul>
+        </div>
         <button type="button" id="btn-tema" class="btn-icono" title="Cambiar entre tema claro y oscuro" aria-label="Cambiar entre tema claro y oscuro">
           <svg class="ico ico-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
           <svg class="ico ico-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
@@ -48,59 +69,117 @@
   </header>
 
   <main id="contenido" class="contenedor lectura" tabindex="-1">
-    <h1>Privacidad</h1>
-    <p class="entradilla">Esta aplicación no pide registro, no utiliza cookies, no incorpora publicidad ni analítica y no envía tus búsquedas a ningún servidor.</p>
+    <h1 data-i18n="privH1">Privacidad</h1>
+    <p class="entradilla" data-i18n="privLead">Esta aplicación no pide registro, no utiliza cookies, no incorpora publicidad ni analítica y no envía tus búsquedas a ningún servidor.</p>
 
-    <h2>Cómo funciona la consulta</h2>
-    <p>Al abrir la web, tu navegador descarga el catálogo estructurado en formato JSON y realiza todas las búsquedas y filtros directamente en tu dispositivo. Nada de lo que escribes en el buscador ni los filtros que eliges salen de tu navegador.</p>
+    <h2 data-i18n="privH2How">Cómo funciona la consulta</h2>
+    <p data-i18n="privPHow">Al abrir la web, tu navegador descarga el catálogo estructurado en formato JSON y realiza todas las búsquedas y filtros directamente en tu dispositivo. Nada de lo que escribes en el buscador ni los filtros que eliges salen de tu navegador.</p>
 
-    <h2>Qué se guarda en tu dispositivo</h2>
-    <p>Únicamente si cambias a mano entre tema claro y tema oscuro, el navegador recuerda esa preferencia en el almacenamiento local (<code>localStorage</code>) bajo la clave <code>gpe.tema</code>. Si mantienes el tema de tu sistema operativo, no se guarda nada.</p>
+    <h2 data-i18n="privH2Local">Datos guardados en tu dispositivo</h2>
+    <p data-i18n-html="privPLocal">El navegador guarda únicamente tus preferencias si las cambias a mano (tema claro/oscuro en <code>gpe.tema</code> e idioma en <code>gpe.idioma</code>) y una copia en caché de los archivos de la web para poder consultarla sin conexión. Nada de esto sale de tu dispositivo.</p>
 
-    <h2>Alojamiento y enlaces externos</h2>
-    <p>La web se aloja en <a href="https://docs.github.com/es/pages/getting-started-with-github-pages/what-is-github-pages" target="_blank" rel="noopener">GitHub Pages</a>, que puede registrar la dirección IP de cada visita en sus registros técnicos de seguridad según su propia documentación.</p>
-    <p>Los enlaces hacia herramientas educativas, políticas de privacidad, páginas de accesibilidad o documentos oficiales del INTEF abren sitios web externos ajenos a esta aplicación, cada uno regido por su propia política de privacidad.</p>
+    <h2 data-i18n="privH2Host">Alojamiento y enlaces externos</h2>
+    <p data-i18n-html="privPHost1">La web se aloja en <a href="https://docs.github.com/es/pages/getting-started-with-github-pages/what-is-github-pages" target="_blank" rel="noopener">GitHub Pages</a>, que puede registrar la dirección IP de cada visita en sus registros técnicos de seguridad según su propia documentación.</p>
+    <p data-i18n="privPHost2">Los enlaces hacia herramientas educativas, políticas de privacidad, páginas de accesibilidad o documentos oficiales del INTEF abren sitios web externos ajenos a esta aplicación, cada uno regido por su propia política de privacidad.</p>
 
-    <p class="volver-bloque"><a href="./" class="btn btn-primario">Volver al buscador de herramientas</a></p>
+    <p class="volver-bloque"><a href="./" class="btn btn-primario" data-i18n="privBack">Volver al buscador de herramientas</a></p>
   </main>
 
   <footer class="pie">
     <div class="contenedor pie-interior">
-      <p>Aplicación independiente sin vinculación oficial con el Ministerio de Educación, Formación Profesional y Deportes. Datos procedentes de las <a href="https://intef.es/Noticias/actualizacion-de-las-orientaciones-sobre-el-uso-de-herramientas-digitales-en-el-ambito-educativo-desde-la-perspectiva-de-la-proteccion-de-datos/" target="_blank" rel="noopener">Orientaciones del INTEF (v3.0, junio 2026)</a> bajo licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
-      <p>Código con licencia <a href="LICENSE" target="_blank" rel="noopener">AGPL v3</a> · Iconos <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a> (ISC) · <a href="privacidad.html" aria-current="page">Privacidad</a></p>
+      <p data-i18n-html="footerDisclaimer"><strong>Aplicación independiente sin vinculación oficial con el Ministerio de Educación, Formación Profesional y Deportes.</strong> El documento tiene carácter orientativo, no prescriptivo; la interpretación y el uso de cada herramienta es responsabilidad única del docente.</p>
+      <p class="pie-enlaces">
+        <span data-i18n="footerVersion">Versión 1.1.0</span>
+        <span aria-hidden="true">·</span>
+        <span data-i18n-html="footerCode">Código <a href="LICENSE" target="_blank" rel="noopener">AGPL v3</a></span>
+        <span aria-hidden="true">·</span>
+        <span data-i18n-html="footerIcons">Iconos <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a> (ISC)</span>
+        <span aria-hidden="true">·</span>
+        <a href="privacidad.html" aria-current="page" data-i18n="footerPrivacy">Privacidad</a>
+      </p>
     </div>
   </footer>
 
+  <script src="i18n.js"></script>
   <script>
     (function () {
-      var raiz = document.documentElement;
-      var sistema = window.matchMedia('(prefers-color-scheme: dark)');
-      function esOscuro() {
-        return raiz.dataset.theme ? raiz.dataset.theme === 'dark' : sistema.matches;
+      var dicc = window.GPE_I18N || {};
+      var soportados = ["es", "ca", "gl", "eu", "en"];
+      function idiomaNavegador() {
+        var langs = navigator.languages || [navigator.language || "es"];
+        for (var i = 0; i < langs.length; i++) {
+          var cod = String(langs[i] || "").slice(0, 2).toLowerCase();
+          if (soportados.indexOf(cod) !== -1) return cod;
+        }
+        return "es";
       }
-      function aplicar() {
-        raiz.dataset.theme = esOscuro() ? 'dark' : 'light';
-      }
-      aplicar();
-      sistema.addEventListener('change', function () {
+      function detectarIdioma() {
+        var q = new URLSearchParams(location.search).get("lang");
+        if (q && soportados.indexOf(q.toLowerCase()) !== -1) return q.toLowerCase();
         try {
-          if (!localStorage.getItem('gpe.tema')) {
-            delete raiz.dataset.theme;
-            aplicar();
-          }
-        } catch (_) { aplicar(); }
-      });
-      var btn = document.getElementById('btn-tema');
-      if (btn) {
-        btn.addEventListener('click', function () {
-          var nuevo = esOscuro() ? 'light' : 'dark';
-          raiz.dataset.theme = nuevo;
-          try {
-            if ((nuevo === 'dark') === sistema.matches) localStorage.removeItem('gpe.tema');
-            else localStorage.setItem('gpe.tema', nuevo);
-          } catch (_) {}
+          var g = localStorage.getItem("gpe.idioma");
+          if (g && soportados.indexOf(g) !== -1) return g;
+        } catch (_) {}
+        return idiomaNavegador();
+      }
+      function aplicarIdioma(cod) {
+        var t = dicc[cod] || dicc.es;
+        if (!t) return;
+        document.documentElement.lang = cod;
+        document.title = t.privacyTitle;
+        var codEl = document.getElementById("idioma-actual-cod");
+        if (codEl) codEl.textContent = t.langCode;
+        var btnId = document.getElementById("btn-idioma");
+        if (btnId) { btnId.title = t.btnLangTitle; btnId.setAttribute("aria-label", t.btnLangTitle); }
+        var btnTema = document.getElementById("btn-tema");
+        if (btnTema) { btnTema.title = t.btnThemeTitle; btnTema.setAttribute("aria-label", t.btnThemeTitle); }
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var k = el.dataset.i18n;
+          if (t[k] !== undefined) el.textContent = t[k];
+        });
+        document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
+          var k = el.dataset.i18nHtml;
+          if (t[k] !== undefined) el.innerHTML = t[k];
+        });
+        document.querySelectorAll("[data-elegir-idioma]").forEach(function (b) {
+          b.setAttribute("aria-current", b.dataset.elegirIdioma === cod ? "true" : "false");
         });
       }
+
+      var raiz = document.documentElement;
+      var sistema = window.matchMedia("(prefers-color-scheme: dark)");
+      function esOscuro() { return raiz.dataset.theme ? raiz.dataset.theme === "dark" : sistema.matches; }
+      function aplicarTema() { raiz.dataset.theme = esOscuro() ? "dark" : "light"; }
+      aplicarTema();
+      sistema.addEventListener("change", function () {
+        try { if (!localStorage.getItem("gpe.tema")) { delete raiz.dataset.theme; aplicarTema(); } } catch (_) { aplicarTema(); }
+      });
+      var btnT = document.getElementById("btn-tema");
+      if (btnT) btnT.addEventListener("click", function () {
+        var nuevo = esOscuro() ? "light" : "dark";
+        raiz.dataset.theme = nuevo;
+        try { if ((nuevo === "dark") === sistema.matches) localStorage.removeItem("gpe.tema"); else localStorage.setItem("gpe.tema", nuevo); } catch (_) {}
+      });
+
+      var bi = document.getElementById("btn-idioma"), mi = document.getElementById("menu-idiomas");
+      function toggleMenu(abre) {
+        mi.hidden = !abre;
+        bi.setAttribute("aria-expanded", abre ? "true" : "false");
+      }
+      if (bi && mi) {
+        bi.addEventListener("click", function (ev) { ev.stopPropagation(); toggleMenu(mi.hidden); });
+        document.addEventListener("click", function (ev) { if (!mi.hidden && !mi.contains(ev.target)) toggleMenu(false); });
+        document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && !mi.hidden) { toggleMenu(false); bi.focus(); } });
+        mi.querySelectorAll("[data-elegir-idioma]").forEach(function (b) {
+          b.addEventListener("click", function () {
+            var cod = b.dataset.elegirIdioma;
+            try { if (cod === idiomaNavegador()) localStorage.removeItem("gpe.idioma"); else localStorage.setItem("gpe.idioma", cod); } catch (_) {}
+            aplicarIdioma(cod);
+            toggleMenu(false);
+          });
+        });
+      }
+      aplicarIdioma(detectarIdioma());
     })();
   </script>
 </body>

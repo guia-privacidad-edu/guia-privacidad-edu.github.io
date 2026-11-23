@@ -1,0 +1,72 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+name: Verificar datos y código
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Comprobar sintaxis JavaScript
+        run: |
+          node --check i18n.js
+          node --check app.js
+          node --check sw.js
+
+      - name: Validar integridad de los JSON e idiomas
+        run: |
+          python3 - <<'PY'
+          import json, re, subprocess
+          from pathlib import Path
+
+          guia = json.loads(Path("datos/guia-intef.json").read_text(encoding="utf-8"))
+          enlaces = json.loads(Path("datos/enlaces-herramientas.json").read_text(encoding="utf-8"))
+
+          assert guia["total_herramientas"] == 1144, f"Total inesperado: {guia['total_herramientas']}"
+          assert len(guia["herramientas"]) == 1144
+          assert len(guia["categorias"]) == 87
+          assert len(guia["marco"]["advertencias"]) == 11
+
+          for h in guia["herramientas"]:
+              assert h["id"] and h["nombre"] and h["categoria"] and h["descripcion"], f"Campos vacíos en {h.get('nombre')}"
+              assert h["escenarios"], f"Sin escenarios en {h['nombre']}"
+              for esc in h["escenarios"]:
+                  assert esc["semaforo"] in ("VERDE", "AMARILLO", "ROJO"), f"Semáforo inválido en {h['nombre']}"
+                  assert esc["profesorado"] and esc["alumnado"], f"Sin indicaciones en {h['nombre']}"
+
+          ids_guia = {h["id"] for h in guia["herramientas"]}
+          ids_enl = set(enlaces["enlaces"].keys())
+          assert ids_guia == ids_enl, f"Desajuste de IDs entre guía y enlaces: {len(ids_guia ^ ids_enl)}"
+          print(f"JSON validado: {len(ids_guia)} herramientas, {enlaces['verificados']} verificados, {enlaces['bloqueados_bot']} 403/429")
+          PY
+
+      - name: Verificar paridad de claves en los 5 idiomas
+        run: |
+          node - <<'JS'
+          const fs = require("fs");
+          const vm = require("vm");
+          const ctx = { window: {} };
+          vm.runInNewContext(fs.readFileSync("i18n.js", "utf8"), ctx);
+          const i18n = ctx.window.GPE_I18N;
+          const langs = ["es", "ca", "gl", "eu", "en"];
+          const baseKeys = Object.keys(i18n.es).sort();
+          for (const l of langs) {
+            if (!i18n[l]) throw new Error("Falta idioma " + l);
+            const ks = Object.keys(i18n[l]).sort();
+            if (JSON.stringify(ks) !== JSON.stringify(baseKeys)) {
+              throw new Error("Claves distintas en " + l);
+            }
+            const ambBase = Object.keys(i18n.es.ambitos).sort();
+            const ambL = Object.keys(i18n[l].ambitos).sort();
+            if (JSON.stringify(ambL) !== JSON.stringify(ambBase)) {
+              throw new Error("Claves de ambitos distintas en " + l);
+            }
+          }
+          console.log("Paridad perfecta en los 5 idiomas:", langs.join(", "));
+          JS

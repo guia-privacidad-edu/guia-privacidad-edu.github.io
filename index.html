@@ -6,12 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guía de privacidad de herramientas educativas · Orientaciones INTEF v3.0</title>
   <meta name="description" content="Buscador sencillo de las 1.144 herramientas digitales analizadas por el INTEF (v3.0, junio 2026) según su protección de datos y uso con alumnado y profesorado.">
+  <link rel="canonical" href="https://guia-privacidad-edu.github.io/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Guía de privacidad de herramientas educativas">
   <meta property="og:title" content="Guía de privacidad de herramientas educativas">
   <meta property="og:description" content="Consulta rápida y clara de las 1.144 herramientas analizadas en las Orientaciones de protección de datos del INTEF (v3.0).">
   <meta property="og:url" content="https://guia-privacidad-edu.github.io/">
+  <meta property="og:image" content="https://guia-privacidad-edu.github.io/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0f5266">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
   <script>
     (function () {
       try {
@@ -29,7 +39,7 @@
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <a class="saltar" href="#resultados">Saltar al listado de herramientas</a>
+  <a class="saltar" href="#resultados" data-i18n="skipToContent">Saltar al listado de herramientas</a>
 
   <header class="cabecera">
     <div class="contenedor cabecera-interior">
@@ -37,23 +47,36 @@
         <a href="./" class="marca-enlace" id="enlace-inicio">
           <img src="favicon.svg" alt="" width="34" height="34" class="marca-logo">
           <div>
-            <span class="marca-titulo">Guía de privacidad de herramientas educativas</span>
-            <span class="marca-sub">Consulta interactiva de las Orientaciones v3.0 del INTEF (junio 2026)</span>
+            <span class="marca-titulo" data-i18n="brandTitle">Guía de privacidad de herramientas educativas</span>
+            <span class="marca-sub" data-i18n="brandSub">Consulta interactiva de las Orientaciones v3.0 del INTEF (junio 2026)</span>
           </div>
         </a>
       </div>
       <div class="cabecera-acciones">
         <button type="button" id="btn-asistente" class="btn btn-primario">
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-          <span>Ayúdame a elegir</span>
+          <span data-i18n="btnWizard">Ayúdame a elegir</span>
         </button>
         <button type="button" id="btn-marco" class="btn btn-secundario">
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
-          <span>Advertencias y guía</span>
+          <span data-i18n="btnGuide">Advertencias y guía</span>
         </button>
+        <div class="idiomas-wrap">
+          <button type="button" id="btn-idioma" class="idioma-btn" aria-expanded="false" aria-controls="menu-idiomas" title="Cambiar de idioma" aria-label="Cambiar de idioma">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+            <span id="idioma-actual-cod" aria-hidden="true">ES</span>
+          </button>
+          <ul id="menu-idiomas" class="idioma-menu" hidden>
+            <li><button type="button" data-elegir-idioma="es" lang="es" aria-current="true"><span>Castellano</span><span>ES</span></button></li>
+            <li><button type="button" data-elegir-idioma="ca" lang="ca"><span>Català</span><span>CA</span></button></li>
+            <li><button type="button" data-elegir-idioma="gl" lang="gl"><span>Galego</span><span>GL</span></button></li>
+            <li><button type="button" data-elegir-idioma="eu" lang="eu"><span>Euskara</span><span>EU</span></button></li>
+            <li><button type="button" data-elegir-idioma="en" lang="en"><span>English</span><span>EN</span></button></li>
+          </ul>
+        </div>
         <button type="button" id="btn-tema" class="btn-icono" title="Cambiar entre tema claro y oscuro" aria-label="Cambiar entre tema claro y oscuro">
           <svg class="ico ico-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-          <svg class="ico ico-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l1.41-1.41M19.07 4.93l1.41-1.41"/></svg>
+          <svg class="ico ico-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
         </button>
       </div>
     </div>
@@ -63,8 +86,9 @@
     <section class="hero" aria-label="Buscador y filtros">
       <div class="hero-top">
         <div>
-          <h1>Consulta si puedes usar una herramienta digital en clase</h1>
-          <p class="hero-desc">Reúne las <strong>1.144 herramientas</strong> analizadas por el INTEF según la protección de datos. Escribe un nombre o una tarea, o elige filtros sencillos.</p>
+          <h1 data-i18n="heroTitle">Consulta si puedes usar una herramienta digital en clase</h1>
+          <p class="hero-desc" data-i18n-html="heroDesc">Reúne las <strong>1.144 herramientas</strong> analizadas por el INTEF según la protección de datos. Escribe un nombre o una tarea, o elige filtros sencillos.</p>
+          <p id="nota-idioma-oficial" class="nota-idioma-oficial" hidden></p>
         </div>
       </div>
 
@@ -72,7 +96,7 @@
         <div class="buscador-fila">
           <div class="buscador-campo">
             <svg class="ico ico-buscar" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-            <label for="buscador" class="solo-lector">Buscar herramienta, función o categoría</label>
+            <label for="buscador" class="solo-lector" data-i18n="searchLabel">Buscar herramienta, función o categoría</label>
             <input id="buscador" type="search" autocomplete="off" placeholder="Busca por nombre o tarea: ej. Kahoot, audio, mapas mentales, cuestionarios…">
             <button type="button" id="btn-limpiar-busq" class="btn-limpiar-busq" title="Borrar búsqueda" aria-label="Borrar búsqueda" hidden>
               <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
@@ -82,55 +106,55 @@
 
         <div class="filtros-bloque">
           <div class="grupo-filtro" role="group" aria-label="Semáforo de protección de datos">
-            <span class="grupo-rotulo">Semáforo:</span>
-            <button type="button" class="chip" data-semaforo="TODOS" aria-pressed="true">Todas</button>
+            <span class="grupo-rotulo" data-i18n="filterTraffic">Semáforo:</span>
+            <button type="button" class="chip" data-semaforo="TODOS" aria-pressed="true" data-i18n="filterAll">Todas</button>
             <button type="button" class="chip chip-verde" data-semaforo="VERDE" aria-pressed="false">
               <span class="punto punto-verde" aria-hidden="true"></span>
-              <span>Verde</span>
+              <span data-i18n="semVerde">Verde</span>
               <span class="chip-num" id="num-verde"></span>
             </button>
             <button type="button" class="chip chip-amarillo" data-semaforo="AMARILLO" aria-pressed="false">
               <span class="punto punto-amarillo" aria-hidden="true"></span>
-              <span>Amarillo</span>
+              <span data-i18n="semAmarillo">Amarillo</span>
               <span class="chip-num" id="num-amarillo"></span>
             </button>
             <button type="button" class="chip chip-rojo" data-semaforo="ROJO" aria-pressed="false">
               <span class="punto punto-rojo" aria-hidden="true"></span>
-              <span>Rojo</span>
+              <span data-i18n="semRojo">Rojo</span>
               <span class="chip-num" id="num-rojo"></span>
             </button>
           </div>
 
           <div class="grupo-filtro" role="group" aria-label="Quién la va a utilizar">
-            <span class="grupo-rotulo">¿Quién la usa?</span>
-            <button type="button" class="chip" data-uso="TODOS" aria-pressed="true">Cualquiera</button>
-            <button type="button" class="chip" data-uso="ALUMNADO_VERDE" aria-pressed="false" title="Herramientas con al menos un modo verde utilizable con el alumnado sin aportar datos personales">Con alumnado (verde)</button>
-            <button type="button" class="chip" data-uso="SOLO_DOCENTE" aria-pressed="false" title="Incluye herramientas donde el alumnado puede ver lo creado por el docente sin registrarse">Solo profesorado / ver producciones</button>
+            <span class="grupo-rotulo" data-i18n="filterWho">¿Quién la usa?</span>
+            <button type="button" class="chip" data-uso="TODOS" aria-pressed="true" data-i18n="whoAny">Cualquiera</button>
+            <button type="button" class="chip" data-uso="ALUMNADO_VERDE" aria-pressed="false" data-i18n="whoStudentsGreen">Con alumnado (verde)</button>
+            <button type="button" class="chip" data-uso="SOLO_DOCENTE" aria-pressed="false" data-i18n="whoTeacherOnly">Solo profesorado / ver producciones</button>
           </div>
         </div>
 
         <div class="filtros-secundarios">
           <div class="campo-select">
-            <label for="sel-categoria">Categoría:</label>
+            <label for="sel-categoria" data-i18n="filterCat">Categoría:</label>
             <select id="sel-categoria">
               <option value="">Todas las categorías (87)</option>
             </select>
           </div>
 
           <div class="grupo-filtro" role="group" aria-label="Condiciones prácticas">
-            <button type="button" class="chip" data-extra="sin_registro" aria-pressed="false" title="Permite utilizarla sin crear cuenta">Sin registro</button>
-            <button type="button" class="chip" data-extra="software_libre" aria-pressed="false" title="Marcada como software libre o de código abierto por el INTEF">Software libre</button>
-            <button type="button" class="chip" data-extra="embebible" aria-pressed="false" title="Marcada como embebible por el INTEF">Embebible</button>
-            <button type="button" class="chip" data-extra="accesibilidad" aria-pressed="false" title="Incluye enlace o referencia de accesibilidad">Con accesibilidad</button>
+            <button type="button" class="chip" data-extra="sin_registro" aria-pressed="false" data-i18n="extraNoReg">Sin registro</button>
+            <button type="button" class="chip" data-extra="software_libre" aria-pressed="false" data-i18n="extraFreeSw">Software libre</button>
+            <button type="button" class="chip" data-extra="embebible" aria-pressed="false" data-i18n="extraEmbed">Embebible</button>
+            <button type="button" class="chip" data-extra="accesibilidad" aria-pressed="false" data-i18n="extraAccess">Con accesibilidad</button>
           </div>
 
           <div class="campo-select campo-orden">
-            <label for="sel-orden">Orden:</label>
+            <label for="sel-orden" data-i18n="filterOrder">Orden:</label>
             <select id="sel-orden">
-              <option value="semaforo">Primero las verdes</option>
-              <option value="nombre">Alfabético (A–Z)</option>
-              <option value="categoria">Por categoría</option>
-              <option value="fecha">Revisión más reciente</option>
+              <option value="semaforo" data-i18n="orderTraffic">Primero las verdes</option>
+              <option value="nombre" data-i18n="orderAlpha">Alfabético (A–Z)</option>
+              <option value="categoria" data-i18n="orderCat">Por categoría</option>
+              <option value="fecha" data-i18n="orderDate">Revisión más reciente</option>
             </select>
           </div>
         </div>
@@ -138,29 +162,29 @@
 
       <div class="leyenda-semaforo" aria-label="Significado del semáforo">
         <div class="leyenda-item leyenda-verde">
-          <strong><span class="punto punto-verde" aria-hidden="true"></span>Verde:</strong>
-          No trata datos personales. En principio puede usarse siguiendo las advertencias.
+          <strong><span class="punto punto-verde" aria-hidden="true"></span><span><span data-i18n="semVerde">Verde</span>:</span></strong>
+          <span data-i18n="legendGreen">No trata datos personales. En principio puede usarse siguiendo las advertencias.</span>
         </div>
         <div class="leyenda-item leyenda-amarillo">
-          <strong><span class="punto punto-amarillo" aria-hidden="true"></span>Amarillo:</strong>
-          Trata datos cumpliendo la ley. Requiere permiso del centro y cumplir condiciones.
+          <strong><span class="punto punto-amarillo" aria-hidden="true"></span><span><span data-i18n="semAmarillo">Amarillo</span>:</span></strong>
+          <span data-i18n="legendYellow">Trata datos cumpliendo la ley. Requiere permiso del centro y cumplir condiciones.</span>
         </div>
         <div class="leyenda-item leyenda-rojo">
-          <strong><span class="punto punto-rojo" aria-hidden="true"></span>Rojo:</strong>
-          No cumple la normativa europea de protección de datos. No debe usarse con alumnado.
+          <strong><span class="punto punto-rojo" aria-hidden="true"></span><span><span data-i18n="semRojo">Rojo</span>:</span></strong>
+          <span data-i18n="legendRed">No cumple la normativa europea de protección de datos. No debe usarse con alumnado.</span>
         </div>
       </div>
     </section>
 
     <section id="resultados" tabindex="-1" aria-live="polite">
       <div class="barra-resultados">
-        <p class="contador-resultados" id="contador-resultados">Cargando catálogo de herramientas…</p>
+        <p class="contador-resultados" id="contador-resultados" data-i18n="loading">Cargando catálogo de herramientas…</p>
         <div class="acciones-resultados">
-          <button type="button" id="btn-compartir-vista" class="btn btn-suave" title="Copiar enlace directo a esta búsqueda y filtros">
+          <button type="button" id="btn-compartir-vista" class="btn btn-suave">
             <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
-            <span>Compartir consulta</span>
+            <span data-i18n="btnShareView">Compartir consulta</span>
           </button>
-          <button type="button" id="btn-restablecer" class="btn btn-secundario" hidden>Limpiar filtros</button>
+          <button type="button" id="btn-restablecer" class="btn btn-secundario" hidden data-i18n="btnReset">Limpiar filtros</button>
         </div>
       </div>
 
@@ -169,10 +193,10 @@
       <div id="lista-tarjetas" class="rejilla"></div>
 
       <div id="estado-vacio" class="estado-vacio" hidden>
-        <h2>No hay herramientas que cumplan todos esos criterios</h2>
-        <p>Prueba a quitar algún filtro o buscar con una palabra más general. Si la herramienta que buscas no aparece en las 1.144 analizadas por el INTEF, consulta las <strong>Advertencias y guía</strong> para saber cómo evaluarla junto a tu centro.</p>
+        <h2 data-i18n="emptyTitle">No hay herramientas que cumplan todos esos criterios</h2>
+        <p data-i18n-html="emptyText">Prueba a quitar algún filtro o buscar con una palabra más general. Si la herramienta que buscas no aparece en las 1.144 analizadas por el INTEF, consulta las <strong>Advertencias y guía</strong> para saber cómo evaluarla junto a tu centro.</p>
         <p>
-          <button type="button" id="btn-vacio-limpiar" class="btn btn-primario">Ver todas las herramientas</button>
+          <button type="button" id="btn-vacio-limpiar" class="btn btn-primario" data-i18n="emptyBtn">Ver todas las herramientas</button>
         </p>
       </div>
 
@@ -188,11 +212,11 @@
         <p class="modal-sub" id="ficha-sub"></p>
       </div>
       <div class="modal-acciones-cab">
-        <button type="button" id="btn-compartir-ficha" class="btn btn-secundario" title="Compartir o copiar el enlace directo a esta ficha">
+        <button type="button" id="btn-compartir-ficha" class="btn btn-secundario">
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
-          <span>Compartir</span>
+          <span data-i18n="btnShare">Compartir</span>
         </button>
-        <button type="button" class="btn-icono" data-cerrar="modal-ficha" title="Cerrar ficha" aria-label="Cerrar ficha">
+        <button type="button" class="btn-icono" data-cerrar="modal-ficha" title="Cerrar" aria-label="Cerrar">
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
       </div>
@@ -204,58 +228,58 @@
   <dialog id="modal-asistente" class="modal" aria-labelledby="asistente-titulo">
     <div class="modal-cab">
       <div>
-        <h2 id="asistente-titulo">Ayúdame a elegir herramienta</h2>
-        <p class="modal-sub">Responde tres preguntas sencillas y te mostramos las opciones más adecuadas.</p>
+        <h2 id="asistente-titulo" data-i18n="wizardTitle">Ayúdame a elegir herramienta</h2>
+        <p class="modal-sub" data-i18n="wizardSub">Responde tres preguntas sencillas y te mostramos las opciones más adecuadas.</p>
       </div>
-      <button type="button" class="btn-icono" data-cerrar="modal-asistente" title="Cerrar asistente" aria-label="Cerrar asistente">
+      <button type="button" class="btn-icono" data-cerrar="modal-asistente" title="Cerrar" aria-label="Cerrar">
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
       </button>
     </div>
     <form class="modal-cuerpo" id="form-asistente">
       <div class="asistente-paso">
-        <h3>1. ¿Qué quieres hacer?</h3>
+        <h3 data-i18n="wizardStep1">1. ¿Qué quieres hacer?</h3>
         <div class="asistente-opciones" id="asistente-ambitos"></div>
       </div>
 
       <div class="asistente-paso">
-        <h3>2. ¿La va a usar el alumnado directamente?</h3>
+        <h3 data-i18n="wizardStep2">2. ¿La va a usar el alumnado directamente?</h3>
         <div class="asistente-opciones">
           <label class="asistente-radio">
             <input type="radio" name="asist_quien" value="ALUMNADO_VERDE" checked>
-            <span>Sí, entrará el alumnado (priorizar opciones en verde)</span>
+            <span data-i18n="wizardWhoStudents">Sí, entrará el alumnado (priorizar opciones en verde)</span>
           </label>
           <label class="asistente-radio">
             <input type="radio" name="asist_quien" value="SOLO_DOCENTE">
-            <span>Solo la uso yo para preparar clase o mostrar resultados</span>
+            <span data-i18n="wizardWhoTeacher">Solo la uso yo para preparar clase o mostrar resultados</span>
           </label>
           <label class="asistente-radio">
             <input type="radio" name="asist_quien" value="TODOS">
-            <span>Quiero ver todas las opciones (verdes, amarillas y rojas)</span>
+            <span data-i18n="wizardWhoAll">Quiero ver todas las opciones (verdes, amarillas y rojas)</span>
           </label>
         </div>
       </div>
 
       <div class="asistente-paso">
-        <h3>3. Preferencias prácticas (opcional)</h3>
+        <h3 data-i18n="wizardStep3">3. Preferencias prácticas (opcional)</h3>
         <div class="asistente-opciones">
           <label class="asistente-radio">
             <input type="checkbox" name="asist_sin_reg" checked>
-            <span>Que se pueda usar sin registro</span>
+            <span data-i18n="wizardPrefNoReg">Que se pueda usar sin registro</span>
           </label>
           <label class="asistente-radio">
             <input type="checkbox" name="asist_libre">
-            <span>Solo software libre o de código abierto</span>
+            <span data-i18n="wizardPrefFree">Solo software libre o de código abierto</span>
           </label>
           <label class="asistente-radio">
             <input type="checkbox" name="asist_embebible">
-            <span>Que se pueda incrustar en un aula virtual (embebible)</span>
+            <span data-i18n="wizardPrefEmbed">Que se pueda incrustar en un aula virtual (embebible)</span>
           </label>
         </div>
       </div>
 
       <div class="asistente-pie">
-        <button type="button" class="btn btn-secundario" data-cerrar="modal-asistente">Cancelar</button>
-        <button type="submit" class="btn btn-primario">Ver herramientas recomendadas</button>
+        <button type="button" class="btn btn-secundario" data-cerrar="modal-asistente" data-i18n="wizardCancel">Cancelar</button>
+        <button type="submit" class="btn btn-primario" data-i18n="wizardSubmit">Ver herramientas recomendadas</button>
       </div>
     </form>
   </dialog>
@@ -264,10 +288,10 @@
   <dialog id="modal-marco" class="modal" aria-labelledby="marco-titulo">
     <div class="modal-cab">
       <div>
-        <h2 id="marco-titulo">Advertencias y orientaciones oficiales (INTEF v3.0)</h2>
-        <p class="modal-sub">Lectura recomendada antes de utilizar cualquier herramienta del listado.</p>
+        <h2 id="marco-titulo" data-i18n="guideTitle">Advertencias y orientaciones oficiales (INTEF v3.0)</h2>
+        <p class="modal-sub" data-i18n="guideSub">Lectura recomendada antes de utilizar cualquier herramienta del listado.</p>
       </div>
-      <button type="button" class="btn-icono" data-cerrar="modal-marco" title="Cerrar advertencias" aria-label="Cerrar advertencias">
+      <button type="button" class="btn-icono" data-cerrar="modal-marco" title="Cerrar" aria-label="Cerrar">
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
       </button>
     </div>
@@ -278,26 +302,29 @@
 
   <footer class="pie">
     <div class="contenedor pie-interior">
-      <p><strong>Aplicación independiente sin vinculación oficial con el Ministerio de Educación, Formación Profesional y Deportes.</strong> El documento tiene carácter orientativo, no prescriptivo; la interpretación y el uso de cada herramienta es responsabilidad única del docente.</p>
-      <p>Datos procedentes de <a href="https://intef.es/Noticias/actualizacion-de-las-orientaciones-sobre-el-uso-de-herramientas-digitales-en-el-ambito-educativo-desde-la-perspectiva-de-la-proteccion-de-datos/" target="_blank" rel="noopener"><em>Orientaciones sobre el uso de herramientas digitales en el ámbito educativo desde la perspectiva de la protección de datos</em></a> (INTEF, v3.0, junio 2026, NIPO 164-26-013-9, <a href="https://intef.es/wp-content/uploads/2026/07/Orientaciones_sobre_el_uso_de_herramientas_digital.pdf" target="_blank" rel="noopener">PDF oficial</a>), bajo licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Los enlaces directos de acceso a cada aplicación se han añadido y verificado aparte.</p>
+      <p data-i18n-html="footerDisclaimer"><strong>Aplicación independiente sin vinculación oficial con el Ministerio de Educación, Formación Profesional y Deportes.</strong> El documento tiene carácter orientativo, no prescriptivo; la interpretación y el uso de cada herramienta es responsabilidad única del docente.</p>
+      <p data-i18n-html="footerSource">Datos procedentes de <a href="https://intef.es/Noticias/actualizacion-de-las-orientaciones-sobre-el-uso-de-herramientas-digitales-en-el-ambito-educativo-desde-la-perspectiva-de-la-proteccion-de-datos/" target="_blank" rel="noopener"><em>Orientaciones sobre el uso de herramientas digitales en el ámbito educativo desde la perspectiva de la protección de datos</em></a> (INTEF, v3.0, junio 2026, NIPO 164-26-013-9, <a href="https://intef.es/wp-content/uploads/2026/07/Orientaciones_sobre_el_uso_de_herramientas_digital.pdf" target="_blank" rel="noopener">PDF oficial</a>), bajo licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Los enlaces directos de acceso a cada aplicación se han añadido y verificado aparte.</p>
       <p class="pie-enlaces">
-        <span>Versión 1.0.0</span>
-        <span>·</span>
-        <span>Dirección y revisión: <a href="https://bilateria.org" target="_blank" rel="noopener">Juan José de Haro</a></span>
-        <span>·</span>
-        <span>Cocreación con IA (<a href="https://jjdeharo.github.io/miae/?nivel=4" target="_blank" rel="noopener">MIAE nivel 4</a>, noviembre 2026)</span>
-        <span>·</span>
-        <span>Código <a href="LICENSE" target="_blank" rel="noopener">AGPL v3</a></span>
-        <span>·</span>
-        <span>Iconos <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a> (ISC)</span>
-        <span>·</span>
-        <a href="privacidad.html">Privacidad</a>
-        <span>·</span>
-        <a href="datos/guia-intef.json" target="_blank" rel="noopener">Datos JSON</a>
+        <span data-i18n="footerVersion">Versión 1.1.0</span>
+        <span aria-hidden="true">·</span>
+        <span data-i18n-html="footerAuthor">Dirección y revisión: <a href="https://bilateria.org" target="_blank" rel="noopener">Juan José de Haro</a></span>
+        <span aria-hidden="true">·</span>
+        <span data-i18n-html="footerAi">Cocreación con IA (<a href="https://jjdeharo.github.io/miae/?nivel=4" target="_blank" rel="noopener">MIAE nivel 4</a>, noviembre 2026; dirección, criterios y revisión funcional por el autor)</span>
+        <span aria-hidden="true">·</span>
+        <span data-i18n-html="footerCode">Código <a href="LICENSE" target="_blank" rel="noopener">AGPL v3</a></span>
+        <span aria-hidden="true">·</span>
+        <span data-i18n-html="footerIcons">Iconos <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a> (ISC)</span>
+        <span aria-hidden="true">·</span>
+        <span data-i18n-html="footerVcer"><a href="https://vibe-coding-educativo.github.io/vibe-responsable/vcer/?r=recomendable&amp;p=100&amp;f=2026-11&amp;v=1.1.0&amp;t=Gu%C3%ADa%20de%20privacidad%20de%20herramientas%20educativas&amp;u=https%3A%2F%2Fguia-privacidad-edu.github.io%2F" target="_blank" rel="noopener">Evaluación VCER (v1.1.0): Recomendable (100 %), noviembre de 2026</a></span>
+        <span aria-hidden="true">·</span>
+        <a href="privacidad.html" data-i18n="footerPrivacy">Privacidad</a>
+        <span aria-hidden="true">·</span>
+        <a href="datos/guia-intef.json" target="_blank" rel="noopener" data-i18n="footerJson">Datos JSON</a>
       </p>
     </div>
   </footer>
 
+  <script src="i18n.js" defer></script>
   <script src="app.js" defer></script>
 </body>
 </html>

@@ -19,14 +19,23 @@ Aplicación web estática y sin seguimiento para consultar de forma sencilla las
 ├── index.html                  # Aplicación principal (buscador, filtros, asistente y fichas)
 ├── privacidad.html             # Política de privacidad (cero seguimiento y cero cookies)
 ├── estilos.css                 # Hoja de estilos (tema claro/oscuro e impresión en blanco)
+├── i18n.js                     # Traducciones de interfaz en 5 idiomas (es, ca, gl, eu, en)
 ├── app.js                      # Lógica de consulta y renderizado en el navegador
-├── favicon.svg                 # Icono de la aplicación
+├── sw.js                       # Service worker para consulta sin conexión
+├── manifest.webmanifest        # Manifiesto de aplicación web instalable
+├── favicon.svg                 # Icono vectorial (+ favicon-32.png, apple-touch-icon.png, og.png)
+├── evaluacion-vcer.md          # Informe de evaluación VCER
 ├── datos/
 │   ├── guia-intef.json         # Datos extraídos del PDF oficial del INTEF (CC BY-SA 4.0)
 │   └── enlaces-herramientas.json # URLs de acceso directo verificadas aparte
 ├── scripts/
 │   ├── extraer_guia.py         # Extractor reproducible desde el PDF oficial con validación 1:1
-│   └── buscar_urls.py          # Resolución y verificación HTTP de enlaces de acceso
+│   ├── buscar_urls.py          # Resolución y verificación HTTP de enlaces de acceso
+│   └── completar_urls.py       # Segunda pasada dirigida para dominios compartidos
+├── pruebas/
+│   ├── probar_app.js           # Pruebas funcionales con probar-web
+│   └── probar_accesibilidad.js # Auditoría WCAG 2.1 AA con axe-core + 5 idiomas
+├── .github/workflows/          # Comprobación automática en GitHub Actions
 ├── docs/adr/                   # Registro de decisiones de arquitectura (ADR)
 ├── LICENSE                     # Licencia del código (AGPL v3)
 └── LICENSE-CONTENIDOS          # Licencia de los contenidos y datos (CC BY-SA 4.0)
