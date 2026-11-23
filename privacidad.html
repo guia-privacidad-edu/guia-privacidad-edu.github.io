@@ -1,0 +1,107 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacidad · Guía de privacidad de herramientas educativas</title>
+  <meta name="description" content="Esta aplicación no recoge datos personales, no usa cookies ni analítica y funciona íntegramente en tu navegador.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('gpe.tema');
+        if (t === 'dark' || t === 'light') {
+          document.documentElement.dataset.theme = t;
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.dataset.theme = 'dark';
+        } else {
+          document.documentElement.dataset.theme = 'light';
+        }
+      } catch (_) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="pag-texto">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera-interior">
+      <div class="marca">
+        <a href="./" class="marca-enlace">
+          <img src="favicon.svg" alt="" width="34" height="34" class="marca-logo">
+          <div>
+            <span class="marca-titulo">Guía de privacidad de herramientas educativas</span>
+            <span class="marca-sub">Basada en las Orientaciones v3.0 del INTEF (junio 2026)</span>
+          </div>
+        </a>
+      </div>
+      <div class="cabecera-acciones">
+        <a href="./" class="btn btn-secundario">Volver al buscador</a>
+        <button type="button" id="btn-tema" class="btn-icono" title="Cambiar entre tema claro y oscuro" aria-label="Cambiar entre tema claro y oscuro">
+          <svg class="ico ico-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <svg class="ico ico-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido" class="contenedor lectura" tabindex="-1">
+    <h1>Privacidad</h1>
+    <p class="entradilla">Esta aplicación no pide registro, no utiliza cookies, no incorpora publicidad ni analítica y no envía tus búsquedas a ningún servidor.</p>
+
+    <h2>Cómo funciona la consulta</h2>
+    <p>Al abrir la web, tu navegador descarga el catálogo estructurado en formato JSON y realiza todas las búsquedas y filtros directamente en tu dispositivo. Nada de lo que escribes en el buscador ni los filtros que eliges salen de tu navegador.</p>
+
+    <h2>Qué se guarda en tu dispositivo</h2>
+    <p>Únicamente si cambias a mano entre tema claro y tema oscuro, el navegador recuerda esa preferencia en el almacenamiento local (<code>localStorage</code>) bajo la clave <code>gpe.tema</code>. Si mantienes el tema de tu sistema operativo, no se guarda nada.</p>
+
+    <h2>Alojamiento y enlaces externos</h2>
+    <p>La web se aloja en <a href="https://docs.github.com/es/pages/getting-started-with-github-pages/what-is-github-pages" target="_blank" rel="noopener">GitHub Pages</a>, que puede registrar la dirección IP de cada visita en sus registros técnicos de seguridad según su propia documentación.</p>
+    <p>Los enlaces hacia herramientas educativas, políticas de privacidad, páginas de accesibilidad o documentos oficiales del INTEF abren sitios web externos ajenos a esta aplicación, cada uno regido por su propia política de privacidad.</p>
+
+    <p class="volver-bloque"><a href="./" class="btn btn-primario">Volver al buscador de herramientas</a></p>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-interior">
+      <p>Aplicación independiente sin vinculación oficial con el Ministerio de Educación, Formación Profesional y Deportes. Datos procedentes de las <a href="https://intef.es/Noticias/actualizacion-de-las-orientaciones-sobre-el-uso-de-herramientas-digitales-en-el-ambito-educativo-desde-la-perspectiva-de-la-proteccion-de-datos/" target="_blank" rel="noopener">Orientaciones del INTEF (v3.0, junio 2026)</a> bajo licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+      <p>Código con licencia <a href="LICENSE" target="_blank" rel="noopener">AGPL v3</a> · Iconos <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a> (ISC) · <a href="privacidad.html" aria-current="page">Privacidad</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var raiz = document.documentElement;
+      var sistema = window.matchMedia('(prefers-color-scheme: dark)');
+      function esOscuro() {
+        return raiz.dataset.theme ? raiz.dataset.theme === 'dark' : sistema.matches;
+      }
+      function aplicar() {
+        raiz.dataset.theme = esOscuro() ? 'dark' : 'light';
+      }
+      aplicar();
+      sistema.addEventListener('change', function () {
+        try {
+          if (!localStorage.getItem('gpe.tema')) {
+            delete raiz.dataset.theme;
+            aplicar();
+          }
+        } catch (_) { aplicar(); }
+      });
+      var btn = document.getElementById('btn-tema');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          var nuevo = esOscuro() ? 'light' : 'dark';
+          raiz.dataset.theme = nuevo;
+          try {
+            if ((nuevo === 'dark') === sistema.matches) localStorage.removeItem('gpe.tema');
+            else localStorage.setItem('gpe.tema', nuevo);
+          } catch (_) {}
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+exclude:
+  - scripts/
+  - docs/
+  - pruebas/
+  - README.md
+  - AGENTS.md
+  - package.json
+  - package-lock.json

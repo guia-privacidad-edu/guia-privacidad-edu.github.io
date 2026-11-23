@@ -1,0 +1,31 @@
+# 2. Extracción reproducible del PDF oficial y validación 1 a 1
+
+Fecha: 2026-11-23 · Estado: aceptado
+
+## Contexto
+
+El PDF oficial del INTEF (v3.0, junio 2026) tiene 237 páginas: marco y orientaciones (págs. 4–17), tabla de 13 columnas con 1.144 herramientas (págs. 19–199), Anexo I (págs. 200–210) e índice numerado en dos columnas (págs. 211–237).
+
+Al inspeccionar el PDF con `pdftohtml` y `pdfplumber`, aparecieron cuatro particularidades que rompen un análisis de texto ingenuo:
+1. **Herramientas con varios escenarios de uso**: unas 48 herramientas combinan verticalmente las celdas de nombre y descripción mientras dividen en dos filas el registro, el semáforo y las indicaciones (por ejemplo, Educaplay en pág. 20–21 o LearningApps y Live Worksheets en pág. 22). Word centra verticalmente el nombre en la celda combinada, de modo que puede caer visualmente debajo de la línea divisoria interna.
+2. **Filas partidas entre páginas**: algunas herramientas continúan en la página siguiente sin repetir el nombre.
+3. **Celda sin etiqueta textual**: en `wBrain Slice` (pág. 148), el documento pinta el fondo de la celda de semáforo en verde `#00B050` (`RGB 0, 0.69, 0.314`) pero omite el texto `VERDE`.
+4. **URLs partidas en múltiples líneas**: el texto visible de la celda parte las URLs, mientras que las anotaciones PDF (`URI`) conservan cada dirección íntegra.
+
+## Alternativas
+
+- **Extracción por tablas automáticas de `pdfplumber` o `pymupdf`**: probada en páginas 19–21; ambas confunden el sombreado de párrafos con subtablas o pierden espacios entre palabras.
+- **Extracción geométrica por bordes negros de Word + palabras + anotaciones URI**: comprobada sobre las 181 páginas de tabla. Elegida.
+
+## Decisión
+
+- Usar `scripts/extraer_guia.py` con `pdfplumber`:
+  - Detectar los bordes horizontales negros reales (`height < 2.2 pt`, color negro) para separar bloques completos de herramienta (`minx <= 60 pt`) y subescenarios internos (`minx > 60 pt`).
+  - Leer las 13 columnas por sus coordenadas X fijas (constantes en todo el documento) usando `extract_words()` una vez por página y asociar las anotaciones `URI` por posición.
+  - Cuando la celda de semáforo carece de texto (`wBrain Slice`, pág. 148), inferir el valor a partir del color de relleno de la celda en el PDF.
+  - Extraer independientemente el índice oficial (págs. 211–237) distinguiendo categorías (`#007691` negrita), subcategorías (`#aa004d` negrita) y herramientas numeradas (`#467885`), y exigir **coincidencia exacta 1 a 1** (1.144 / 1.144, 0 discrepancias, 0 escenarios sin semáforo) antes de emitir el JSON final.
+
+## Consecuencias
+
+- La extracción es repetible y auditable en ~45 segundos.
+- Cualquier futura edición del PDF (v4.0) que cambie columnas o introduzca anomalías fallará la validación de forma visible en lugar de generar datos corruptos en silencio.
