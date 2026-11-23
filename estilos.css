@@ -846,6 +846,10 @@ dialog.modal[open] {
   gap: 1rem;
 }
 
+.modal-cuerpo > * {
+  flex-shrink: 0;
+}
+
 .ficha-barra-web {
   display: flex;
   align-items: center;
