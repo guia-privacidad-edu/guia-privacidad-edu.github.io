@@ -20,8 +20,8 @@ con una base de datos común a los dos programas.
   `scripts/semaforo_vce.py` junta las dos piezas. Lo que se vio de cada aplicación se
   guarda en `datos/auditoria-vce.json`, para no repetirlo cada noche.
 - **Cada noche, en el NAS, a partir de las 3:30** (`nas/reloj.sh`), se inspeccionan
-  las aplicaciones nuevas, las que han cambiado de enlace y las que la última vez no se
-  abrieron. El domingo se inspeccionan todas, porque una aplicación puede añadir
+  las aplicaciones nuevas, las que han cambiado de enlace, las que la última vez no se
+  abrieron y las que están en rojo, para que el arreglo de un autor se vea al día siguiente. El domingo se inspeccionan todas, porque una aplicación puede añadir
   analítica sin que cambie nada en la hoja. Se olvidan las retiradas del repositorio,
   se rehace `datos/vce-evaluadas.json` y se suben los datos. La pasada usa la imagen del
   boletín semanal, que ya trae Chromium, y escribe en un clon aparte (`sitio`) para no

@@ -5,8 +5,8 @@ El semáforo de privacidad del Repositorio de Vibe Coding Educativo, al día (AD
 
 Cada noche, en el NAS:
   1. lee la hoja del repositorio (su CSV publicado);
-  2. inspecciona en el navegador las aplicaciones nuevas, las que han cambiado de enlace y las
-     que la última vez no se abrieron (con --todas, todas: una vez por semana);
+  2. inspecciona en el navegador las aplicaciones nuevas, las que han cambiado de enlace, las
+     que la última vez no se abrieron y las que están en rojo (con --todas, todas: una vez por semana);
   3. olvida las que ya no están en el repositorio;
   4. rehace datos/vce-evaluadas.json, la lista que enseña la guía;
   5. escribe en la hoja el semáforo, el motivo y la fecha de las filas que cambian, con la
@@ -91,7 +91,9 @@ def main() -> int:
     for a in apps:
         n = normalizar_url(a["url"])
         r = por_url.get(n)
-        if args.todas or r is None or fallida(r):
+        # Las rojas, cada noche: si su autor lo arregla, el cambio se ve al día siguiente.
+        roja = (a["hoja"].get(COLS_HOJA[0]) or "").strip().upper() == "ROJO"
+        if args.todas or r is None or fallida(r) or roja:
             pendientes.append(a)
         else:
             # La ficha (título, autor, licencia…) puede haber cambiado sin cambiar la aplicación.
