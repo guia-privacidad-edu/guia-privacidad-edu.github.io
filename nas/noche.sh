@@ -4,6 +4,9 @@
 # repositorio), inspecciona lo que toca con el código de /proyecto, escribe la hoja del
 # repositorio y, si cambian los datos, los sube a GitHub. Los argumentos van a semaforo_vce.py.
 set -euo pipefail
+# Una sola pasada a la vez: la del reloj y una lanzada a mano no pueden pisarse en /sitio.
+exec 9>/estado/.cerrojo
+flock -n 9 || { echo "Ya hay una pasada en marcha."; exit 1; }
 export GIT_SSH_COMMAND="ssh -i /claves/id_ed25519 -o IdentitiesOnly=yes -o UserKnownHostsFile=/claves/known_hosts"
 cd /sitio
 if [ ! -d .git ]; then
