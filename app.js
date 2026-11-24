@@ -47,7 +47,8 @@
     },
     orden: "semaforo",       // semaforo | nombre | categoria | fecha
     pagina: 1,
-    fichaAbiertaId: null
+    fichaAbiertaId: null,
+    enlaceBuscado: ""
   };
 
   const dom = {
@@ -406,6 +407,7 @@
     estado.orden = ["semaforo", "nombre", "categoria", "fecha"].indexOf(ord) !== -1 ? ord : "semaforo";
     estado.pagina = Math.max(1, parseInt(p.get("p") || "1", 10) || 1);
     estado.fichaAbiertaId = p.get("h") || null;
+    estado.enlaceBuscado = p.get("u") || "";
   }
 
   function construirUrlActual(incluirFichaId) {
@@ -1498,6 +1500,18 @@
       actualizarContadoresOrigen();
       pintarMarcoOficial();
       aplicarFiltros();
+
+      // ?u=<enlace>: abre la ficha de esa aplicación (el Repositorio VCE enlaza así cada recurso, ADR 0006).
+      var porEnlace = estado.enlaceBuscado;
+      if (!estado.fichaAbiertaId && porEnlace) {
+        var norm = function (u) { return String(u || "").trim().toLowerCase().replace(/\/+$/, ""); };
+        var buscada = norm(porEnlace);
+        var hallada = estado.herramientas.find(function (h) {
+          return norm(h.url) === buscada || norm(h.url_final) === buscada ||
+            (h._cruceVce && norm(h._cruceVce.url_vce) === buscada);
+        });
+        if (hallada) estado.fichaAbiertaId = hallada.id;
+      }
 
       if (estado.fichaAbiertaId) {
         abrirFicha(estado.fichaAbiertaId);

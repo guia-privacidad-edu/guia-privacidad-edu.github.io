@@ -29,12 +29,16 @@ Aplicación web estática y sin seguimiento para consultar de forma sencilla las
 ├── datos/
 │   ├── guia-intef.json         # Datos extraídos del PDF oficial del INTEF (CC BY-SA 4.0)
 │   ├── enlaces-herramientas.json # URLs de acceso directo verificadas aparte
-│   └── vce-evaluadas.json      # 360 apps del Repositorio VCE evaluadas con Anexo I (no oficial)
+│   ├── vce-evaluadas.json      # Apps del Repositorio VCE evaluadas con el Anexo I (no oficial); se rehace cada noche
+│   └── auditoria-vce.json      # Lo que se vio de cada app en el navegador (lo reutiliza la pasada nocturna)
 ├── scripts/
 │   ├── extraer_guia.py         # Extractor reproducible desde el PDF oficial con validación 1:1
 │   ├── buscar_urls.py          # Resolución y verificación HTTP de enlaces de acceso
 │   ├── completar_urls.py       # Segunda pasada dirigida para dominios compartidos
-│   └── generar_vce.py          # Generador de datos/vce-evaluadas.json a partir de la auditoría
+│   ├── auditar_vce.py          # Inspección de cada app del Repositorio VCE en Chromium (Playwright)
+│   ├── generar_vce.py          # Reglas del semáforo: de la inspección a datos/vce-evaluadas.json
+│   └── semaforo_vce.py         # Pasada nocturna: inspecciona lo nuevo, rehace la lista y escribe la hoja (ADR 0006)
+├── nas/                        # Contenedor del NAS que hace la pasada cada noche (ADR 0006)
 ├── pruebas/
 │   ├── probar_app.js           # Pruebas funcionales con probar-web
 │   └── probar_accesibilidad.js # Auditoría WCAG 2.1 AA con axe-core + 5 idiomas + origen VCE
@@ -53,6 +57,17 @@ uv run --with pdfplumber python3 scripts/extraer_guia.py \
 ```
 
 El guion valida automáticamente el 100 % de las herramientas extraídas frente al índice oficial del documento y conserva intacto `datos/enlaces-herramientas.json`.
+
+## El semáforo del Repositorio VCE, cada noche
+
+Lo hace el NAS a las 3:30 (`nas/reloj.sh`): inspecciona las aplicaciones nuevas del repositorio (el domingo, todas), rehace `datos/vce-evaluadas.json`, escribe el semáforo en la hoja del repositorio y sube los datos (ADR 0006). A mano, sin tocar la hoja:
+
+```bash
+python3 scripts/semaforo_vce.py --sin-hoja          # solo lo nuevo
+python3 scripts/semaforo_vce.py --todas --sin-hoja  # todas (unos 10 minutos)
+```
+
+Como el NAS sube datos cada noche, antes de trabajar aquí: `git pull`.
 
 ## Pruebas en local
 

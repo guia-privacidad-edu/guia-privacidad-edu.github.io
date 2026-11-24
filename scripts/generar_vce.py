@@ -37,8 +37,17 @@ BACKENDS_REALES = {
     "peerjs.com",
 }
 
-# Analítica comercial de terceros con seguimiento de personas
+# Analítica comercial de terceros con seguimiento de personas (ROJO). Se compara por sufijo:
+# «region1.google-analytics.com» cuenta como «google-analytics.com».
 ANALITICA_COMERCIAL = {
+    "facebook.net",
+    "connect.facebook.net",
+    "hotjar.com",
+    "clarity.ms",
+    "mixpanel.com",
+    "segment.io",
+    "heap.io",
+    "mc.yandex.ru",
     "google-analytics.com",
     "region1.google-analytics.com",
     "www.googletagmanager.com",
@@ -55,6 +64,19 @@ RE_LICENCIA_LIBRE = re.compile(
     r"(agpl|gpl|lgpl|mit\b|apache|bsd|mpl|isc|eupl|unlicense|cc0|código abierto|software libre|open source|dominio público)",
     re.I,
 )
+
+
+def es_comercial(host: str) -> bool:
+    return any(host == d or host.endswith("." + d) for d in ANALITICA_COMERCIAL)
+
+
+def fecha_de(r: dict, por_defecto: str) -> str:
+    """La fecha en que se inspeccionó esta aplicación, en dd/mm/aaaa."""
+    f = r.get("fecha_auditoria") or ""
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", f):
+        a, m, d = f.split("-")
+        return f"{d}/{m}/{a}"
+    return por_defecto
 
 
 def norm(s: str) -> str:
@@ -89,6 +111,7 @@ def evaluar_app(r: dict, fecha_es: str) -> dict | None:
     http = r.get("http_status", 0)
     if r.get("error") or http == 0 or http >= 400:
         return None
+    fecha_es = fecha_de(r, fecha_es)
 
     url_final = r.get("url_final") or r["url"]
     host = urlparse(url_final).netloc.lower()
@@ -103,6 +126,16 @@ def evaluar_app(r: dict, fecha_es: str) -> dict | None:
     medios = list(terc.get("medios_mapas", []))
     otros_terc = list(terc.get("otros_terceros", []))
     senales = list(r.get("senales_codigo", []))
+    # Contadores de visitas y analítica sin fines comerciales (Umami, Plausible, Matomo,
+    # contadores gratuitos, telemetría de errores): tratan la IP y datos del dispositivo (AMARILLO).
+    YA_TRATADOS = {"googleads.g.doubleclick.net", "static.doubleclick.net", "static.cloudflareinsights.com"}
+    contadores = sorted({a for a in analitica if not es_comercial(a) and a not in YA_TRATADOS})
+    # Lo que la página MANDA a un servidor ajeno (POST o balizas), aunque no sea un servicio conocido.
+    conocidos = set(backends) | set(analitica)
+    envios = sorted({h for h in r.get("envios_terceros", []) if h not in conocidos})
+    if "umami" in senales:  # el contador Umami manda cada visita a su servidor, sea cual sea el dominio
+        contadores = sorted(set(contadores) | set(envios)) or ["contador Umami"]
+        envios = []
     inputs = list(r.get("inputs_personales", []))
     cookies = list(r.get("cookies", []))
 
@@ -221,8 +254,8 @@ def evaluar_app(r: dict, fecha_es: str) -> dict | None:
         }]
 
     # 2. Analítica comercial real (ROJO)
-    elif any(a in ANALITICA_COMERCIAL for a in analitica):
-        encontrados = sorted({a for a in analitica if a in ANALITICA_COMERCIAL})
+    elif any(es_comercial(a) for a in analitica):
+        encontrados = sorted({a for a in analitica if es_comercial(a)})
         evidencia.append(f"Carga analítica comercial de seguimiento de terceros: {', '.join(encontrados)}.")
         escenarios = [{
             "semaforo": "ROJO",
@@ -248,6 +281,8 @@ def evaluar_app(r: dict, fecha_es: str) -> dict | None:
         or "google_forms" in senales
         or ("googleads.g.doubleclick.net" in analitica)
         or ("static.cloudflareinsights.com" in analitica)
+        or contadores
+        or envios
     ):
         detalles = []
         if host in ("pasos.edumind.es", "liga.edumind.es"):
@@ -265,6 +300,10 @@ def evaluar_app(r: dict, fecha_es: str) -> dict | None:
             detalles.append("Incluye vídeo de YouTube embebido que realiza peticiones a doubleclick.net")
         if "static.cloudflareinsights.com" in analitica:
             detalles.append("Carga analítica web sin cookies de Cloudflare (cloudflareinsights.com)")
+        if contadores:
+            detalles.append("Envía datos de cada visita (página, idioma, pantalla, IP) a un contador de visitas o servicio de analítica (" + ", ".join(contadores[:3]) + ")")
+        if envios:
+            detalles.append("Envía datos a un servidor externo (" + ", ".join(envios[:3]) + ")")
 
         evidencia.extend(detalles)
         pide_reg = "SÍ" if host in ("pasos.edumind.es", "liga.edumind.es") else "NO (o según función)"
@@ -343,18 +382,33 @@ def evaluar_app(r: dict, fecha_es: str) -> dict | None:
     }
 
 
-def main() -> int:
-    if len(sys.argv) < 5:
-        print("Uso: generar_vce.py <auditoria-vce.json> <guia-intef.json> <enlaces.json> <salida-vce.json>")
-        return 1
+def motivo_no_evaluable(r: dict) -> str:
+    http = r.get("http_status", 0)
+    host = urlparse(r.get("url_final") or r["url"]).netloc.lower()
+    if host == "github.com" and not r.get("error") and 0 < http < 400:
+        return "Enlaza al código en GitHub, no a una aplicación que se pueda abrir."
+    if http >= 400:
+        return f"La página no se abre (error {http})."
+    return "La página no se abre."
 
-    aud = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
-    guia = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
-    enlaces = json.loads(Path(sys.argv[3]).read_text(encoding="utf-8"))
-    out_path = Path(sys.argv[4])
 
-    hoy_iso = date.today().isoformat()
-    hoy_es = date.today().strftime("%d/%m/%Y")
+def semaforo_resumido(escenarios: list[dict]) -> str:
+    """VERDE, AMARILLO, ROJO o, si hay dos escenarios (sin y con registro), «VERDE/AMARILLO»."""
+    vistos = []
+    for e in escenarios:
+        if e.get("semaforo") and e["semaforo"] not in vistos:
+            vistos.append(e["semaforo"])
+    return "/".join(vistos) or "SIN EVALUAR"
+
+
+def generar(aud: dict, guia: dict, enlaces: dict, hoy: date | None = None) -> tuple[dict, dict]:
+    """
+    Devuelve (contenido de vce-evaluadas.json, resumen por enlace). El resumen es lo que va a
+    la hoja del repositorio: {enlace: {"semaforo", "motivo", "fecha", "id"}}.
+    """
+    hoy = hoy or date.today()
+    hoy_iso = hoy.isoformat()
+    hoy_es = hoy.strftime("%d/%m/%Y")
 
     # Mapa de URLs del INTEF para detectar coincidencias exactas sin duplicar
     intef_por_url: dict[str, str] = {}
@@ -370,16 +424,18 @@ def main() -> int:
         "https://boardlive.github.io": "boardlive",
     }
 
-    ids_intef_usados = {h["id"] for h in guia["herramientas"]}
+    fichas_intef = {h["id"]: h for h in guia["herramientas"]}
     slugs_vce: Counter[str] = Counter()
 
     herramientas_vce = []
     coincidencias_intef = {}
+    resumen: dict[str, dict] = {}
     excluidas = 0
 
     for r in aud["resultados"]:
         u_orig = r["url"].rstrip("/").lower()
         u_fin = (r.get("url_final") or r["url"]).rstrip("/").lower()
+        fecha_r = r.get("fecha_auditoria") or aud.get("fecha") or hoy_iso
 
         # Comprobar si coincide con una ficha ya existente en la guía oficial del INTEF
         intef_id = (
@@ -398,17 +454,24 @@ def main() -> int:
                 "areas": r.get("areas", ""),
                 "idiomas": r.get("idiomas", ""),
             }
+            resumen[r["url"]] = {
+                "semaforo": semaforo_resumido(fichas_intef.get(intef_id, {}).get("escenarios", [])),
+                "motivo": "Evaluada por el INTEF en sus Orientaciones (v3.0).",
+                "fecha": fecha_r,
+                "id": intef_id,
+            }
             continue
 
-        evaluada = evaluar_app(r, hoy_es)
+        evaluada = evaluar_app(r, fecha_de({"fecha_auditoria": fecha_r}, hoy_es))
         if not evaluada:
             excluidas += 1
+            resumen[r["url"]] = {"semaforo": "SIN EVALUAR", "motivo": motivo_no_evaluable(r), "fecha": fecha_r, "id": ""}
             continue
 
         base = "vce-" + slugify(evaluada["titulo"])
         slugs_vce[base] += 1
         hid = base if slugs_vce[base] == 1 else f"{base}-{slugs_vce[base]}"
-        while hid in ids_intef_usados:
+        while hid in fichas_intef:
             hid += "-vce"
 
         herramientas_vce.append(
@@ -430,6 +493,12 @@ def main() -> int:
                 "escenarios": evaluada["escenarios"],
             }
         )
+        resumen[r["url"]] = {
+            "semaforo": semaforo_resumido(evaluada["escenarios"]),
+            "motivo": " ".join(evaluada["evidencia"])[:300],
+            "fecha": fecha_r,
+            "id": hid,
+        }
 
     # Recopilar categorías propias de VCE
     cats_vce_map = {}
@@ -449,7 +518,7 @@ def main() -> int:
             "nombre": "Repositorio de aplicaciones educativas de Vibe Coding Educativo",
             "url": "https://vibe-coding-educativo.github.io/app_edu/",
             "metodo": "Evaluación técnica orientativa basada en el Anexo I del INTEF (v3.0) mediante inspección automatizada en navegador (tráfico de red, cookies, formularios, alojamiento y cabeceras). No es una evaluación oficial del INTEF.",
-            "fecha_evaluacion": hoy_iso,
+            "fecha_evaluacion": max((x["fecha"] for x in resumen.values()), default=hoy_iso),
         },
         "total_evaluadas": len(herramientas_vce),
         "total_coincidencias_intef": len(coincidencias_intef),
@@ -459,12 +528,25 @@ def main() -> int:
         "categorias": sorted(cats_vce_map.values(), key=lambda c: c["nombre"]),
         "herramientas": herramientas_vce,
     }
+    return salida, resumen
+
+
+def main() -> int:
+    if len(sys.argv) < 5:
+        print("Uso: generar_vce.py <auditoria-vce.json> <guia-intef.json> <enlaces.json> <salida-vce.json>")
+        return 1
+
+    aud = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+    guia = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
+    enlaces = json.loads(Path(sys.argv[3]).read_text(encoding="utf-8"))
+    out_path = Path(sys.argv[4])
+    salida, _ = generar(aud, guia, enlaces)
     out_path.write_text(json.dumps(salida, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Generado {out_path} ({out_path.stat().st_size / 1024:.1f} KB)")
-    print(f"  Evaluadas VCE nuevas : {len(herramientas_vce)}")
-    print(f"  Coincidencias INTEF  : {len(coincidencias_intef)} -> {list(coincidencias_intef.keys())}")
-    print(f"  Excluidas (no web/404): {excluidas}")
-    print(f"  Semáforo (escenarios): {dict(sem_counts)}")
+    print(f"  Evaluadas VCE        : {salida['total_evaluadas']}")
+    print(f"  Coincidencias INTEF  : {salida['total_coincidencias_intef']}")
+    print(f"  Excluidas (no web/404): {salida['total_excluidas_no_web']}")
+    print(f"  Semáforo (escenarios): {salida['resumen_semaforo']}")
     return 0
 
 
