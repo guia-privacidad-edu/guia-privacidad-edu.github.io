@@ -4,7 +4,7 @@
  * Precarga la aplicación y los archivos JSON locales; actualiza en segundo plano cuando hay red.
  */
 
-const CACHE_NOMBRE = "gpe-v1.3.0";
+const CACHE_NOMBRE = "gpe-v1.4.0";
 const ARCHIVOS_BASE = [
   "./",
   "./index.html",
@@ -15,8 +15,7 @@ const ARCHIVOS_BASE = [
   "./favicon.svg",
   "./manifest.webmanifest",
   "./datos/guia-intef.json",
-  "./datos/enlaces-herramientas.json",
-  "./datos/vce-evaluadas.json"
+  "./datos/enlaces-herramientas.json"
 ];
 
 self.addEventListener("install", (ev) => {

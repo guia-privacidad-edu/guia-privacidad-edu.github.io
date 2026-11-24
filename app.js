@@ -3,7 +3,7 @@
  * Guía de privacidad de herramientas educativas
  * Lógica de consulta, filtrado, asistente guiado, ficha detallada e interfaz multilingüe.
  * Funciona íntegramente en el navegador sobre datos/guia-intef.json,
- * datos/enlaces-herramientas.json y datos/vce-evaluadas.json sin enviar datos a ningún servidor.
+ * datos/enlaces-herramientas.json sin enviar datos a ningún servidor.
  */
 
 (function () {
@@ -28,13 +28,11 @@
   const estado = {
     idioma: "es",
     datos: null,
-    vce: null,
     enlaces: {},
     herramientas: [],
     categoriasMapa: new Map(),
     filtradas: [],
     busqueda: "",
-    fuente: "TODAS",         // TODAS | INTEF | VCE
     semaforo: "TODOS",       // TODOS | VERDE | AMARILLO | ROJO
     uso: "TODOS",            // TODOS | ALUMNADO_VERDE | SOLO_DOCENTE
     categoria: "",           // categoria_id o ""
@@ -47,8 +45,7 @@
     },
     orden: "semaforo",       // semaforo | nombre | categoria | fecha
     pagina: 1,
-    fichaAbiertaId: null,
-    enlaceBuscado: ""
+    fichaAbiertaId: null
   };
 
   const dom = {
@@ -76,10 +73,6 @@
     menuIdiomas: document.getElementById("menu-idiomas"),
     idiomaActualCod: document.getElementById("idioma-actual-cod"),
     enlaceInicio: document.getElementById("enlace-inicio"),
-    numSrcTodas: document.getElementById("num-src-todas"),
-    numSrcIntef: document.getElementById("num-src-intef"),
-    numSrcVce: document.getElementById("num-src-vce"),
-    leyendaOrigen: document.getElementById("leyenda-origen"),
     numVerde: document.getElementById("num-verde"),
     numAmarillo: document.getElementById("num-amarillo"),
     numRojo: document.getElementById("num-rojo"),
@@ -186,7 +179,6 @@
 
     pintarOpcionesAsistente();
     if (repintar && estado.datos) {
-      actualizarContadoresOrigen();
       pintarListaCategorias();
       pintarMarcoOficial();
       pintarResultados();
@@ -255,14 +247,8 @@
     }
   }
 
-  function nombreCategoriaVisible(nombre) {
-    return String(nombre || "").replace(/^VCE\s*·\s*/i, "");
-  }
-
   function prepararHerramienta(h) {
     var escenarios = h.escenarios || [];
-    var esVce = h.fuente === "vce";
-    var cruceVce = h._cruceVce || null;
     var colores = [];
     escenarios.forEach(function (e) {
       if (e.semaforo && colores.indexOf(e.semaforo) === -1) colores.push(e.semaforo);
@@ -328,31 +314,20 @@
         h.niveles || "",
         h.licencia || "",
         h.idiomas || "",
-        cruceVce ? cruceVce.titulo_vce : "",
-        cruceVce ? cruceVce.autor : "",
-        cruceVce ? cruceVce.areas : "",
         (h.evidencia || []).join(" "),
         escenarios.map(function (e) { return e.otros || ""; }).join(" ")
       ].join(" ")
     );
 
-    var enlaceInfo = esVce ? null : (estado.enlaces[h.id] || null);
-    var urlAcceso = esVce
-      ? (h.url || h.url_final || null)
-      : (
-          enlaceInfo &&
-          enlaceInfo.url &&
-          (enlaceInfo.estado === "verificado" || enlaceInfo.estado === "bloqueado_bot")
-            ? enlaceInfo.url
-            : null
-        );
+    var enlaceInfo = estado.enlaces[h.id] || null;
+    var urlAcceso =
+      enlaceInfo &&
+      enlaceInfo.url &&
+      (enlaceInfo.estado === "verificado" || enlaceInfo.estado === "bloqueado_bot")
+        ? enlaceInfo.url
+        : null;
 
     return Object.assign({}, h, {
-      _fuente: esVce ? "vce" : "intef",
-      _enIntef: !esVce,
-      _enVce: esVce || Boolean(cruceVce),
-      _esAmbas: !esVce && Boolean(cruceVce),
-      _cruceVce: cruceVce,
       _colores: colores,
       _mejorColor: mejorColor,
       _sinRegistro: permiteSinRegistro,
@@ -391,8 +366,6 @@
   function leerEstadoDesdeUrl() {
     var p = new URLSearchParams(window.location.search);
     estado.busqueda = p.get("q") || "";
-    var src = (p.get("src") || "TODAS").toUpperCase();
-    estado.fuente = ["TODAS", "INTEF", "VCE"].indexOf(src) !== -1 ? src : "TODAS";
     var sem = (p.get("sem") || "TODOS").toUpperCase();
     estado.semaforo = ["TODOS", "VERDE", "AMARILLO", "ROJO"].indexOf(sem) !== -1 ? sem : "TODOS";
     var uso = (p.get("uso") || "TODOS").toUpperCase();
@@ -407,14 +380,12 @@
     estado.orden = ["semaforo", "nombre", "categoria", "fecha"].indexOf(ord) !== -1 ? ord : "semaforo";
     estado.pagina = Math.max(1, parseInt(p.get("p") || "1", 10) || 1);
     estado.fichaAbiertaId = p.get("h") || null;
-    estado.enlaceBuscado = p.get("u") || "";
   }
 
   function construirUrlActual(incluirFichaId) {
     var p = new URLSearchParams();
     if (estado.idioma !== "es") p.set("lang", estado.idioma);
     if (estado.busqueda.trim()) p.set("q", estado.busqueda.trim());
-    if (estado.fuente !== "TODAS") p.set("src", estado.fuente.toLowerCase());
     if (estado.semaforo !== "TODOS") p.set("sem", estado.semaforo.toLowerCase());
     if (estado.uso !== "TODOS") p.set("uso", estado.uso.toLowerCase());
     if (estado.categoria) p.set("cat", estado.categoria);
@@ -437,13 +408,8 @@
     }
   }
 
-  function categoriasVisiblesPorFuente() {
-    var catsIntef = (estado.datos && estado.datos.categorias) || [];
-    var catsVce = (estado.vce && estado.vce.categorias) || [];
-    return {
-      intef: estado.fuente === "VCE" ? [] : catsIntef,
-      vce: estado.fuente === "INTEF" ? [] : catsVce
-    };
+  function categoriasGuia() {
+    return (estado.datos && estado.datos.categorias) || [];
   }
 
   function contarPorCategoria(terminos) {
@@ -461,10 +427,9 @@
     if (!dom.catActualTexto) return;
     if (estado.categoria && estado.categoriasMapa.has(estado.categoria)) {
       var cat = estado.categoriasMapa.get(estado.categoria);
-      dom.catActualTexto.textContent = cat.fuente === "vce" ? nombreCategoriaVisible(cat.nombre) : cat.nombre;
+      dom.catActualTexto.textContent = cat.nombre;
       return;
     }
-    var grupos = categoriasVisiblesPorFuente();
     var cuentas = cuentasCat || contarPorCategoria();
     var hayOtrosFiltros =
       Boolean(estado.busqueda.trim()) ||
@@ -474,7 +439,7 @@
       estado.extras.software_libre ||
       estado.extras.embebible ||
       estado.extras.accesibilidad;
-    var todas = grupos.intef.concat(grupos.vce);
+    var todas = categoriasGuia();
     var totalCats = hayOtrosFiltros
       ? todas.filter(function (c) { return (cuentas[c.id] || 0) > 0; }).length
       : (todas.length || 97);
@@ -494,8 +459,7 @@
       estado.extras.embebible ||
       estado.extras.accesibilidad;
 
-    var grupos = categoriasVisiblesPorFuente();
-    var todasVis = grupos.intef.concat(grupos.vce).filter(function (c) {
+    var todasVis = categoriasGuia().filter(function (c) {
       return !hayOtrosFiltros || (cuentasCat[c.id] || 0) > 0 || estado.categoria === c.id;
     });
     var partes = [];
@@ -511,30 +475,22 @@
 
     var totalMostradas = 0;
 
-    function añadirGrupo(titulo, lista, esVce) {
-      var filtradas = lista.filter(function (c) {
-        var n = cuentasCat[c.id] || 0;
-        if (hayOtrosFiltros && n === 0 && estado.categoria !== c.id) return false;
-        if (!q) return true;
-        return normalizarTexto(c.nombre).indexOf(q) !== -1;
-      });
-      if (!filtradas.length) return;
-      totalMostradas += filtradas.length;
-      partes.push('<div class="cat-grupo-titulo">' + escaparHtml(titulo + " (" + filtradas.length + ")") + "</div>");
-      filtradas.forEach(function (c) {
-        var nombre = esVce ? nombreCategoriaVisible(c.nombre) : c.nombre;
-        var activo = estado.categoria === c.id ? "true" : "false";
-        partes.push(
-          '<button type="button" class="cat-opcion" data-elegir-cat="' + escaparHtml(c.id) + '" aria-current="' + activo + '">' +
-            "<span>" + escaparHtml(nombre) + "</span>" +
-            '<span class="cat-opcion-num">(' + (cuentasCat[c.id] || 0) + ")</span>" +
-          "</button>"
-        );
-      });
-    }
-
-    añadirGrupo(t("catGroupIntef"), grupos.intef, false);
-    añadirGrupo(t("catGroupVce"), grupos.vce, true);
+    var filtradas = categoriasGuia().filter(function (c) {
+      var n = cuentasCat[c.id] || 0;
+      if (hayOtrosFiltros && n === 0 && estado.categoria !== c.id) return false;
+      if (!q) return true;
+      return normalizarTexto(c.nombre).indexOf(q) !== -1;
+    });
+    totalMostradas = filtradas.length;
+    filtradas.forEach(function (c) {
+      var activo = estado.categoria === c.id ? "true" : "false";
+      partes.push(
+        '<button type="button" class="cat-opcion" data-elegir-cat="' + escaparHtml(c.id) + '" aria-current="' + activo + '">' +
+          "<span>" + escaparHtml(c.nombre) + "</span>" +
+          '<span class="cat-opcion-num">(' + (cuentasCat[c.id] || 0) + ")</span>" +
+        "</button>"
+      );
+    });
 
     if (totalMostradas === 0) {
       partes.push('<p class="cat-vacio">' + escaparHtml(t("catNoMatch")) + "</p>");
@@ -549,12 +505,6 @@
     actualizarTextoCategoria();
     dom.selOrden.value = estado.orden;
 
-    document.querySelectorAll("[data-fuente]").forEach(function (btn) {
-      btn.setAttribute("aria-pressed", btn.dataset.fuente === estado.fuente ? "true" : "false");
-    });
-    if (dom.leyendaOrigen) {
-      dom.leyendaOrigen.dataset.fuenteActiva = estado.fuente;
-    }
     document.querySelectorAll("[data-semaforo]").forEach(function (btn) {
       btn.setAttribute("aria-pressed", btn.dataset.semaforo === estado.semaforo ? "true" : "false");
     });
@@ -567,7 +517,6 @@
 
     var hayFiltros =
       Boolean(estado.busqueda.trim()) ||
-      estado.fuente !== "TODAS" ||
       estado.semaforo !== "TODOS" ||
       estado.uso !== "TODOS" ||
       Boolean(estado.categoria) ||
@@ -580,14 +529,7 @@
     dom.btnRestablecer.hidden = !hayFiltros;
   }
 
-  function coincideFuente(h) {
-    if (estado.fuente === "INTEF") return h._enIntef;
-    if (estado.fuente === "VCE") return h._enVce;
-    return true;
-  }
-
   function coincideFiltros(h, terminos, omitir) {
-    if (omitir !== "fuente" && !coincideFuente(h)) return false;
     if (omitir !== "semaforo" && estado.semaforo !== "TODOS" && h._colores.indexOf(estado.semaforo) === -1) return false;
     if (estado.uso === "ALUMNADO_VERDE" && !h._alumnadoVerde) return false;
     if (estado.uso === "SOLO_DOCENTE" && !h._soloDocente) return false;
@@ -603,18 +545,6 @@
       }
     }
     return true;
-  }
-
-  function actualizarContadoresOrigen(terminos) {
-    var loc = estado.idioma === "en" ? "en-US" : "es-ES";
-    var terms = terminos || normalizarTexto(estado.busqueda).split(/\s+/).filter(Boolean);
-    var base = estado.herramientas.filter(function (h) { return coincideFiltros(h, terms, "fuente"); });
-    var nTodas = base.length;
-    var nIntef = base.filter(function (h) { return h._enIntef; }).length;
-    var nVce = base.filter(function (h) { return h._enVce; }).length;
-    if (dom.numSrcTodas) dom.numSrcTodas.textContent = "(" + nTodas.toLocaleString(loc) + ")";
-    if (dom.numSrcIntef) dom.numSrcIntef.textContent = "(" + nIntef.toLocaleString(loc) + ")";
-    if (dom.numSrcVce) dom.numSrcVce.textContent = "(" + nVce.toLocaleString(loc) + ")";
   }
 
   function actualizarContadoresSemaforo(terminos) {
@@ -674,7 +604,6 @@
     var totalPags = Math.max(1, Math.ceil(res.length / POR_PAGINA));
     if (estado.pagina > totalPags) estado.pagina = totalPags;
 
-    actualizarContadoresOrigen(terminos);
     actualizarContadoresSemaforo(terminos);
     sincronizarControles();
     sincronizarUrl();
@@ -745,13 +674,7 @@
       if (h._softwareLibre) etiquetas.push('<span class="etq">' + escaparHtml(t("extraFreeSw")) + "</span>");
       if (h._embebible) etiquetas.push('<span class="etq">' + escaparHtml(t("extraEmbed")) + "</span>");
 
-      var catVisible = h._fuente === "vce" ? nombreCategoriaVisible(h.categoria) : h.categoria;
-      var catTexto = catVisible + (h.subcategoria ? " · " + h.subcategoria : "");
-      var badgeOrigen = h._esAmbas
-        ? '<span class="etq-origen etq-origen-ambas">' + escaparHtml(t("badgeBoth")) + "</span>"
-        : h._fuente === "vce"
-          ? '<span class="etq-origen etq-origen-vce">' + escaparHtml(t("badgeVce")) + "</span>"
-          : '<span class="etq-origen etq-origen-intef">' + escaparHtml(t("badgeIntef")) + "</span>";
+      var catTexto = h.categoria + (h.subcategoria ? " · " + h.subcategoria : "");
       var btnWeb = h._urlAcceso
         ? '<a class="btn btn-suave" href="' + escaparHtml(h._urlAcceso) + '" target="_blank" rel="noopener">' + escaparHtml(t("cardOpenWeb")) + " " + iconoExterno() + "</a>"
         : "";
@@ -762,7 +685,7 @@
             '<h2 class="tarjeta-titulo"><button type="button" data-abrir-ficha="' + escaparHtml(h.id) + '">' + escaparHtml(h.nombre) + "</button></h2>" +
             '<div class="badges-semaforo">' + badges + "</div>" +
           "</div>" +
-          '<p class="tarjeta-cat">' + badgeOrigen + "<span>" + escaparHtml(catTexto) + "</span></p>" +
+          '<p class="tarjeta-cat">' + "<span>" + escaparHtml(catTexto) + "</span></p>" +
           '<p class="tarjeta-desc">' + escaparHtml(h.descripcion || t("cardNoDesc")) + "</p>" +
           (etiquetas.length ? '<div class="tarjeta-etiquetas">' + etiquetas.join("") + "</div>" : "") +
           '<div class="tarjeta-pie">' +
@@ -855,49 +778,19 @@
     estado.fichaAbiertaId = h.id;
     sincronizarUrl();
 
-    var esVce = h._fuente === "vce";
-    var vceRepoUrl = (estado.vce && estado.vce.fuente && estado.vce.fuente.url) || "https://vibe-coding-educativo.github.io/app_edu/";
-    var catMostrar = esVce ? nombreCategoriaVisible(h.categoria) : h.categoria;
-
     dom.fichaTitulo.textContent = h.nombre;
-    if (esVce) {
-      dom.fichaSub.textContent =
-        t("vceRecordMeta") +
-        " · " + catMostrar +
-        (h.subcategoria ? " · " + h.subcategoria : "");
-    } else {
-      dom.fichaSub.textContent =
-        h.categoria +
-        (h.subcategoria ? " · " + h.subcategoria : "") +
-        " · " + t("cardRecordMeta", { num: h.numero, pag: h.pagina }) +
-        (h._esAmbas ? " · " + t("bothRecordMeta") : "");
-    }
+    dom.fichaSub.textContent =
+      h.categoria +
+      (h.subcategoria ? " · " + h.subcategoria : "") +
+      " · " + t("cardRecordMeta", { num: h.numero, pag: h.pagina });
 
     var bloques = [];
-
-    if (esVce) {
-      bloques.push(
-        '<div class="aviso-vce">' +
-          "<strong>" + escaparHtml(t("vceNoticeTitle")) + "</strong>" +
-          "<p>" + escaparHtml(t("vceNoticeText")) + "</p>" +
-          '<div class="enlaces-lista">' +
-            '<a class="enlace-pildora" href="' + escaparHtml(vceRepoUrl) + '" target="_blank" rel="noopener">' + escaparHtml(t("vceRepoLink")) + " " + iconoExterno() + "</a>" +
-          "</div>" +
-        "</div>"
-      );
-    }
 
     bloques.push('<p style="margin:0">' + escaparHtml(h.descripcion) + "</p>");
 
     if (h._urlAcceso) {
-      var notaWeb = "";
-      if (esVce) {
-        var fechaVce = (estado.vce && estado.vce.fuente && estado.vce.fuente.fecha_evaluacion) || "";
-        notaWeb = t("vceDirectNote") + (fechaVce ? " · " + t("cardCheckedOn") + " " + fechaVce : "");
-      } else {
-        var fechaUrl = h._enlaceInfo && h._enlaceInfo.comprobado ? " · " + t("cardCheckedOn") + " " + h._enlaceInfo.comprobado : "";
-        notaWeb = t("cardDirectNote") + fechaUrl;
-      }
+      var fechaUrl = h._enlaceInfo && h._enlaceInfo.comprobado ? " · " + t("cardCheckedOn") + " " + h._enlaceInfo.comprobado : "";
+      var notaWeb = t("cardDirectNote") + fechaUrl;
       bloques.push(
         '<div class="ficha-barra-web">' +
           "<div>" +
@@ -907,29 +800,6 @@
           '<a class="btn btn-primario" href="' + escaparHtml(h._urlAcceso) + '" target="_blank" rel="noopener">' + escaparHtml(t("cardOpenTool")) + " " + iconoExterno() + "</a>" +
         "</div>"
       );
-    }
-
-    if (esVce) {
-      var metaVce = [];
-      if (h.autor) metaVce.push([t("vceAuthor"), h.autor]);
-      if (h.licencia) metaVce.push([t("vceLicense"), h.licencia]);
-      if (h.niveles) metaVce.push([t("vceLevels"), h.niveles]);
-      if (h.subcategoria) metaVce.push([t("vceAreas"), h.subcategoria]);
-      if (h.idiomas) metaVce.push([t("vceLanguages"), h.idiomas]);
-      if (metaVce.length) {
-        bloques.push(
-          '<div class="datos-tabla">' +
-            metaVce.map(function (par) {
-              return (
-                '<div class="dato-item">' +
-                  '<span class="dato-clave">' + escaparHtml(par[0]) + "</span>" +
-                  "<span>" + escaparHtml(par[1]) + "</span>" +
-                "</div>"
-              );
-            }).join("") +
-          "</div>"
-        );
-      }
     }
 
     if (h.escenarios.length > 1) {
@@ -1018,49 +888,6 @@
         "</section>"
       );
     });
-
-    if (esVce && h.evidencia && h.evidencia.length) {
-      bloques.push(
-        '<div class="rol-caja">' +
-          "<h4>" + escaparHtml(t("vceEvidenceTitle")) + "</h4>" +
-          '<ul class="lista-evidencias">' +
-            h.evidencia.map(function (ev) { return "<li>" + escaparHtml(ev) + "</li>"; }).join("") +
-          "</ul>" +
-        "</div>"
-      );
-    }
-
-    if (h._esAmbas && h._cruceVce) {
-      var cv = h._cruceVce;
-      var metaCruce = [];
-      if (cv.titulo_vce) metaCruce.push([t("bothVceTitle"), cv.titulo_vce]);
-      if (cv.autor) metaCruce.push([t("vceAuthor"), cv.autor]);
-      if (cv.licencia) metaCruce.push([t("vceLicense"), cv.licencia]);
-      if (cv.niveles) metaCruce.push([t("vceLevels"), cv.niveles]);
-      if (cv.areas) metaCruce.push([t("vceAreas"), cv.areas]);
-      if (cv.idiomas) metaCruce.push([t("vceLanguages"), cv.idiomas]);
-      bloques.push(
-        '<div class="aviso-vce">' +
-          "<strong>" + escaparHtml(t("bothBoxTitle")) + "</strong>" +
-          "<p>" + escaparHtml(t("bothBoxNote")) + "</p>" +
-          (metaCruce.length
-            ? '<div class="datos-tabla">' +
-                metaCruce.map(function (par) {
-                  return (
-                    '<div class="dato-item">' +
-                      '<span class="dato-clave">' + escaparHtml(par[0]) + "</span>" +
-                      "<span>" + escaparHtml(par[1]) + "</span>" +
-                    "</div>"
-                  );
-                }).join("") +
-              "</div>"
-            : "") +
-          '<div class="enlaces-lista">' +
-            '<a class="enlace-pildora" href="' + escaparHtml(vceRepoUrl) + '" target="_blank" rel="noopener">' + escaparHtml(t("vceRepoLink")) + " " + iconoExterno() + "</a>" +
-          "</div>" +
-        "</div>"
-      );
-    }
 
     if (estado.datos && estado.datos.marco) {
       var m = estado.datos.marco;
@@ -1171,7 +998,6 @@
 
   function restablecerFiltros() {
     estado.busqueda = "";
-    estado.fuente = "TODAS";
     estado.semaforo = "TODOS";
     estado.uso = "TODOS";
     estado.categoria = "";
@@ -1201,21 +1027,6 @@
       dom.buscador.focus();
       estado.pagina = 1;
       aplicarFiltros();
-    });
-
-    document.querySelectorAll("[data-fuente]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        estado.fuente = btn.dataset.fuente;
-        if (estado.categoria && estado.categoriasMapa.has(estado.categoria)) {
-          var catSel = estado.categoriasMapa.get(estado.categoria);
-          var esCatVce = catSel && catSel.fuente === "vce";
-          if ((estado.fuente === "INTEF" && esCatVce) || (estado.fuente === "VCE" && !esCatVce)) {
-            estado.categoria = "";
-          }
-        }
-        estado.pagina = 1;
-        aplicarFiltros();
-      });
     });
 
     document.querySelectorAll("[data-semaforo]").forEach(function (btn) {
@@ -1263,13 +1074,6 @@
         var opt = ev.target.closest("[data-elegir-cat]");
         if (!opt) return;
         estado.categoria = opt.dataset.elegirCat;
-        if (estado.categoria && estado.categoriasMapa.has(estado.categoria)) {
-          var catSel = estado.categoriasMapa.get(estado.categoria);
-          var esCatVce = catSel && catSel.fuente === "vce";
-          if ((esCatVce && estado.fuente === "INTEF") || (!esCatVce && estado.fuente === "VCE")) {
-            estado.fuente = "TODAS";
-          }
-        }
         estado.ambito = "";
         estado.pagina = 1;
         togglePanelCat(false);
@@ -1463,10 +1267,9 @@
     registrarServiceWorker();
 
     try {
-      var [respGuia, respEnlaces, respVce] = await Promise.all([
+      var [respGuia, respEnlaces] = await Promise.all([
         fetch("datos/guia-intef.json"),
-        fetch("datos/enlaces-herramientas.json").catch(function () { return null; }),
-        fetch("datos/vce-evaluadas.json").catch(function () { return null; })
+        fetch("datos/enlaces-herramientas.json").catch(function () { return null; })
       ]);
 
       if (!respGuia.ok) throw new Error("HTTP " + respGuia.status);
@@ -1477,41 +1280,14 @@
         estado.enlaces = datosEnlaces.enlaces || {};
       }
 
-      if (respVce && respVce.ok) {
-        estado.vce = await respVce.json();
-      }
-
-      var coincidencias = (estado.vce && estado.vce.coincidencias_intef) || {};
-      var intefLista = (estado.datos.herramientas || []).map(function (h) {
-        var copia = coincidencias[h.id] ? Object.assign({}, h, { _cruceVce: coincidencias[h.id] }) : h;
-        return prepararHerramienta(copia);
-      });
-      var vceLista = (estado.vce && estado.vce.herramientas ? estado.vce.herramientas : []).map(prepararHerramienta);
-      estado.herramientas = intefLista.concat(vceLista);
-
-      var catsIntef = estado.datos.categorias || [];
-      var catsVce = (estado.vce && estado.vce.categorias) || [];
-      catsIntef.forEach(function (c) { estado.categoriasMapa.set(c.id, c); });
-      catsVce.forEach(function (c) { estado.categoriasMapa.set(c.id, c); });
+      estado.herramientas = (estado.datos.herramientas || []).map(prepararHerramienta);
+      (estado.datos.categorias || []).forEach(function (c) { estado.categoriasMapa.set(c.id, c); });
 
       actualizarTextoCategoria();
       pintarListaCategorias();
 
-      actualizarContadoresOrigen();
       pintarMarcoOficial();
       aplicarFiltros();
-
-      // ?u=<enlace>: abre la ficha de esa aplicación (el Repositorio VCE enlaza así cada recurso, ADR 0006).
-      var porEnlace = estado.enlaceBuscado;
-      if (!estado.fichaAbiertaId && porEnlace) {
-        var norm = function (u) { return String(u || "").trim().toLowerCase().replace(/\/+$/, ""); };
-        var buscada = norm(porEnlace);
-        var hallada = estado.herramientas.find(function (h) {
-          return norm(h.url) === buscada || norm(h.url_final) === buscada ||
-            (h._cruceVce && norm(h._cruceVce.url_vce) === buscada);
-        });
-        if (hallada) estado.fichaAbiertaId = hallada.id;
-      }
 
       if (estado.fichaAbiertaId) {
         abrirFicha(estado.fichaAbiertaId);

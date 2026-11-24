@@ -1,6 +1,8 @@
 # 5. Integración separada del Repositorio de Vibe Coding Educativo (VCE)
 
-Fecha: 2026-11-23 · Estado: aceptado
+Fecha: 2026-11-23 · Estado: sustituido por el ADR 0007
+
+> Sustituido por el [ADR 0007](0007-la-guia-solo-del-intef.md): la guía pasó a ser solo del INTEF y se retiró todo lo de VCE. Se conserva como historial.
 
 ## Contexto
 

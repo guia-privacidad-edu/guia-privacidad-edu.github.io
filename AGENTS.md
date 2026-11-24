@@ -6,8 +6,7 @@
 - **Separación estricta de datos**:
   - `datos/guia-intef.json` procede exclusivamente del PDF oficial del INTEF mediante `scripts/extraer_guia.py`. Nunca se edita a mano: cualquier ajuste va en el script de extracción y debe pasar la validación 1 a 1 contra el índice oficial (1.144 herramientas en la v3.0).
   - `datos/enlaces-herramientas.json` contiene las URLs de acceso directo a cada herramienta buscadas y verificadas aparte, con código HTTP y fecha de comprobación.
-  - `datos/vce-evaluadas.json` y `datos/auditoria-vce.json` los rehace cada noche el NAS (`scripts/semaforo_vce.py`, ADR 0006) y los sube él: haz `git pull` antes de tocar nada y no los edites a mano. Las reglas del semáforo están en `scripts/generar_vce.py`; si cambian, pasa `semaforo_vce.py --todas --sin-hoja` y revisa los cambios de color antes de subir.
-  - El mismo semáforo va a la hoja del Repositorio VCE (tres columnas que solo escribe la pasada nocturna, ADR 0002 de app_edu) y la web del repositorio enlaza cada ficha con `?u=<enlace>`.
+- **Solo INTEF**: la guía recoge únicamente las herramientas del INTEF (ADR 0007). El semáforo de las aplicaciones del Repositorio de Vibe Coding Educativo no se calcula ni se muestra aquí.
 - **Licencias**: código `AGPL-3.0-or-later` (cabecera `SPDX-License-Identifier` en cada archivo de código); datos y contenidos derivados `CC BY-SA 4.0` acreditando al INTEF.
 - **Decisiones en ADR**: cada cambio relevante de arquitectura, datos o diseño se documenta en `docs/adr/`.
 

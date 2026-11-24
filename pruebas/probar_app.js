@@ -2,10 +2,10 @@
 // Script de pruebas funcionales para probar-web (-s pruebas/probar_app.js)
 
 module.exports = async (page, info) => {
-  // 1. Esperar a que carguen las 1.504 herramientas (1.144 INTEF + 360 VCE)
+  // 1. Esperar a que carguen las 1.144 herramientas del INTEF
   await page.waitForFunction(() => {
     const el = document.getElementById("contador-resultados");
-    return el && /1[.,]?504/.test(el.textContent);
+    return el && /1[.,]?144/.test(el.textContent);
   }, undefined, { timeout: 10000 });
 
   const tarjetasIniciales = await page.locator("#lista-tarjetas .tarjeta").count();
@@ -17,7 +17,7 @@ module.exports = async (page, info) => {
   await page.fill("#buscador", "MATEMÁTICAS");
   await page.waitForFunction(() => {
     const s = document.querySelector("#contador-resultados strong");
-    return s && !/1[.,]?504/.test(s.textContent);
+    return s && !/1[.,]?144/.test(s.textContent);
   }, undefined, { timeout: 5000 });
   const esperado = await page.locator("#contador-resultados").textContent();
 
@@ -61,6 +61,6 @@ module.exports = async (page, info) => {
   await page.click("#btn-restablecer");
   await page.waitForFunction(() => {
     const el = document.getElementById("contador-resultados");
-    return el && /1[.,]?504/.test(el.textContent);
+    return el && /1[.,]?144/.test(el.textContent);
   }, undefined, { timeout: 5000 });
 };

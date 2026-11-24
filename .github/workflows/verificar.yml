@@ -27,7 +27,6 @@ jobs:
 
           guia = json.loads(Path("datos/guia-intef.json").read_text(encoding="utf-8"))
           enlaces = json.loads(Path("datos/enlaces-herramientas.json").read_text(encoding="utf-8"))
-          vce = json.loads(Path("datos/vce-evaluadas.json").read_text(encoding="utf-8"))
 
           assert guia["total_herramientas"] == 1144, f"Total inesperado: {guia['total_herramientas']}"
           assert len(guia["herramientas"]) == 1144
@@ -45,19 +44,7 @@ jobs:
           ids_enl = set(enlaces["enlaces"].keys())
           assert ids_guia == ids_enl, f"Desajuste de IDs entre guía y enlaces: {len(ids_guia ^ ids_enl)}"
 
-          assert len(vce["herramientas"]) == vce["total_evaluadas"] and vce["total_evaluadas"] > 0
-          ids_vce = set()
-          for h in vce["herramientas"]:
-              assert h["id"] and h["id"].startswith("vce-") and h["id"] not in ids_vce
-              ids_vce.add(h["id"])
-              assert h["nombre"] and h["url"] and h["categoria_id"] and h["escenarios"], f"VCE incompleta: {h.get('nombre')}"
-              for esc in h["escenarios"]:
-                  assert esc["semaforo"] in ("VERDE", "AMARILLO", "ROJO"), f"Semáforo VCE inválido en {h['nombre']}"
-                  assert esc["profesorado"] and esc["alumnado"], f"Sin indicaciones VCE en {h['nombre']}"
-          for cid in vce["coincidencias_intef"]:
-              assert cid in ids_guia, f"Coincidencia VCE inexistente en INTEF: {cid}"
-
-          print(f"JSON validado: {len(ids_guia)} INTEF + {len(ids_vce)} VCE ({len(vce['coincidencias_intef'])} en ambas), {enlaces['verificados']} enlaces verificados")
+          print(f"JSON validado: {len(ids_guia)} herramientas INTEF, {enlaces['verificados']} enlaces verificados")
           PY
 
       - name: Verificar paridad de claves en los 5 idiomas
