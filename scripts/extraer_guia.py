@@ -13,6 +13,7 @@ Uso:
 
 from __future__ import annotations
 
+import difflib
 import json
 import re
 import sys
@@ -22,6 +23,7 @@ from pathlib import Path
 from typing import Any
 
 import pdfplumber
+from pdfplumber.utils import extract_words
 
 # Límites X de las 13 columnas del listado (páginas 19-199, apaisado 1190.5 x 841.9 pt)
 COLUMNAS_X = [
@@ -165,6 +167,23 @@ def extraer_texto_de_palabras(
                 vistas.add(enl["uri"])
                 urls.append(enl["uri"])
     return texto, urls
+
+
+def extraer_palabras_por_columna(page: pdfplumber.page.Page) -> list[dict[str, Any]]:
+    """Extrae las palabras de cada columna del listado por separado."""
+    grupos: dict[int, list[dict[str, Any]]] = defaultdict(list)
+    for c in page.chars:
+        xc = (c["x0"] + c["x1"]) / 2.0
+        for i, (_, cx0, cx1) in enumerate(COLUMNAS_X):
+            if cx0 <= xc < cx1:
+                grupos[i].append(c)
+                break
+    palabras: list[dict[str, Any]] = []
+    for i in sorted(grupos):
+        palabras.extend(
+            extract_words(grupos[i], x_tolerance=2, y_tolerance=3, keep_blank_chars=False)
+        )
+    return palabras
 
 
 def detectar_bordes_horizontales(page: pdfplumber.page.Page) -> list[dict[str, Any]]:
@@ -399,10 +418,29 @@ def extraer_banda_categoria(texto_completo: str) -> tuple[str, str] | None:
         titulo = re.sub(r"\s+", " ", m.group(1)).strip()
         desc = re.sub(r"\s+", " ", m.group(2)).strip()
         # Comprobar que la parte antes de ':' es mayoritariamente mayúsculas o empieza por mayúsculas
-        letras = [c for c in titulo if c.isalpha()]
+        # Sin el paréntesis aclaratorio en minúsculas («VÍDEO (alojamiento, creación…)»)
+        letras = [c for c in re.sub(r"\([^)]*\)", "", titulo) if c.isalpha()]
         if letras and sum(1 for c in letras if c.isupper()) / len(letras) >= 0.45:
             return titulo, desc
     return None
+
+
+def buscar_descripcion_categoria(nombre: str, desc_cats: dict[str, str]) -> str:
+    """Descripción de una categoría del índice, tolerando erratas del título en la tabla
+    (p. ej. «ELECTRIDAD» o «DIDÁCTICAS» frente a «ELECTRICIDAD» y «DINÁMICAS» del índice)."""
+    clave = normalizar_clave(nombre)
+    if clave in desc_cats:
+        return desc_cats[clave]
+    estricta = normalizar_clave_estricta(nombre)
+    for k, v in desc_cats.items():
+        if re.sub(r"[^a-z0-9]+", "", k) == estricta:
+            return v
+    parecidas = difflib.get_close_matches(clave, list(desc_cats), n=1, cutoff=0.85)
+    if parecidas:
+        print(f"Descripción de categoría por parecido: {nombre!r} ← {parecidas[0]!r}")
+        return desc_cats[parecidas[0]]
+    print(f"AVISO: categoría sin descripción: {nombre!r}")
+    return ""
 
 
 def extraer_bloques_tablas(pdf: pdfplumber.PDF) -> tuple[list[dict[str, Any]], dict[str, str]]:
@@ -419,8 +457,13 @@ def extraer_bloques_tablas(pdf: pdfplumber.PDF) -> tuple[list[dict[str, Any]], d
         if len(bordes) < 2:
             continue
         enlaces = obtener_enlaces_pagina(page)
-        palabras = page.extract_words(x_tolerance=2, y_tolerance=3, keep_blank_chars=False)
-        for w in palabras:
+        # Palabras de la página entera: solo para las bandas de categoría, que cruzan columnas.
+        palabras_pagina = page.extract_words(x_tolerance=2, y_tolerance=3, keep_blank_chars=False)
+        # Palabras de cada columna por separado: si se agrupan las líneas de toda la
+        # página, el texto de otras columnas encadena dos líneas de una misma celda y
+        # sus letras se intercalan («S ig u i e n d o…», Canva, p. 88).
+        palabras = extraer_palabras_por_columna(page)
+        for w in palabras_pagina + palabras:
             w["xc"] = (w["x0"] + w["x1"]) / 2.0
             w["yc"] = (w["top"] + w["bottom"]) / 2.0
 
@@ -438,24 +481,25 @@ def extraer_bloques_tablas(pdf: pdfplumber.PDF) -> tuple[list[dict[str, Any]], d
                 continue
 
             # Texto global del bloque para detectar cabeceras de categoría, cabeceras de columnas y subcategorías
-            txt_todo, _ = extraer_texto_de_palabras(palabras, 28.0, y_ini, 1170.5, y_fin, [])
+            txt_todo, _ = extraer_texto_de_palabras(palabras_pagina, 28.0, y_ini, 1170.5, y_fin, [])
             if not txt_todo.strip():
                 continue
 
-            # Extraer columnas clave del bloque completo
-            txt_nombre, _ = extraer_texto_de_palabras(palabras, 56.7, y_ini, 142.0, y_fin, [])
-            txt_desc, _ = extraer_texto_de_palabras(palabras, 142.0, y_ini, 262.3, y_fin, [])
-            txt_sw_global, _ = extraer_texto_de_palabras(palabras, 262.3, y_ini, 318.8, y_fin, [])
-            txt_priv_global, _ = extraer_texto_de_palabras(palabras, 552.8, y_ini, 645.0, y_fin, [])
-            txt_fecha_global, _ = extraer_texto_de_palabras(palabras, 645.0, y_ini, 729.6, y_fin, [])
-            txt_sem_global, _ = extraer_texto_de_palabras(palabras, 729.6, y_ini, 793.1, y_fin, [])
-            txt_prof_global, _ = extraer_texto_de_palabras(palabras, 793.1, y_ini, 907.3, y_fin, [])
-            txt_alum_global, _ = extraer_texto_de_palabras(palabras, 907.3, y_ini, 1027.7, y_fin, [])
+            # Columnas clave del bloque completo, con la lectura de página entera para
+            # reconocer bandas y cabeceras tal como se validó (las bandas cruzan columnas)
+            txt_nombre, _ = extraer_texto_de_palabras(palabras_pagina, 56.7, y_ini, 142.0, y_fin, [])
+            txt_desc, _ = extraer_texto_de_palabras(palabras_pagina, 142.0, y_ini, 262.3, y_fin, [])
+            txt_sw_global, _ = extraer_texto_de_palabras(palabras_pagina, 262.3, y_ini, 318.8, y_fin, [])
+            txt_priv_global, _ = extraer_texto_de_palabras(palabras_pagina, 552.8, y_ini, 645.0, y_fin, [])
+            txt_fecha_global, _ = extraer_texto_de_palabras(palabras_pagina, 645.0, y_ini, 729.6, y_fin, [])
+            txt_sem_global, _ = extraer_texto_de_palabras(palabras_pagina, 729.6, y_ini, 793.1, y_fin, [])
+            txt_prof_global, _ = extraer_texto_de_palabras(palabras_pagina, 793.1, y_ini, 907.3, y_fin, [])
+            txt_alum_global, _ = extraer_texto_de_palabras(palabras_pagina, 907.3, y_ini, 1027.7, y_fin, [])
 
             if es_cabecera_columnas(txt_nombre, txt_sem_global, txt_prof_global):
                 continue
 
-            txt_emb_global, _ = extraer_texto_de_palabras(palabras, 1027.7, y_ini, 1085.5, y_fin, [])
+            txt_emb_global, _ = extraer_texto_de_palabras(palabras_pagina, 1027.7, y_ini, 1085.5, y_fin, [])
             sem_detectado = normalizar_semaforo(txt_sem_global) or detectar_semaforo_por_fondo(page, y_ini, y_fin)
             tiene_fecha = bool(re.search(r"\d{2}/\d{2}/\d{4}", txt_fecha_global))
             tiene_sw = normalizar_si_x(txt_sw_global) in ("SI", "X", "NO")
@@ -503,6 +547,10 @@ def extraer_bloques_tablas(pdf: pdfplumber.PDF) -> tuple[list[dict[str, Any]], d
                         "urls": celdas_urls,
                     }
                 )
+
+            # Contenido de nombre y descripción, con la lectura por columnas
+            txt_nombre, _ = extraer_texto_de_palabras(palabras, 56.7, y_ini, 142.0, y_fin, [])
+            txt_desc, _ = extraer_texto_de_palabras(palabras, 142.0, y_ini, 262.3, y_fin, [])
 
             bloques.append(
                 {
@@ -840,7 +888,7 @@ def main() -> int:
             {
                 "id": slugify(c["nombre"]),
                 "nombre": c["nombre"],
-                "descripcion": desc_cats.get(normalizar_clave(c["nombre"]), ""),
+                "descripcion": buscar_descripcion_categoria(c["nombre"], desc_cats),
                 "subcategorias": c["subcategorias"],
             }
             for c in categorias

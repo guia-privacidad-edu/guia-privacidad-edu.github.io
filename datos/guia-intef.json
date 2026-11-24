@@ -2272,7 +2272,7 @@
       "categoria": "ARTE E HISTORIA DEL ARTE",
       "categoria_id": "arte-e-historia-del-arte",
       "subcategoria": null,
-      "descripcion": "S it io w e b q u e o fre c e co n t e n id o s d e m á s d e 2.000 museos y archivos de primer orden.",
+      "descripcion": "Sitio web que ofrece contenidos de más de 2.000 museos y archivos de primer orden.",
       "pagina": 26,
       "escenarios": [
         {
@@ -2284,7 +2284,7 @@
           "enlaces_otros": [
             "https://artsandculture.google.com/"
           ],
-          "politica_privacidad_texto": "Política de Privacidad – P r i va c i d a d y C o n d ic i o n e s – Google",
+          "politica_privacidad_texto": "Política de Privacidad – Privacidad y Condiciones – Google",
           "enlaces_privacidad": [
             "https://policies.google.com/privacy?hl=es"
           ],
@@ -2292,8 +2292,8 @@
           "fechas_comprobacion": [
             "13/01/2026"
           ],
-          "profesorado": "Siempre y cuando se use la opción sin registro, no se aporte ningún tipo de dato p e rs o n a l y s e s ig a s i e mpre lo e s ta b l e c id o e n l o s apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "Siempre y cuando se cumplan, referidos al a l u m n a d o , l o s re q u i si to s e s ta b le c i d o s e n e l a p a rt a do 'PROFESORADO'.",
+          "profesorado": "Siempre y cuando se use la opción sin registro, no se aporte ningún tipo de dato personal y se siga siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO'.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -2988,7 +2988,7 @@
       "categoria": "AUDIO",
       "categoria_id": "audio",
       "subcategoria": null,
-      "descripcion": "S o l u c i ó n d e g r a b a c i ó n y e d i c i ó n d e a u d io q u e a y u d a a lo s u s u a r i o s a g ra b a r, c a r g a r , p u b lic a r y compartir p ód c a st .",
+      "descripcion": "Solución de grabación y edición de audio que ayuda a los usuarios a grabar, cargar, publicar y compartir pódcast.",
       "pagina": 30,
       "escenarios": [
         {
@@ -2996,9 +2996,9 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una prueba gratuita para crear un pódcast previo registro. Servidores en EE.UU. y no parece explicitar los términos en que se realiza la transferencia de datos. By choosing to visit or use the Services, or provide information to us, you agree that any dispute over privacy or the terms contained in this Privacy Policy will be governed by the laws of the State of California and the United States of America. You also agree to abide by any dispute resolution mechanisms or limitations on d a m a g e s c o n ta in e d i n o u r T e r m s o f S e rv i c e , o r o t h e r a g r e e m e n t s th a t w e h a v e w it h y o u . B y c h o o s i n g t o m a k e y o u r C o ntent a v a i l a b le o n s u c h t h i r d - p a r ty p l a t f o r m s , Y o u c o n s e n t to Podomatic’s disclosure and transfer of your Content and any other information required to be sent to such third-party on your behalf. You also agree to accept and abide by any such third- party’s terms and conditions of use with respect to your Content and information provided, whether or not those terms and conditions of use are presented to You. We are not responsible or liable to You for any use of your Content or any other information by any such third-party.",
+          "otros": "Ofrece una prueba gratuita para crear un pódcast previo registro. Servidores en EE.UU. y no parece explicitar los términos en que se realiza la transferencia de datos. By choosing to visit or use the Services, or provide information to us, you agree that any dispute over privacy or the terms contained in this Privacy Policy will be governed by the laws of the State of California and the United States of America. You also agree to abide by any dispute resolution mechanisms or limitations on damages contained in our Terms of Service, or other agreements that we have with you. By choosing to make your Content available on such third-party platforms, You consent to Podomatic’s disclosure and transfer of your Content and any other information required to be sent to such third-party on your behalf. You also agree to accept and abide by any such third- party’s terms and conditions of use with respect to your Content and information provided, whether or not those terms and conditions of use are presented to You. We are not responsible or liable to You for any use of your Content or any other information by any such third-party.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h t t p s : //w w w .p o d o m a t i c . c o m /a b ou t/ p r iv ac y h t t p s : //w w w .p o d o m a ti c . c o m /a b ou t/ t o s",
+          "politica_privacidad_texto": "https://www.podomatic.com/about/privacy\nhttps://www.podomatic.com/about/tos",
           "enlaces_privacidad": [
             "https://www.podomatic.com/about/privacy",
             "https://www.podomatic.com/about/tos"
@@ -3007,8 +3007,8 @@
           "fechas_comprobacion": [
             "06/03/2025"
           ],
-          "profesorado": "S i e l d o c e n t e d e c i d e u s a r e s ta a p l i c a c i ó n , l o h a r á a tí t u l o i n d iv i d u a l y b a j o s u r e s p o n sa bi li d a d c o m o p e r so n a m a y o r d e e da d .",
-          "alumnado": "N O , a u n q u e p u e d e n v i s u a l iz a r la s p r o d u c c i o n es c r e a d a s p o r e l d o c e n t e , s i e m p r e y c u a n d o n o t e n g a n q u e r e g is t r a rs e n i c o m p a rt ir s u s d a t o s p e rs o n a l e s .",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "SI",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -4103,7 +4103,7 @@
             "29/12/2025"
           ],
           "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "Siempre y cuando se cumplan, referidos al a l u m n a d o , l o s re q u i si to s e s ta b le c i d o s e n e l a p a rt a do 'PROFESORADO'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO'.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -4729,7 +4729,7 @@
       "categoria": "CIENCIAS",
       "categoria_id": "ciencias",
       "subcategoria": "Visualización y/o creación de estructuras químicas",
-      "descripcion": "I nt e r fa z d e d ib uj o y m o d e la d o q u ím i c o que permite crear, modificar y visualizar estructuras químicas en 2D y 3D.",
+      "descripcion": "Interfaz de dibujo y modelado químico que permite crear, modificar y visualizar estructuras químicas en 2D y 3D.",
       "pagina": 37,
       "escenarios": [
         {
@@ -4737,9 +4737,9 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una versión gratuita que puede ser descargada e instalada en el dispositivo, previo registro. E l p ro ve e d o r d el s e r v ic io parece te n e r s e d e e n C a n a d á . La información ofrecida en la política de privacidad no parece ser lo suficientemente detallada como para confirmar si cumple con la legislación europea. Fecha política privacidad: 01/11/2021.",
+          "otros": "Ofrece una versión gratuita que puede ser descargada e instalada en el dispositivo, previo registro. El proveedor del servicio parece tener sede en Canadá. La información ofrecida en la política de privacidad no parece ser lo suficientemente detallada como para confirmar si cumple con la legislación europea. Fecha política privacidad: 01/11/2021.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h tt ps : / / w w w .a c d l a b s . co m / p r i va c y- p o li c y /\nhttps://www.acdlabs.com/terms-conditions/",
+          "politica_privacidad_texto": "https://www.acdlabs.com/privacy-policy/\nhttps://www.acdlabs.com/terms-conditions/",
           "enlaces_privacidad": [
             "https://www.acdlabs.com/privacy-policy/",
             "https://www.acdlabs.com/terms-conditions/"
@@ -4748,8 +4748,8 @@
           "fechas_comprobacion": [
             "26/03/2025"
           ],
-          "profesorado": "S i e l d o c e n t e d e c id e u s a r es ta a p li c a c ió n , lo h a r á a título individual y bajo su responsabilidad como persona mayor de edad.",
-          "alumnado": "N O , a u n q u e p u e d e n v i s u a l iz a r la s p r o d u c c i o n es c r e a d a s p o r e l d o c e n t e , siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -4934,9 +4934,9 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Para poder descargar los códigos QR es necesario registrarse p r e vi a m e n te . O f re c e u n p e r i odo de prueba gratuito.",
+          "otros": "Para poder descargar los códigos QR es necesario registrarse previamente. Ofrece un periodo de prueba gratuito.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "Se menciona el RGPD, pero no se especifica el mecanismo empleado para la transferencia i n t e r n a cional de d a t o s .\nhttps://pageloot.com/es/privacy/\nhttps://pageloot.com/es/terms/",
+          "politica_privacidad_texto": "Se menciona el RGPD, pero no se especifica el mecanismo empleado para la transferencia internacional de datos.\nhttps://pageloot.com/es/privacy/\nhttps://pageloot.com/es/terms/",
           "enlaces_privacidad": [
             "https://pageloot.com/es/privacy/",
             "https://pageloot.com/es/terms/"
@@ -4945,8 +4945,8 @@
           "fechas_comprobacion": [
             "04/12/2025"
           ],
-          "profesorado": "Si el docente decide usar esta aplicación, lo hará a t í t u lo in d i vi d u a l y b a jo s u r e s p o n s a b i li d a d c o m o persona mayor de edad.",
-          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, s i e m p r e y c u a n d o n o te n g a n q u e r e g is t r a rs e n i c o m p a rt ir sus datos personales.",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -5433,7 +5433,7 @@
             "23/06/2025"
           ],
           "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos e s ta b l e ci d os en e l apartado 'P R O F E S O R A D O '.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO'.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -6060,7 +6060,7 @@
       "categoria": "CUESTIONARIOS Y ENCUESTAS",
       "categoria_id": "cuestionarios-y-encuestas",
       "subcategoria": null,
-      "descripcion": "Herramienta en línea a s is t i d a p o r I A q u e p e r m i te r e a l i z a r c o n s u l t a s a g r a n e s c a l a o W ik i S u r v e y s y elaborar una lista ordenada de las aportaciones del público.",
+      "descripcion": "Herramienta en línea asistida por IA que permite realizar consultas a gran escala o Wiki Surveys y elaborar una lista ordenada de las aportaciones del público.",
       "pagina": 45,
       "escenarios": [
         {
@@ -6068,9 +6068,9 @@
           "semaforo": "ROJO",
           "software_libre": "SI",
           "requiere_registro": "SÍ",
-          "otros": "L a p o l í t i c a d e p ri v a c i d a d e s i n c o m p l e t a y n o p a r e c e c u m plir c o n l a l e g is l a c i ó n e u r o p e a . Servidores gestionados por un proveedor de US.",
+          "otros": "La política de privacidad es incompleta y no parece cumplir con la legislación europea. Servidores gestionados por un proveedor de US.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h tt p : / / w w w . a ll ouride as . o r g / p riv a c y\nhttps://www.engineyard.com/",
+          "politica_privacidad_texto": "http://www.allourideas.org/privacy\nhttps://www.engineyard.com/",
           "enlaces_privacidad": [
             "http://www.allourideas.org/privacy",
             "https://www.engineyard.com/"
@@ -6079,8 +6079,8 @@
           "fechas_comprobacion": [
             "08/05/2025"
           ],
-          "profesorado": "S i e l d o c e n t e d e c i d e u s a r e s ta a p l i c a c i ó n , l o h a r á a tí t u l o i n d iv i d u a l y b a j o s u responsabilidad como persona mayor de edad.",
-          "alumnado": "N O , a u n q u e p u e d e n v i s u a l iz a r la s p r o d u c c i o n es c r e a d a s p o r e l d o c e n t e , s i e m p r e y c u a n d o n o te n g a n q u e r e g is t r a rs e n i c o m p a rt ir sus datos personales.",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -6650,7 +6650,7 @@
       "categoria": "DEBATE",
       "categoria_id": "debate",
       "subcategoria": null,
-      "descripcion": "Herramienta en línea de d eb a te d is e ñada para uso ed uc a ti vo .",
+      "descripcion": "Herramienta en línea de debate diseñada para uso educativo.",
       "pagina": 48,
       "escenarios": [
         {
@@ -6658,9 +6658,9 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Existe la opción de que los participantes tomen parte en el d e b a te d e f o r m a a n ó n i m a . A se g u ra q u e t od o s l o s da t o s son procesados y almacenados en Europa.",
+          "otros": "Existe la opción de que los participantes tomen parte en el debate de forma anónima. Asegura que todos los datos son procesados y almacenados en Europa.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://www.kialo-edu.com/privacy\nhttps://support.kialo-\ne d u . c o m / e n / h c / k i alo- e d u - d a ta - s e c u r it y - and-privacy- plan/#h_01FC88KQC DYZ41D4A40J4868P9",
+          "politica_privacidad_texto": "https://www.kialo-edu.com/privacy\nhttps://support.kialo-edu.com/en/hc/kialo-edu-data-security-and-privacy-plan/#h_01FC88KQCDYZ41D4A40J4868P9",
           "enlaces_privacidad": [
             "https://www.kialo-edu.com/privacy"
           ],
@@ -6668,10 +6668,10 @@
           "fechas_comprobacion": [
             "29/04/2025"
           ],
-          "profesorado": "Siguiendo siempre lo e st a b le c i d o e n lo s ap a r ta d o s 'A d v e rt e ncias' y 'Orientaciones'.",
-          "alumnado": "Siempre y cuando se cumplan, referidos al a l u m n a d o , l o s re q u i si to s e s ta b le c i d o s e n e l a p a rt a do 'PROFESORADO’.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
-          "accesibilidad_texto": "https://support.kialo-\ne d u .c o m / e n/hc/ac ce s s ib i lit y - statement/",
+          "accesibilidad_texto": "https://support.kialo-edu.com/en/hc/accessibility-statement/",
           "enlaces_accesibilidad": [
             "https://support.kialo-edu.com/en/hc/accessibility-statement/"
           ]
@@ -6922,7 +6922,7 @@
       "categoria": "DIBUJO, DISEÑO, ILUSTRACIÓN, 2D, 3D",
       "categoria_id": "dibujo-diseno-ilustracion-2d-3d",
       "subcategoria": null,
-      "descripcion": "A p li c a ción de dibujo en lín e a .",
+      "descripcion": "Aplicación de dibujo en línea.",
       "pagina": 49,
       "escenarios": [
         {
@@ -6932,7 +6932,7 @@
           "requiere_registro": "NO",
           "otros": "",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h t tp s : / /d r a wisland.co m / p ri v a c y",
+          "politica_privacidad_texto": "https://drawisland.com/privacy",
           "enlaces_privacidad": [
             "https://drawisland.com/privacy"
           ],
@@ -6940,7 +6940,7 @@
           "fechas_comprobacion": [
             "29/04/2025"
           ],
-          "profesorado": "Siguiendo siempre lo e st a b le c i d o e n lo s ap a r ta d o s 'A d v e rt e ncias' y 'Orientaciones'.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
           "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
@@ -7196,9 +7196,9 @@
           "semaforo": "VERDE",
           "software_libre": "X",
           "requiere_registro": "NO",
-          "otros": "En principio, no almacena ni transfiere ningún tipo de dato. Ú n i c a m e n te p u e d e a l m a c e nar los di c t a d os lo c a l m e n t e e n e l n a v e g a d o r , y a q u e e n v í a e l d ic t a d o d e v o z a lo s s e r v id o r e s d e G o o g l e a través del navegador Chrome, pero no los almacena.",
+          "otros": "En principio, no almacena ni transfiere ningún tipo de dato. Únicamente puede almacenar los dictados localmente en el navegador, ya que envía el dictado de voz a los servidores de Google a través del navegador Chrome, pero no los almacena.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h t t p s : //d ig i t a l in s pirati o n . c o m /p r i v a c y h t tp s://dictation.io/h el p",
+          "politica_privacidad_texto": "https://digitalinspiration.com/privacy\nhttps://dictation.io/help",
           "enlaces_privacidad": [
             "https://digitalinspiration.com/privacy"
           ],
@@ -7206,8 +7206,8 @@
           "fechas_comprobacion": [
             "30/04/2025"
           ],
-          "profesorado": "S ig u i e n d o s i e m p r e lo es t a b l e c id o e n lo s a p a rt a d o s ' A d v e rtencias' y 'O r ie n t a c io n e s ' .",
-          "alumnado": "S ie m p r e y c u a n d o s e cu m p l a n , r e fe r id o s a l alumnado, los requisitos e s ta b l e ci d os en e l apartado 'P R O F E S O R A D O ’.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -7254,7 +7254,7 @@
       "categoria": "DISEÑO DE PLANOS Y DISEÑO DE INTERIORES",
       "categoria_id": "diseno-de-planos-y-diseno-de-interiores",
       "subcategoria": null,
-      "descripcion": "Herramienta en línea que p er m ite crear planos 2D y 3D .",
+      "descripcion": "Herramienta en línea que permite crear planos 2D y 3D.",
       "pagina": 51,
       "escenarios": [
         {
@@ -7262,7 +7262,7 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "El proveedor del servicio parece tener sede en Países Bajos, pero no aparece de forma clara dónde s e a l m a c e n a n l os d a to s p e r s o n a le s . L a p o l ít ic a d e privacidad no parece ser del todo completa.",
+          "otros": "El proveedor del servicio parece tener sede en Países Bajos, pero no aparece de forma clara dónde se almacenan los datos personales. La política de privacidad no parece ser del todo completa.",
           "enlaces_otros": [],
           "politica_privacidad_texto": "https://www.floorplanner.com/privacy\nhttps://www.floorplanner.com/terms",
           "enlaces_privacidad": [
@@ -7273,7 +7273,7 @@
           "fechas_comprobacion": [
             "30/04/2025"
           ],
-          "profesorado": "Si el docente decide usar esta aplicación, lo hará a t í t u lo in d i vi d u a l y b a jo s u r e s p o n s a b i li d a d c o m o persona mayor de edad.",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
           "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
@@ -7323,7 +7323,7 @@
       "categoria": "DISEÑO DE PLANOS Y DISEÑO DE INTERIORES",
       "categoria_id": "diseno-de-planos-y-diseno-de-interiores",
       "subcategoria": null,
-      "descripcion": "Herramienta que permite c r e a r d is e ñ o s y p la n o s d e a s p e c to p r o f e s i o n a l p a ra hogares, paisajes y oficinas.",
+      "descripcion": "Herramienta que permite crear diseños y planos de aspecto profesional para hogares, paisajes y oficinas.",
       "pagina": 51,
       "escenarios": [
         {
@@ -7342,7 +7342,7 @@
           "fechas_comprobacion": [
             "30/04/2025"
           ],
-          "profesorado": "Siguiendo siempre lo e st a b le c i d o e n lo s ap a r ta d o s 'A d v e rt e ncias' y 'Orientaciones'.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
           "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
           "accesibilidad_texto": "X",
@@ -7489,7 +7489,7 @@
       "categoria": "CREACIÓN, DISEÑO Y PUBLICACIÓN WEB, CMS (SISTEMA DE CREACIÓN DE CONTENIDOS)",
       "categoria_id": "creacion-diseno-y-publicacion-web-cms-sistema-de-creacion-de-contenidos",
       "subcategoria": null,
-      "descripcion": "S o ft w a re p a ra d es a rr o ll a d o re s PHP.",
+      "descripcion": "Software para desarrolladores PHP.",
       "pagina": 52,
       "escenarios": [
         {
@@ -7499,13 +7499,13 @@
           "requiere_registro": "NO",
           "otros": "",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h t t p s : // w w w .e c l ip se. o r g /l e g a l/ p riv a c y /",
+          "politica_privacidad_texto": "https://www.eclipse.org/legal/privacy/",
           "enlaces_privacidad": [],
           "fecha_comprobacion": "30/04/2025",
           "fechas_comprobacion": [
             "30/04/2025"
           ],
-          "profesorado": "Siguiendo siempre lo e st a b le c i d o e n lo s ap a r ta d o s 'A d v e rt e ncias' y 'Orientaciones'.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
           "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "https://wiki.eclipse.org/Accessibility\nhttps://projects.eclipse.org/projects/technology.actf",
@@ -8478,7 +8478,7 @@
           "semaforo": "VERDE",
           "software_libre": "SI",
           "requiere_registro": "NO",
-          "otros": "Ofrece la posibilidad de activar un chat para que los usuarios interactúen a la hora de crear el d o c u m e n to c o la b o r a ti v o . Li c e n ci a G N U A G P L v 3 , s a lvo excepciones.",
+          "otros": "Ofrece la posibilidad de activar un chat para que los usuarios interactúen a la hora de crear el documento colaborativo. Licencia GNU AGPLv3, salvo excepciones.",
           "enlaces_otros": [],
           "politica_privacidad_texto": "https://ladigitale.dev/confidentialite.html",
           "enlaces_privacidad": [
@@ -8488,7 +8488,7 @@
           "fechas_comprobacion": [
             "07/05/2025"
           ],
-          "profesorado": "Siempre y cuando se use sin aportar ningún tipo de dato personal, se gestione adecuadamente el acceso a l c h a t , y s e s i g a s i empre lo e s ta b l e c i d o e n lo s apartados 'Advertencias' y 'Orientaciones'.",
+          "profesorado": "Siempre y cuando se use sin aportar ningún tipo de dato personal, se gestione adecuadamente el acceso al chat, y se siga siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
           "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
           "accesibilidad_texto": "X",
@@ -8544,9 +8544,9 @@
           "semaforo": "VERDE",
           "software_libre": "SI",
           "requiere_registro": "NO",
-          "otros": "Debe elegirse el periodo de tiempo en el que el documento colaborativo creado estará disponible: 1 día, 30 días o 1 año. P o r t a n to , l o s d oc u m e n t o s in a c t iv o s s e e l im in a rá n u n a vez transcurrido el tiempo de caducidad seleccionado. Ofrece la posibilidad de activar un chat para que los usuarios interactúen a la hora de crear el documento colaborativo.",
+          "otros": "Debe elegirse el periodo de tiempo en el que el documento colaborativo creado estará disponible: 1 día, 30 días o 1 año. Por tanto, los documentos inactivos se eliminarán una vez transcurrido el tiempo de caducidad seleccionado. Ofrece la posibilidad de activar un chat para que los usuarios interactúen a la hora de crear el documento colaborativo.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://www.dbjr.de/\ne n /a b o u t -u s/data- p ro te c t io n\nhttps://www.dbjr.de/en/about-us/yopad-use",
+          "politica_privacidad_texto": "https://www.dbjr.de/en/about-us/data-protection\nhttps://www.dbjr.de/en/about-us/yopad-use",
           "enlaces_privacidad": [
             "https://www.dbjr.de/en/about-us/data-protection"
           ],
@@ -8554,10 +8554,10 @@
           "fechas_comprobacion": [
             "07/05/2025"
           ],
-          "profesorado": "Siempre y cuando se use sin aportar ningún tipo de d at o p e rs o na l , s e g e s t io n e ad e c u a d a m e n t e e l a c c e s o al chat, y se siga siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "S ie m p r e y c u a n d o s e cu m p l a n , r e fe r id o s a l alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
+          "profesorado": "Siempre y cuando se use sin aportar ningún tipo de dato personal, se gestione adecuadamente el acceso al chat, y se siga siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
-          "accesibilidad_texto": "https://github.com/\ne t h e r/ e t h e r p a d - lit e / w i k i/ A c c e s s ibili ty/847645e4bf1f21 428cd1c6e4bd06fe f3ebc8cd8d",
+          "accesibilidad_texto": "https://github.com/ether/etherpad-lite/wiki/Accessibility/847645e4bf1f21428cd1c6e4bd06fef3ebc8cd8d",
           "enlaces_accesibilidad": [
             "https://github.com/ether/etherpad-lite/wiki/Accessibility/847645e4bf1f21428cd1c6e4bd06fef3ebc8cd8d"
           ]
@@ -8637,7 +8637,7 @@
       "categoria": "EDICIÓN DE GRÁFICOS VECTORIALES",
       "categoria_id": "edicion-de-graficos-vectoriales",
       "subcategoria": null,
-      "descripcion": "Editor de gráficos vectoriales y herramienta de prototipado q u e s ir v e p ara diseñar in te r fa c e s .",
+      "descripcion": "Editor de gráficos vectoriales y herramienta de prototipado que sirve para diseñar interfaces.",
       "pagina": 58,
       "escenarios": [
         {
@@ -8645,9 +8645,9 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una versión básica g r a tu it a , p r e v i o r e g i s tr o . P a re c e c u m p li r l a l e g i s l a c i ó n e u ro p e a .",
+          "otros": "Ofrece una versión básica gratuita, previo registro. Parece cumplir la legislación europea.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://www.figma.com/privacy/\nh t tp s : // w w w . figma.co m / le g a l /d p a/",
+          "politica_privacidad_texto": "https://www.figma.com/privacy/\nhttps://www.figma.com/legal/dpa/",
           "enlaces_privacidad": [
             "https://www.figma.com/privacy/",
             "https://www.figma.com/legal/dpa/"
@@ -8656,10 +8656,10 @@
           "fechas_comprobacion": [
             "07/05/2025"
           ],
-          "profesorado": "Siguiendo siempre lo establecido en los a p a rt a d o s ' A d v e rtencias' y 'O r ie n t a c io n e s ' .",
-          "alumnado": "Siempre y cuando se cumplan, referidos al a l u m n a d o , l o s re q u i si to s e s ta b l e c i d o s e n e l a p a rt a do 'P R O F E S O R A D O ’ .",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
-          "accesibilidad_texto": "https://help.figma.com/hc/en-us/articles/7810391964695-Accessible-\np r o to t ypes-in- Fi g m a\nhttps://www.figma.com/community/accessibility",
+          "accesibilidad_texto": "https://help.figma.com/hc/en-us/articles/7810391964695-Accessible-prototypes-in-Figma\nhttps://www.figma.com/community/accessibility",
           "enlaces_accesibilidad": [
             "https://help.figma.com/hc/en-us/articles/7810391964695-Accessible-prototypes-in-Figma"
           ]
@@ -8743,7 +8743,7 @@
       "categoria": "EDICIÓN DE PÁGINAS WEB",
       "categoria_id": "edicion-de-paginas-web",
       "subcategoria": null,
-      "descripcion": "Diseñado originalmente como sustituto de la función V is t a d e l ib r o d e la s ve r s io n e s a n t e r io re s de Sigil, también puede utilizarse como editor visual XHTML de propósito general.",
+      "descripcion": "Diseñado originalmente como sustituto de la función Vista de libro de las versiones anteriores de Sigil, también puede utilizarse como editor visual XHTML de propósito general.",
       "pagina": 58,
       "escenarios": [
         {
@@ -8762,7 +8762,7 @@
             "07/05/2025"
           ],
           "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "Siempre y cuando se c u m p la n , r e fe r i d o s a l a lu m n a d o , lo s r e q u i s i tos establecidos en el apartado 'PROFESORADO’.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "https://github.com/Sigil-Ebook/PageEdit/releases",
           "enlaces_accesibilidad": [
@@ -8778,7 +8778,7 @@
       "categoria": "EDICIÓN DE PUBLICACIONES",
       "categoria_id": "edicion-de-publicaciones",
       "subcategoria": null,
-      "descripcion": "Herramienta en línea que p e r m it e c r e a r r e v i st a s e n fo r m a t o d i gi ta l e i m p r e s o de forma colaborativa.",
+      "descripcion": "Herramienta en línea que permite crear revistas en formato digital e impreso de forma colaborativa.",
       "pagina": 59,
       "escenarios": [
         {
@@ -8786,9 +8786,9 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "O f r e c e u n a v e rs i ó n b á si c a gr a t u i ta , p re v io r e g i s t ro , q u e permite añadir a un colaborador.",
+          "otros": "Ofrece una versión básica gratuita, previo registro, que permite añadir a un colaborador.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "No ha sido posible encontrar la política d e p ri va c id a d de esta he r ra m ie n t a . h t tp s :/ /madmagz.co m / to s",
+          "politica_privacidad_texto": "No ha sido posible encontrar la política de privacidad de esta herramienta.\nhttps://madmagz.com/tos",
           "enlaces_privacidad": [
             "https://madmagz.com/tos"
           ],
@@ -8796,8 +8796,8 @@
           "fechas_comprobacion": [
             "07/05/2025"
           ],
-          "profesorado": "Si el docente decide usar e s ta a p l ic a c i ó n , l o h a r á a tí tu lo i n d iv i d u a l y b a j o s u responsabilidad como persona mayor de edad.",
-          "alumnado": "NO, aunque pueden visualizar las producciones c r e ad a s p o r e l d o c e n t e , si e m p re y c u a n d o n o t e n gan q u e re g is t r a rs e n i c o m p artir su s d a to s p e rs o n a l e s.",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "SI",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -8896,10 +8896,10 @@
           "fechas_comprobacion": [
             "08/05/2025"
           ],
-          "profesorado": "S i e m p r e y c u a n d o los ví d e o s c r e a d o s s e descarguen directamente en el equipo y se siga siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "Siempre y cuando se c u m p la n , r e fe r i d o s a l a lu m n a d o , lo s r e q u i s i tos establecidos en el apartado 'PROFESORADO’.",
+          "profesorado": "Siempre y cuando los vídeos creados se descarguen directamente en el equipo y se siga siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
-          "accesibilidad_texto": "https://support.microsoft.com/es-es/topic/herramien\nt a s - d e - a c c e s i bilidad-para- clipchamp- 2108915e-fa69- 4983-8116- b213dc4c1dd5",
+          "accesibilidad_texto": "https://support.microsoft.com/es-es/topic/herramientas-de-accesibilidad-para-clipchamp-2108915e-fa69-4983-8116-b213dc4c1dd5",
           "enlaces_accesibilidad": [
             "https://support.microsoft.com/es-es/topic/herramientas-de-accesibilidad-para-clipchamp-2108915e-fa69-4983-8116-b213dc4c1dd5"
           ]
@@ -8989,9 +8989,9 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece un plan gratuito. E m p le a l a s c l á u su l a s co n tr a c t u a l e s t ip o ( S C C) para realizar transferencias de datos fuera de la UE. En principio, parece cumplir con la legislación europea.",
+          "otros": "Ofrece un plan gratuito. Emplea las cláusulas contractuales tipo (SCC) para realizar transferencias de datos fuera de la UE. En principio, parece cumplir con la legislación europea.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://www.hippovideo.io/privacy_policy.html\nh t t p s :/ / w w w .y ou ronli n e c h o i c e s. co m /\nhttps://www.hippovideo.io/gdpr-compliance.html\nhttps://www.hippovideo.io/data-processing.html",
+          "politica_privacidad_texto": "https://www.hippovideo.io/privacy_policy.html\nhttps://www.youronlinechoices.com/\nhttps://www.hippovideo.io/gdpr-compliance.html\nhttps://www.hippovideo.io/data-processing.html",
           "enlaces_privacidad": [
             "https://www.hippovideo.io/privacy_policy.html",
             "https://www.youronlinechoices.com/",
@@ -9002,8 +9002,8 @@
           "fechas_comprobacion": [
             "08/05/2025"
           ],
-          "profesorado": "S ig u i e n d o s i e m p r e lo es t a b l e c id o e n lo s apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "S ie m p r e y c u a n d o s e cu m p l a n , r e fe r id o s a l alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -9688,9 +9688,9 @@
             "09/05/2025"
           ],
           "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos e s ta b l e ci d os en e l apartado 'P R O F E S O R A D O ’.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
-          "accesibilidad_texto": "https://wiki.gnucash.org/wiki/FAQ#Q:_I.27m_vision-impaired._How_do\n_ I _m a k e _ G n u C a s h _ m or e _ a c c e ss ib l e . 3F",
+          "accesibilidad_texto": "https://wiki.gnucash.org/wiki/FAQ#Q:_I.27m_vision-impaired._How_do_I_make_GnuCash_more_accessible.3F",
           "enlaces_accesibilidad": [
             "https://wiki.gnucash.org/wiki/FAQ#Q:_I.27m_vision-impaired._How_do_I_make_GnuCash_more_accessible.3F"
           ]
@@ -9704,19 +9704,19 @@
       "categoria": "EMPRESA Y CONTABILIDAD FINANCIERA",
       "categoria_id": "empresa-y-contabilidad-financiera",
       "subcategoria": null,
-      "descripcion": "S o f tw a r e d e a d ministración d e p ro y e c to s .",
+      "descripcion": "Software de administración de proyectos.",
       "pagina": 63,
       "escenarios": [
         {
           "pagina": 63,
           "semaforo": "VERDE",
           "software_libre": "SI",
-          "requiere_registro": "P u e d e e m p le a rse con y s in r e gi st ro .",
-          "otros": "h tt p s : / / s o u rceforge.net/projects/p ro je c t l i b r e /",
+          "requiere_registro": "Puede emplearse con y sin registro.",
+          "otros": "https://sourceforge.net/projects/projectlibre/",
           "enlaces_otros": [
             "https://sourceforge.net/projects/projectlibre/"
           ],
-          "politica_privacidad_texto": "https://www.projectli\nb r e . c o m /privacy- p o li c y /",
+          "politica_privacidad_texto": "https://www.projectlibre.com/privacy-policy/",
           "enlaces_privacidad": [
             "https://www.projectlibre.com/privacy-policy/"
           ],
@@ -9724,8 +9724,8 @@
           "fechas_comprobacion": [
             "09/05/2025"
           ],
-          "profesorado": "Siempre y cuando se use la o p ci ó n s i n r e g i s t r o , n o s e ap o r te n i n g ú n t i p o d e d a t o p e rs o n a l y s e s ig a s i e mpre lo e s ta b l e c id o e n l o s apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "S ie m p r e y c u a n d o s e cu m p l a n , r e fe r id o s a l a l u m n a d o , l o s re q u i si to s e s ta b le c i d o s e n e l a p a rt a do 'PROFESORADO’.",
+          "profesorado": "Siempre y cuando se use la opción sin registro, no se aporte ningún tipo de dato personal y se siga siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -9904,7 +9904,7 @@
       "categoria": "FORMACIÓN Y ORIENTACIÓN LABORAL / FOL",
       "categoria_id": "formacion-y-orientacion-laboral-fol",
       "subcategoria": null,
-      "descripcion": "Herramienta que emplea IA (ChatGPT) para ayudar a c r e a r , a c t ua l i zar y optimizar c u r rí c u l u m s .",
+      "descripcion": "Herramienta que emplea IA (ChatGPT) para ayudar a crear, actualizar y optimizar currículums.",
       "pagina": 64,
       "escenarios": [
         {
@@ -9912,7 +9912,7 @@
           "semaforo": "VERDE",
           "software_libre": "X",
           "requiere_registro": "NO",
-          "otros": "Su página web afirma lo siguiente: ¿Cómo maneja Resume Copilot los datos personales y la privacidad? Resume Copilot prioriza la privacidad y seguridad del usuario. L o s d a t o s p e rs o n a l e s s e m a n e j a n c o n e s t ri c t a c o n fi d e n c ia l ida d y s e utilizan únicamente para la creación de currículums.\nhttps://www.yeschat.ai/es/gpts-2OToA7yqCl-Resume-Copilot",
+          "otros": "Su página web afirma lo siguiente: ¿Cómo maneja Resume Copilot los datos personales y la privacidad? Resume Copilot prioriza la privacidad y seguridad del usuario. Los datos personales se manejan con estricta confidencialidad y se utilizan únicamente para la creación de currículums.\nhttps://www.yeschat.ai/es/gpts-2OToA7yqCl-Resume-Copilot",
           "enlaces_otros": [
             "https://www.yeschat.ai/es/gpts-2OToA7yqCl-Resume-Copilot"
           ],
@@ -9924,8 +9924,8 @@
           "fechas_comprobacion": [
             "12/05/2025"
           ],
-          "profesorado": "Siempre y cuando se use la opción sin registro, no se aporte ningún tipo de dato p e r s o n a l y s e s i g a s i e m p r e l o e s t a b l e c i d o e n l o s a p a r t a d o s ' A d v e r t e n c ia s' y 'Orientaciones'.",
-          "alumnado": "Siempre y cuando se cumplan, referidos al a l u m n a d o , l o s re q u i si to s e s ta b l e c i d o s e n e l a p a rt a do 'P R O F E S O R A D O ’ .",
+          "profesorado": "Siempre y cuando se use la opción sin registro, no se aporte ningún tipo de dato personal y se siga siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -10129,9 +10129,9 @@
             "12/05/2025"
           ],
           "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "S ie m p r e y c u a n d o s e cu m p l a n , r e fe r id o s a l alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
-          "accesibilidad_texto": "h t tp s :/ / fo n t s . go o g l e .c o m / k n o w l e d ge / r e adability_and_acce ssibility/introducing _accessibility_in_ty pography",
+          "accesibilidad_texto": "https://fonts.google.com/knowledge/readability_and_accessibility/introducing_accessibility_in_typography",
           "enlaces_accesibilidad": [
             "https://fonts.google.com/knowledge/readability_and_accessibility/introducing_accessibility_in_typography"
           ]
@@ -10218,7 +10218,7 @@
             "12/05/2025"
           ],
           "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
-          "alumnado": "N O , a u n q u e p u e d e n vis u a l iz a r la s p r o d u c ciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -10788,7 +10788,7 @@
       "categoria": "GENERACIÓN DE VOZ",
       "categoria_id": "generacion-de-voz",
       "subcategoria": null,
-      "descripcion": "Generador de texto a voz a través de IA. En combinación con creación y edición de vídeo ( C li p c h amp es un editor de v íd e o )",
+      "descripcion": "Generador de texto a voz a través de IA. En combinación con creación y edición de vídeo (Clipchamp es un editor de vídeo)",
       "pagina": 68,
       "escenarios": [
         {
@@ -10796,7 +10796,7 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una prueba gratuita previo registro. Transfiere datos fuera de la Unión Europea usando las cláusulas contractuales tipo (SCC). En principio, parece cumplir con la l e g i s la c i ó n e u r o p e a . O f r e c e l a p o s i b il id a d de descargar los vídeos en el equipo o guardarlos en la nube.",
+          "otros": "Ofrece una prueba gratuita previo registro. Transfiere datos fuera de la Unión Europea usando las cláusulas contractuales tipo (SCC). En principio, parece cumplir con la legislación europea. Ofrece la posibilidad de descargar los vídeos en el equipo o guardarlos en la nube.",
           "enlaces_otros": [],
           "politica_privacidad_texto": "https://clipchamp.com/en/privacy/\nhttps://clipchamp.com/en/terms/",
           "enlaces_privacidad": [
@@ -10806,10 +10806,10 @@
           "fechas_comprobacion": [
             "13/05/2025"
           ],
-          "profesorado": "Siempre y cuando los vídeos creados se descarguen directamente en el equipo y se siga siempre lo establecido en l o s a p a r t a d o s ' A d v e r t e n c i a s ' y ' O ri e n t a c i o n e s '.",
+          "profesorado": "Siempre y cuando los vídeos creados se descarguen directamente en el equipo y se siga siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
           "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO'.",
           "embebible": "SI",
-          "accesibilidad_texto": "https://support.microsoft.com/es-es/topic/herramientas-de-accesibilidad-para-clipchamp-\n2 1 0 8 9 1 5 e -f a69- 4 9 8 3 -8 1 1 6 - b213dc4c1dd5",
+          "accesibilidad_texto": "https://support.microsoft.com/es-es/topic/herramientas-de-accesibilidad-para-clipchamp-2108915e-fa69-4983-8116-b213dc4c1dd5",
           "enlaces_accesibilidad": [
             "https://support.microsoft.com/es-es/topic/herramientas-de-accesibilidad-para-clipchamp-2108915e-fa69-4983-8116-b213dc4c1dd5"
           ]
@@ -10858,7 +10858,7 @@
       "categoria": "GENERACIÓN DE VOZ",
       "categoria_id": "generacion-de-voz",
       "subcategoria": null,
-      "descripcion": "G e n e r a d o r d e v o z y pl a ta f o r m a e n lí n e a de conversión de texto a voz gracias a la IA.",
+      "descripcion": "Generador de voz y plataforma en línea de conversión de texto a voz gracias a la IA.",
       "pagina": 69,
       "escenarios": [
         {
@@ -10866,9 +10866,9 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una prueba gratuita previo registro que permite compartir mediante enlace las creaciones, pero no descargarlas en el equipo. T r a n s fi e r e d a to s f u e r a d e l a U E , a u n q u e p a r e c e c u m p l i r c o n la le g i s l a c i ó n e u r o p e a : I f w e p r o c e ss your data outside the EEA, we ensure that the legal requirements of Art. 44 et seq. GDPR for such a third country transfer are met and that your data is processed in accordance with the European data protection standard.",
+          "otros": "Ofrece una prueba gratuita previo registro que permite compartir mediante enlace las creaciones, pero no descargarlas en el equipo. Transfiere datos fuera de la UE, aunque parece cumplir con la legislación europea: If we process your data outside the EEA, we ensure that the legal requirements of Art. 44 et seq. GDPR for such a third country transfer are met and that your data is processed in accordance with the European data protection standard.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h t t p s :/ /www.lovo.ai/p ri v a c y\nhttps://www.lovo.ai/tos",
+          "politica_privacidad_texto": "https://www.lovo.ai/privacy\nhttps://www.lovo.ai/tos",
           "enlaces_privacidad": [
             "https://www.lovo.ai/privacy",
             "https://www.lovo.ai/tos"
@@ -10877,10 +10877,10 @@
           "fechas_comprobacion": [
             "13/05/2025"
           ],
-          "profesorado": "S ig u i e n d o s i e m p r e lo es t a b l e c id o e n lo s apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "S ie m p r e y c u a n d o s e c u m p l a n , r e fe r i d o s a l a l u m n a d o , l o s r e q u i s i tos establecidos en el apartado 'PROFESORADO’.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
-          "accesibilidad_texto": "h t t p s : / / l o v o . a i /post / a i - v o i c e s - a r e - tr a n s f o r m i n g - industries-heres- why-you-need-to- pay-attention",
+          "accesibilidad_texto": "https://lovo.ai/post/ai-voices-are-transforming-industries-heres-why-you-need-to-pay-attention",
           "enlaces_accesibilidad": [
             "https://lovo.ai/post/ai-voices-are-transforming-industries-heres-why-you-need-to-pay-attention"
           ]
@@ -10894,7 +10894,7 @@
       "categoria": "GENERACIÓN DE VOZ",
       "categoria_id": "generacion-de-voz",
       "subcategoria": null,
-      "descripcion": "A p li c a c i ó n d e I A e n l í n e a q ue p e r m it e a l o s u s u a r i o s co n v e r t i r t e x t o e n v o z , a s í c o m o c r e a r v í d e o s y t r a n s c r i p c i o n e s . V o c e s r e a l i s ta s .",
+      "descripcion": "Aplicación de IA en línea que permite a los usuarios convertir texto en voz, así como crear vídeos y transcripciones. Voces realistas.",
       "pagina": 69,
       "escenarios": [
         {
@@ -10902,9 +10902,9 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una prueba gratuita previo r e g i s t r o q u e n o p e r m i t e d e s c a rgar l o s a r c h i v o s d e v í d e o y a u d i o c r e a d o s , p e r o s í l o s g u i o n e s . P a r e c e c u m p l ir c o n l a le g is l a c i ó n e u r o p e a . A p a r e c e a ct iv a e n e l li s ta d o d e l DPF.",
+          "otros": "Ofrece una prueba gratuita previo registro que no permite descargar los archivos de vídeo y audio creados, pero sí los guiones. Parece cumplir con la legislación europea. Aparece activa en el listado del DPF.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h tt p s : / / m u rf . a i/ r e s o ur ce s / p r i v ac y _ p o l i c y / h tt p s : // m u r f. a i/ r e sour ce s / g d p r_ p o l ic y /",
+          "politica_privacidad_texto": "https://murf.ai/resources/privacy_policy/\nhttps://murf.ai/resources/gdpr_policy/",
           "enlaces_privacidad": [
             "https://murf.ai/resources/privacy_policy/",
             "https://murf.ai/resources/gdpr_policy/"
@@ -10913,10 +10913,10 @@
           "fechas_comprobacion": [
             "16/05/2025"
           ],
-          "profesorado": "S ig u i e n d o s i e m p r e lo es t a b l e c id o e n lo s a p a rt a d o s ' A d v e rtencias' y 'O r ie n t a c io n e s ' .",
-          "alumnado": "S ie m p r e y c u a n d o s e cu m p l a n , r e fe r id o s a l a l u m n a d o , l o s re q u i si to s e s ta b l e c i d o s e n e l a p a rt a do 'P R O F E S O R A D O ’ .",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
-          "accesibilidad_texto": "https://murf.ai/blog\n/ te x t -t o - s peech-for- te a c h e r s h tt p s : / / m u r f . a i /b l og / w h a t - i s - t e x t - t o - s p e e c h - a s s i s t i v e - technology",
+          "accesibilidad_texto": "https://murf.ai/blog/text-to-speech-for-teachers\nhttps://murf.ai/blog/what-is-text-to-speech-assistive-technology",
           "enlaces_accesibilidad": [
             "https://murf.ai/blog/text-to-speech-for-teachers"
           ]
@@ -11809,7 +11809,7 @@
       "categoria": "GESTIÓN DE REFERENCIAS BIBLIOGRÁFICAS, GENERACIÓN DE CITAS Y BÚSQUEDA DE LITERATURA ACADÉMICA",
       "categoria_id": "gestion-de-referencias-bibliograficas-generacion-de-citas-y-busqueda-de-literatura-academica",
       "subcategoria": null,
-      "descripcion": "Motor de búsqueda para recursos web académicos gestionado por la Biblioteca de la Universidad de Bielefeld. El índice contiene más de 400 millones de r e g i s tr o s d e m á s d e 1 2 . 0 0 0 p r o v e e d o re s d e c o n t e n i d o . Se puede acceder de forma g r a t u i t a ( a c c e s o a b ie r to ) a lo s t e x t o s c o m p l e t o s d e aproximadamente el 60 % de los registros indexados.",
+      "descripcion": "Motor de búsqueda para recursos web académicos gestionado por la Biblioteca de la Universidad de Bielefeld. El índice contiene más de 400 millones de registros de más de 12.000 proveedores de contenido. Se puede acceder de forma gratuita (acceso abierto) a los textos completos de aproximadamente el 60 % de los registros indexados.",
       "pagina": 73,
       "escenarios": [
         {
@@ -11836,7 +11836,7 @@
           "requiere_registro": "SÍ",
           "otros": "",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://www.base-search.net/about/en/\np rivacy_statement.ph p",
+          "politica_privacidad_texto": "https://www.base-search.net/about/en/privacy_statement.php",
           "enlaces_privacidad": [
             "https://www.base-search.net/about/en/privacy_statement.php"
           ],
@@ -11844,10 +11844,10 @@
           "fechas_comprobacion": [
             "15/01/2026"
           ],
-          "profesorado": "Si el docente decide usar esta aplicación, lo hará a t í t u lo in d i vi d u a l y b a jo s u r e s p o n s a b i li d a d c o m o persona mayor de edad.",
-          "alumnado": "N O , a u n q u e p u e d e n vis u a l iz a r la s p r o d u c ciones creadas por el docente, s i e m p r e y c u a n d o n o te n g a n q u e r e g is t r a rs e n i c o m p a rt ir sus datos personales.",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
-          "accesibilidad_texto": "https://www.uni-\nb i e l e f e ld .d e / u b / b a r r i e r e f re ih e it / b a s e /",
+          "accesibilidad_texto": "https://www.uni-bielefeld.de/ub/barrierefreiheit/base/",
           "enlaces_accesibilidad": []
         }
       ]
@@ -12905,7 +12905,7 @@
           "fechas_comprobacion": [
             "19/05/2025"
           ],
-          "profesorado": "Siempre y cuando no se aporte ningún tipo de dato personal y se siga siempre lo establecido en los a p a rt a d o s ' A d v e rtencias' y 'O r ie n t a c io n e s ' .",
+          "profesorado": "Siempre y cuando no se aporte ningún tipo de dato personal y se siga siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
           "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
@@ -13090,7 +13090,7 @@
       "categoria": "GRÁFICAS Y ANÁLISIS DE DATOS",
       "categoria_id": "graficas-y-analisis-de-datos",
       "subcategoria": null,
-      "descripcion": "El apartado Resources perteneciente al sitio Data Education in Schools (proyecto de la Universidad de Edimburgo orientado a m e j o r a r l a a lfa b e t i z a c ió n e n da t o s e n l á m b it o e d u c a t i vo no universitario) ofrece una biblioteca de recursos gratuitos para apoyar la alfabetización en datos. Los materiales son adaptables y se pueden buscar empleando diferentes filtros.",
+      "descripcion": "El apartado Resources perteneciente al sitio Data Education in Schools (proyecto de la Universidad de Edimburgo orientado a mejorar la alfabetización en datos en l ámbito educativo no universitario) ofrece una biblioteca de recursos gratuitos para apoyar la alfabetización en datos. Los materiales son adaptables y se pueden buscar empleando diferentes filtros.",
       "pagina": 79,
       "escenarios": [
         {
@@ -13108,10 +13108,10 @@
           "fechas_comprobacion": [
             "30/01/2026"
           ],
-          "profesorado": "S ig u i e n d o s i e m p r e lo es t a b l e c id o e n lo s apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "Siempre y cuando se c u m p la n , r e fe r i d o s a l a lu m n a d o , lo s r e q u i s i tos establecidos en el apartado 'PROFESORADO’.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
-          "accesibilidad_texto": "h t tp s : // d a ta s c h o o l s .e d u c a t io n /a c c e s s i bility/",
+          "accesibilidad_texto": "https://dataschools.education/accessibility/",
           "enlaces_accesibilidad": [
             "https://dataschools.education/accessibility/"
           ]
@@ -13334,9 +13334,9 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una Trial Version gratuita para estudiantes previo registro. También ofrece una Learning Edition gratuita para estudiantes, previo registro. Servidores en EE.UU. La política de privacidad dice lo siguiente: To t h e e x t e n t r e q u i r e d b y a p p li c a b le l a w , w h e n w e tr a n s f e r yo u r p e r s o n a l in f o r m a t i o n t o r e c i p ie n t s in other countries, we will take adequate measures to protect that information. En principio, parece cumplir con la legislación europea pero, al poderse quizás admitir diferentes lecturas, es especialmente necesario en este caso cumplir con el requisito de consulta previa a la Delegación de Protección de Datos.",
+          "otros": "Ofrece una Trial Version gratuita para estudiantes previo registro. También ofrece una Learning Edition gratuita para estudiantes, previo registro. Servidores en EE.UU. La política de privacidad dice lo siguiente: To the extent required by applicable law, when we transfer your personal information to recipients in other countries, we will take adequate measures to protect that information. En principio, parece cumplir con la legislación europea pero, al poderse quizás admitir diferentes lecturas, es especialmente necesario en este caso cumplir con el requisito de consulta previa a la Delegación de Protección de Datos.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://www.originlab.com/index.aspx?go=\nC o mpany/PrivacyPoli cy\nhttps://www.originlab.com/index.aspx?go=Company/TermsOfUse",
+          "politica_privacidad_texto": "https://www.originlab.com/index.aspx?go=Company/PrivacyPolicy\nhttps://www.originlab.com/index.aspx?go=Company/TermsOfUse",
           "enlaces_privacidad": [
             "https://www.originlab.com/index.aspx?go=Company/PrivacyPolicy",
             "https://www.originlab.com/index.aspx?go=Company/TermsOfUse"
@@ -13345,10 +13345,10 @@
           "fechas_comprobacion": [
             "16/01/2026"
           ],
-          "profesorado": "S ig u i e n d o s i e m p r e lo es t a b l e c id o e n lo s apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "S ie m p r e y c u a n d o s e c u m p l a n , r e fe r i d o s a l a l u m n a d o , l o s r e q u i s i tos establecidos en el apartado 'PROFESORADO’.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
-          "accesibilidad_texto": "h tt p s : //w w w . o r ig i n l ab . c o m /p d fs / 5 0 8 _ c ompliance.pdf",
+          "accesibilidad_texto": "https://www.originlab.com/pdfs/508_compliance.pdf",
           "enlaces_accesibilidad": [
             "https://www.originlab.com/pdfs/508_compliance.pdf"
           ]
@@ -13461,7 +13461,7 @@
       "categoria": "IDIOMAS Y REVISIÓN DE TEXTOS",
       "categoria_id": "idiomas-y-revision-de-textos",
       "subcategoria": null,
-      "descripcion": "Juego en línea, que puede emplearse en distintos idiomas, que consiste en un genio que puede adivinar e n q u é p e r s o n a je e s t á p e n s a n d o e l u s u a r i o , s ea real o no, a través de una serie de preguntas.",
+      "descripcion": "Juego en línea, que puede emplearse en distintos idiomas, que consiste en un genio que puede adivinar en qué personaje está pensando el usuario, sea real o no, a través de una serie de preguntas.",
       "pagina": 81,
       "escenarios": [
         {
@@ -13479,8 +13479,8 @@
           "fechas_comprobacion": [
             "05/02/2026"
           ],
-          "profesorado": "Siguiendo siempre lo establecido en los a p a rt a d o s ' A d v e rtencias' y 'O r ie n t a c io n e s ' .",
-          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos e s ta b l e ci d os en e l apartado 'P R O F E S O R A D O ’.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -14874,7 +14874,7 @@
       "categoria": "IMÁGENES INTERACTIVAS Y 360",
       "categoria_id": "imagenes-interactivas-y-360",
       "subcategoria": null,
-      "descripcion": "Herramienta de código abierto para crear contenido i n t e r a c ti v o y a tr a c t iv o ( in c l u y e n d o i m á g e n e s 360)",
+      "descripcion": "Herramienta de código abierto para crear contenido interactivo y atractivo (incluyendo imágenes 360)",
       "pagina": 88,
       "escenarios": [
         {
@@ -14895,7 +14895,7 @@
           "profesorado": "Siempre y cuando se use la opción sin registro, no se aporte ningún tipo de dato personal y se siga siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
           "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
-          "accesibilidad_texto": "https://help.h5p.com/hc/en-us/articles/750564\n9 0 7 2 7 97-Content- ty p e s - recommendations",
+          "accesibilidad_texto": "https://help.h5p.com/hc/en-us/articles/7505649072797-Content-types-recommendations",
           "enlaces_accesibilidad": [
             "https://help.h5p.com/hc/en-us/articles/7505649072797-Content-types-recommendations"
           ]
@@ -15012,7 +15012,7 @@
       "categoria": "INFOGRAFÍAS",
       "categoria_id": "infografias",
       "subcategoria": null,
-      "descripcion": "Plataforma de diseño y c o m un icación visual asistida p o r IA .",
+      "descripcion": "Plataforma de diseño y comunicación visual asistida por IA.",
       "pagina": 88,
       "escenarios": [
         {
@@ -15020,9 +15020,9 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Canva ofrece varias herramientas q ue e m p le a n I A : Te x t o a Im a g e n , Ed ic ió n M á g ic a , D is e ñ o M á gi c o y Traductor. Aparece activa en el listado del DPA.",
+          "otros": "Canva ofrece varias herramientas que emplean IA: Texto a Imagen, Edición Mágica, Diseño Mágico y Traductor. Aparece activa en el listado del DPA.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://www.canva.com/es_es/politicas-\nl e g a le s /privacy- p o l ic y/\nhttps://www.canva.com/policies/data-privacy-framework-statement/",
+          "politica_privacidad_texto": "https://www.canva.com/es_es/politicas-legales/privacy-policy/\nhttps://www.canva.com/policies/data-privacy-framework-statement/",
           "enlaces_privacidad": [
             "https://www.canva.com/es_es/politicas-legales/privacy-policy/",
             "https://www.canva.com/policies/data-privacy-framework-statement/"
@@ -15031,10 +15031,10 @@
           "fechas_comprobacion": [
             "17/06/2025"
           ],
-          "profesorado": "S ig u i e n d o s i e m p r e lo es t a b l e c id o e n lo s apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "S ie m p r e y c u a n d o s e cu m p l a n , r e fe r id o s a l a l u m n a d o , l o s re q u i si to s e s ta b le c i d o s e n e l a p a rt a do 'PROFESORADO’.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
-          "accesibilidad_texto": "https://www.canva.com/help/canva-accessibility-\nf e a tu r e s / h t tp s: / / w w w.canva. com/accessibility/\nhttps://www.canva.com/help/using-design-accessibility/",
+          "accesibilidad_texto": "https://www.canva.com/help/canva-accessibility-features/\nhttps://www.canva.com/accessibility/\nhttps://www.canva.com/help/using-design-accessibility/",
           "enlaces_accesibilidad": [
             "https://www.canva.com/help/canva-accessibility-features/",
             "https://www.canva.com/accessibility/",
@@ -15606,7 +15606,7 @@
       "categoria": "INTELIGENCIA ARTIFICIAL / IA",
       "categoria_id": "inteligencia-artificial-ia",
       "subcategoria": "Animación, dibujo, imágenes (creación y/o modificación)",
-      "descripcion": "H er ra m i e n ta e n lín e a q ue em p le a I A p a r a i n te r c a m b iar caras en vídeos.",
+      "descripcion": "Herramienta en línea que emplea IA para intercambiar caras en vídeos.",
       "pagina": 91,
       "escenarios": [
         {
@@ -15614,11 +15614,11 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "L a p o lí ti c a d e privacidad parece in c o m p l e ta .\nhttps://aisaver.io/face-swap-video",
+          "otros": "La política de privacidad parece incompleta.\nhttps://aisaver.io/face-swap-video",
           "enlaces_otros": [
             "https://aisaver.io/face-swap-video"
           ],
-          "politica_privacidad_texto": "h tt p s : // a is a ver.io/priv ac y - p o l ic y h t tp s :/ / a i s aver.io/ter m s -o f - u s e",
+          "politica_privacidad_texto": "https://aisaver.io/privacy-policy\nhttps://aisaver.io/terms-of-use",
           "enlaces_privacidad": [
             "https://aisaver.io/privacy-policy",
             "https://aisaver.io/terms-of-use"
@@ -15627,8 +15627,8 @@
           "fechas_comprobacion": [
             "17/06/2025"
           ],
-          "profesorado": "S i e l d o c e n t e d e c i d e u s a r e s ta a p l i c a c i ó n , l o h a r á a tí t u l o i n d iv i d u a l y b a j o s u r e s p o n sa bi li d a d c o m o p e r so n a m a y o r d e e da d .",
-          "alumnado": "NO, aunque pueden v i s u a l iz a r la s p r o d u c c i o n es c r e a d a s p o r e l d o c e n t e , s i e m p r e y c u a n d o n o te n g a n q u e r e g is t r a rs e n i c o m p a rt ir sus datos personales.",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -15840,7 +15840,7 @@
       "categoria": "INTELIGENCIA ARTIFICIAL / IA",
       "categoria_id": "inteligencia-artificial-ia",
       "subcategoria": "Animación, dibujo, imágenes (creación y/o modificación)",
-      "descripcion": "H e r r a m i e n t a e n l í n e a p a r a la g e n e r a c i ó n d e i m á g e n e s c o n in t e li g e n c i a a rt i f i c ia l q u e combina modelos 3D con IA generativa.",
+      "descripcion": "Herramienta en línea para la generación de imágenes con inteligencia artificial que combina modelos 3D con IA generativa.",
       "pagina": 92,
       "escenarios": [
         {
@@ -15848,9 +15848,9 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una prueba gratuita previo registro. L a p o l ít i c a d e p r iv a c i d a d n o p a r e c e o f re c e r t o d a l a in f o rm ación necesaria para cerciorarse de que se cumple con la normativa vigente en materia de protección de datos.",
+          "otros": "Ofrece una prueba gratuita previo registro. La política de privacidad no parece ofrecer toda la información necesaria para cerciorarse de que se cumple con la normativa vigente en materia de protección de datos.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h t tp s :/ / c g d re am.ai/pr iv a cy - p o l ic y\nhttps://cgdream.ai/terms-of-service",
+          "politica_privacidad_texto": "https://cgdream.ai/privacy-policy\nhttps://cgdream.ai/terms-of-service",
           "enlaces_privacidad": [
             "https://cgdream.ai/privacy-policy"
           ],
@@ -15858,8 +15858,8 @@
           "fechas_comprobacion": [
             "18/06/2025"
           ],
-          "profesorado": "S i e l d o c e n t e d e c i d e u s a r e s ta a p l i c a c i ó n , l o h a r á a tí t u l o i n d iv i d u a l y b a j o s u responsabilidad como persona mayor de edad.",
-          "alumnado": "NO, aunque pueden v i s u a l iz a r la s p r o d u c c i o n es c r e a d a s p o r e l d o c e n t e , siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -16573,7 +16573,7 @@
       "categoria": "INTELIGENCIA ARTIFICIAL / IA",
       "categoria_id": "inteligencia-artificial-ia",
       "subcategoria": "Animación, dibujo, imágenes (creación y/o modificación)",
-      "descripcion": "H e r r a m ie n t a p a r a cr e a r y ed i t a r im á g e n e s e m p l e a n do IA.",
+      "descripcion": "Herramienta para crear y editar imágenes empleando IA.",
       "pagina": 95,
       "escenarios": [
         {
@@ -16581,9 +16581,9 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una prueba gratuita limitada previo registro. Las imágenes creadas y/o modificadas aparecen con una marca de agua. La política de privacidad m e n c i o n a e l R G P D , a u n q u e n o e s p e c i f i c a l o s m e c a n i s m o s p o r los q u e s e r e a l i z a l a t r a n s f e r e n c ia internacional de datos a EE.UU. Tras consulta al proveedor del servicio, siguen sin especificarse los mecanismos empleados, por lo que es especialmente necesario en este caso cumplir con el requisito de consulta previa a la Delegación de Protección de Datos.",
+          "otros": "Ofrece una prueba gratuita limitada previo registro. Las imágenes creadas y/o modificadas aparecen con una marca de agua. La política de privacidad menciona el RGPD, aunque no especifica los mecanismos por los que se realiza la transferencia internacional de datos a EE.UU. Tras consulta al proveedor del servicio, siguen sin especificarse los mecanismos empleados, por lo que es especialmente necesario en este caso cumplir con el requisito de consulta previa a la Delegación de Protección de Datos.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h t tp s: / / m a g i c s t u d i o.c o m /p r i v ac y - p o l i c y\nhttps://magicstudio.com/terms-of-service",
+          "politica_privacidad_texto": "https://magicstudio.com/privacy-policy\nhttps://magicstudio.com/terms-of-service",
           "enlaces_privacidad": [
             "https://magicstudio.com/privacy-policy",
             "https://magicstudio.com/terms-of-service"
@@ -16592,8 +16592,8 @@
           "fechas_comprobacion": [
             "24/10/2025"
           ],
-          "profesorado": "S ig u i e n d o s i e m p r e lo es t a b l e c id o e n lo s apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "S ie m p r e y c u a n d o s e c u m p l a n , r e fe r i d o s a l a l u m n a d o , l o s r e q u i s i tos establecidos en el apartado 'PROFESORADO’.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -17037,7 +17037,7 @@
       "categoria": "INTELIGENCIA ARTIFICIAL / IA",
       "categoria_id": "inteligencia-artificial-ia",
       "subcategoria": "Animación, dibujo, imágenes (creación y/o modificación)",
-      "descripcion": "Suite de creación de contenido impulsada por IA. Ayuda a los usuarios a crear y e d i t a r c o n t e n i d o a t ra v és d e u n a a m p l ia g a m a d e h e r r a m i e n t a s c o m o : generación de texto a imagen, borrado y reemplazo, entrenamiento de IA, texto a gradación de color, etc.",
+      "descripcion": "Suite de creación de contenido impulsada por IA. Ayuda a los usuarios a crear y editar contenido a través de una amplia gama de herramientas como: generación de texto a imagen, borrado y reemplazo, entrenamiento de IA, texto a gradación de color, etc.",
       "pagina": 97,
       "escenarios": [
         {
@@ -17045,9 +17045,9 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una prueba gratuita previo registro. L a p o l ít i c a d e p r i v a c i d a d n o p a r e c e o f r e c e r l a i n f o r m a c ió n n e c e s a r ia p a r a s a b e r q u é tratamiento se realiza respecto a los datos de carácter personal. Por tanto, no se puede asegurar que cumpla con la legislación europea.",
+          "otros": "Ofrece una prueba gratuita previo registro. La política de privacidad no parece ofrecer la información necesaria para saber qué tratamiento se realiza respecto a los datos de carácter personal. Por tanto, no se puede asegurar que cumpla con la legislación europea.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h t tp s : / /r u n w a y m l . co m / p ri v a c y -p o l ic y /\nhttps://runwayml.com/terms-of-use/",
+          "politica_privacidad_texto": "https://runwayml.com/privacy-policy/\nhttps://runwayml.com/terms-of-use/",
           "enlaces_privacidad": [
             "https://runwayml.com/privacy-policy/",
             "https://runwayml.com/terms-of-use/"
@@ -17056,8 +17056,8 @@
           "fechas_comprobacion": [
             "20/06/2025"
           ],
-          "profesorado": "S i e l d o c e n t e d e c i d e u s a r e s ta a p l i c a c i ó n , l o h a r á a tí t u l o i n d iv i d u a l y b a j o s u responsabilidad como persona mayor de edad.",
-          "alumnado": "N O , a u n q u e p u e d e n v i s u a l iz a r la s p r o d u c c i o n es c r e a d a s p o r e l d o c e n t e , siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -17104,7 +17104,7 @@
       "categoria": "INTELIGENCIA ARTIFICIAL / IA",
       "categoria_id": "inteligencia-artificial-ia",
       "subcategoria": "Animación, dibujo, imágenes (creación y/o modificación)",
-      "descripcion": "Herramienta en línea que emplea IA para generar i m á g e n e s f o t o r realistas a p a rt ir d e te x t o .",
+      "descripcion": "Herramienta en línea que emplea IA para generar imágenes fotorrealistas a partir de texto.",
       "pagina": 97,
       "escenarios": [
         {
@@ -17112,11 +17112,11 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una prueba gratuita limitada previo registro. Las creaciones muestran una marca de agua. h tt p s :// s tablediffusionweb.com/e s# d e m o La política de privacidad es incompleta.",
+          "otros": "Ofrece una prueba gratuita limitada previo registro. Las creaciones muestran una marca de agua.\nhttps://stablediffusionweb.com/es#demo\nLa política de privacidad es incompleta.",
           "enlaces_otros": [
             "https://stablediffusionweb.com/es#demo"
           ],
-          "politica_privacidad_texto": "https://stablediffusionweb.com/es/private-policy\nh t tp s : / / st ab le d i ff u s io n w e b . c o m /e s /t e r m s - and-conditions",
+          "politica_privacidad_texto": "https://stablediffusionweb.com/es/private-policy\nhttps://stablediffusionweb.com/es/terms-and-conditions",
           "enlaces_privacidad": [
             "https://stablediffusionweb.com/es/private-policy"
           ],
@@ -17124,8 +17124,8 @@
           "fechas_comprobacion": [
             "20/06/2025"
           ],
-          "profesorado": "Si el docente decide usar esta aplicación, lo hará a t í t u lo in d i vi d u a l y b a jo s u r e s p o n s a b i li d a d c o m o p e r s o n a m a y o r d e e d a d .",
-          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, s i e m p r e y c u a n d o n o te n g a n q u e r e g is t r a rs e n i c o m p a rt ir sus datos personales.",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -18320,7 +18320,7 @@
       "categoria": "INTELIGENCIA ARTIFICIAL / IA",
       "categoria_id": "inteligencia-artificial-ia",
       "subcategoria": "Ayuda para docentes (creación unidades didácticas, unidades de programación, actividades, gamificación, protección de datos...)",
-      "descripcion": "Asistente de enseñanza en l ín e a y p o t e n c i a d o p o r I A q u e a y u d a a lo s d o c e n t e s a cr e a r d if e re n t e s r e c u r s o s .",
+      "descripcion": "Asistente de enseñanza en línea y potenciado por IA que ayuda a los docentes a crear diferentes recursos.",
       "pagina": 104,
       "escenarios": [
         {
@@ -18328,9 +18328,9 @@
           "semaforo": "ROJO",
           "software_libre": "SI",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece la posibilidad de utilizar las herramientas de IA para docentes, l l a m a d a s K h a n m i go T o o l s , p revio r e g is tr o y d e fo r m a g r a t u i ta . L a p o l ít i c a d e p r iv a c i d a d n o p a r e c e o f r e c e r t o d a l a i n f o r m a ci ó n n e c e s a r i a p a r a c e r c i o r a r s e d e q u e se c u m p l e c o n l a l e g i s l a c i ó n vigente en materia de protección de datos.",
+          "otros": "Ofrece la posibilidad de utilizar las herramientas de IA para docentes, llamadas Khanmigo Tools, previo registro y de forma gratuita. La política de privacidad no parece ofrecer toda la información necesaria para cerciorarse de que se cumple con la legislación vigente en materia de protección de datos.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://www.khanacademy.org/about/privacy-policy\nh t t p s : / / w w w . k h a n a c a d e m y . o r g /a b o u t / d o c s / k h a n - a c a d e m y - te r m s - o f - service#international -use",
+          "politica_privacidad_texto": "https://www.khanacademy.org/about/privacy-policy\nhttps://www.khanacademy.org/about/docs/khan-academy-terms-of-service#international-use",
           "enlaces_privacidad": [
             "https://www.khanacademy.org/about/privacy-policy",
             "https://www.khanacademy.org/about/docs/khan-academy-terms-of-service#international-use"
@@ -18339,10 +18339,10 @@
           "fechas_comprobacion": [
             "09/07/2025"
           ],
-          "profesorado": "Si el docente decide usar e s t a a p l i c a c i ó n , l o h a r á a t í t u lo i n d i v i d u a l y b a j o s u r e s p o n s a b i li d a d c o m o p e r s o n a m a y o r d e e d a d .",
-          "alumnado": "N O , a u n q u e p u e d e n vis u a l iz a r la s p r o d u c ciones c r e a d a s p o r e l d o c e n t e , s i e m p r e y c u a n d o n o t e n g a n q u e r e g is t r a r s e n i c o m p a rt ir s u s d a t o s p e rs o n a l e s .",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
-          "accesibilidad_texto": "https://www.khana\nc a d e m y . o r g / about/ a c c e s s ib il i t y - st a t e m e n t",
+          "accesibilidad_texto": "https://www.khanacademy.org/about/accessibility-statement",
           "enlaces_accesibilidad": [
             "https://www.khanacademy.org/about/accessibility-statement"
           ]
@@ -19395,7 +19395,7 @@
       "categoria": "INTELIGENCIA ARTIFICIAL / IA",
       "categoria_id": "inteligencia-artificial-ia",
       "subcategoria": "Chat y chatbot",
-      "descripcion": "Plataforma en línea para crear chatbots basados en IA que representan personajes c o n l o s q u e p o d e r i n t e r a c t u a r . E s ta a p l i c a c i ón d e c h a t b o t d e m o d e l o d e lenguaje neuronal genera respuestas de texto similares a las humanas y permite participar en conversaciones contextuales.",
+      "descripcion": "Plataforma en línea para crear chatbots basados en IA que representan personajes con los que poder interactuar. Esta aplicación de chatbot de modelo de lenguaje neuronal genera respuestas de texto similares a las humanas y permite participar en conversaciones contextuales.",
       "pagina": 109,
       "escenarios": [
         {
@@ -19403,9 +19403,9 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Previo registro, se puede interactuar con un personaje ya creado o bien crear un personaje propio para poder interactuar después. Dicha interacción puede realizarse por escrito a través de un chat o bien a través de una llamada que permite interactuar oralmente. Es importante tener en cuenta que la voz es un dato de carácter personal. El proveedor del servicio parece tener su sede en EE.UU., no aparece en el listado del DPF y su p o l ít i c a d e p r i v a c i d a d a f i r m a lo s i g u i e n t e : F o r d a t a s u b j e c ts i n t he E E A a n d t h e U K , w h e re y o u r information is stored and processed in a country outside the EEA and the UK that is not regarded under local law as ensuring an adequate level of protection for personal data, we have put in place appropriate safeguards to protect data in accordance with applicable legal requirements. No funciona el enlace para contactar con el Delegado/a de protección de datos para realizar consulta sobre los mecanismos empleados para la transferencia internacional de datos, que no se especifican en la política de privacidad.",
+          "otros": "Previo registro, se puede interactuar con un personaje ya creado o bien crear un personaje propio para poder interactuar después. Dicha interacción puede realizarse por escrito a través de un chat o bien a través de una llamada que permite interactuar oralmente. Es importante tener en cuenta que la voz es un dato de carácter personal. El proveedor del servicio parece tener su sede en EE.UU., no aparece en el listado del DPF y su política de privacidad afirma lo siguiente: For data subjects in the EEA and the UK, where your information is stored and processed in a country outside the EEA and the UK that is not regarded under local law as ensuring an adequate level of protection for personal data, we have put in place appropriate safeguards to protect data in accordance with applicable legal requirements. No funciona el enlace para contactar con el Delegado/a de protección de datos para realizar consulta sobre los mecanismos empleados para la transferencia internacional de datos, que no se especifican en la política de privacidad.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h t t p s :/ /character.ai/p ri v a c y\nhttps://character.ai/regional",
+          "politica_privacidad_texto": "https://character.ai/privacy\nhttps://character.ai/regional",
           "enlaces_privacidad": [
             "https://character.ai/privacy",
             "https://character.ai/regional"
@@ -19414,8 +19414,8 @@
           "fechas_comprobacion": [
             "31/07/2025"
           ],
-          "profesorado": "S i e l d o c e n t e d e c i d e u s a r e s ta a p l i c a c i ó n , l o h a r á a tí t u l o i n d iv i d u a l y b a j o s u responsabilidad como persona mayor de edad.",
-          "alumnado": "N O , a u n q u e p u e d e n v i s u a l iz a r la s p r o d u c c i o n es c r e a d a s p o r e l d o c e n t e , siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -20925,7 +20925,7 @@
       "categoria": "INTELIGENCIA ARTIFICIAL / IA",
       "categoria_id": "inteligencia-artificial-ia",
       "subcategoria": "Generación de texto y contenido",
-      "descripcion": "Plataforma de IA entrenada para crear texto original en español. También genera imágenes, t r a n s c r i p c io n e s d e t e x t o a p a r t i r d e a u d io y o fr e c e u n c h a t b o t q u e a y u d a a l a n á li sis de documentos.",
+      "descripcion": "Plataforma de IA entrenada para crear texto original en español. También genera imágenes, transcripciones de texto a partir de audio y ofrece un chatbot que ayuda al análisis de documentos.",
       "pagina": 116,
       "escenarios": [
         {
@@ -20933,9 +20933,9 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una prueba gratuita, previo registro. La política de privacidad no parece ofrecer toda la información n e ce s a r i a p a r a s a b e r s i s e c u m p l e c o n l a le g i s l a c ió n e u r o p e a . N o s e h a b l a e s p e c íf i c a m e n t e d e d ó n d e se almacenan los datos, cómo se procesan, etc.",
+          "otros": "Ofrece una prueba gratuita, previo registro. La política de privacidad no parece ofrecer toda la información necesaria para saber si se cumple con la legislación europea. No se habla específicamente de dónde se almacenan los datos, cómo se procesan, etc.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://www.redacta.me/politica-de-privacidad/\nh t t p s : / / w w w . r e dacta. m e / t e r m i n o s - y - co n d i c io n e s /",
+          "politica_privacidad_texto": "https://www.redacta.me/politica-de-privacidad/\nhttps://www.redacta.me/terminos-y-condiciones/",
           "enlaces_privacidad": [
             "https://www.redacta.me/politica-de-privacidad/",
             "https://www.redacta.me/terminos-y-condiciones/"
@@ -20944,8 +20944,8 @@
           "fechas_comprobacion": [
             "06/08/2025"
           ],
-          "profesorado": "Si el docente decide usar esta aplicación, lo hará a t í t u lo in d i vi d u a l y b a jo s u r e s p o n s a b i li d a d c o m o p e r s o n a m a y o r d e e d a d .",
-          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, s i e m p r e y c u a n d o n o t e n g a n q u e r e g is t r a rs e n i c o m p a rt ir s u s d a t o s p e rs o n a l e s .",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -23208,7 +23208,7 @@
       "categoria": "INTELIGENCIA ARTIFICIAL / IA",
       "categoria_id": "inteligencia-artificial-ia",
       "subcategoria": "Varios",
-      "descripcion": "Widget que lleva la potencia d e l a I A a l o s p a n e le s cr e a d o s c o n F i g m a .",
+      "descripcion": "Widget que lleva la potencia de la IA a los paneles creados con Figma.",
       "pagina": 125,
       "escenarios": [
         {
@@ -23218,7 +23218,7 @@
           "requiere_registro": "SÍ",
           "otros": "",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://www.figma.com/privacy/\nh t tp s : // w w w . figma.co m / le g a l /d p a/",
+          "politica_privacidad_texto": "https://www.figma.com/privacy/\nhttps://www.figma.com/legal/dpa/",
           "enlaces_privacidad": [
             "https://www.figma.com/privacy/",
             "https://www.figma.com/legal/dpa/"
@@ -23227,10 +23227,10 @@
           "fechas_comprobacion": [
             "04/08/2025"
           ],
-          "profesorado": "Siguiendo siempre lo establecido en los a p a rt a d o s ' A d v e rtencias' y 'O r ie n t a c io n e s ' .",
-          "alumnado": "Siempre y cuando se cumplan, referidos al a l u m n a d o , l o s re q u i si to s e s ta b l e c i d o s e n e l a p a rt a do 'P R O F E S O R A D O ’ .",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
-          "accesibilidad_texto": "https://help.figma.com/hc/en-us/articles/7810391964695-Accessible-\np r o to t ypes-in- Fi g m a\nhttps://www.figma.com/community/accessibility",
+          "accesibilidad_texto": "https://help.figma.com/hc/en-us/articles/7810391964695-Accessible-prototypes-in-Figma\nhttps://www.figma.com/community/accessibility",
           "enlaces_accesibilidad": [
             "https://help.figma.com/hc/en-us/articles/7810391964695-Accessible-prototypes-in-Figma"
           ]
@@ -23477,7 +23477,7 @@
       "categoria": "INTELIGENCIA ARTIFICIAL / IA",
       "categoria_id": "inteligencia-artificial-ia",
       "subcategoria": "Varios",
-      "descripcion": "H e r ra m ie n t a q u e e m p l e a IA pa r a m e jo r a r y fa c il ita r la r e d a c c ió n d e l os trabajos de in v e s t ig a c i ó n .",
+      "descripcion": "Herramienta que emplea IA para mejorar y facilitar la redacción de los trabajos de investigación.",
       "pagina": 127,
       "escenarios": [
         {
@@ -23485,9 +23485,9 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "O f r e c e u na versión gratuita, previo re g i s tr o . L a p o lí ti c a d e privacidad es in c o m p l e ta .",
+          "otros": "Ofrece una versión gratuita, previo registro. La política de privacidad es incompleta.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h t tp s : // j enni.ai/privac y- p o li c y\nhttps://jenni.ai/terms",
+          "politica_privacidad_texto": "https://jenni.ai/privacy-policy\nhttps://jenni.ai/terms",
           "enlaces_privacidad": [
             "https://jenni.ai/privacy-policy",
             "https://jenni.ai/terms"
@@ -23496,8 +23496,8 @@
           "fechas_comprobacion": [
             "04/08/2025"
           ],
-          "profesorado": "S i e l d o c e n t e d e c i d e u s a r e s ta a p l i c a c i ó n , l o h a r á a tí t u l o i n d iv i d u a l y b a j o s u r e s p o n sa bi li d a d c o m o p e r so n a m a y o r d e e da d .",
-          "alumnado": "NO, aunque pueden v i s u a l iz a r la s p r o d u c c i o n es c r e a d a s p o r e l d o c e n t e , s i e m p r e y c u a n d o n o te n g a n q u e r e g is t r a rs e n i c o m p a rt ir sus datos personales.",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -26122,7 +26122,7 @@
       "categoria": "LLUVIA DE IDEAS",
       "categoria_id": "lluvia-de-ideas",
       "subcategoria": null,
-      "descripcion": "Colección de herramientas que permiten la lluvia de i d e a s c o l a b o r a t i v a , la p l a n if i c a c i ó n y l a to m a de d e c is i o n e s .",
+      "descripcion": "Colección de herramientas que permiten la lluvia de ideas colaborativa, la planificación y la toma de decisiones.",
       "pagina": 138,
       "escenarios": [
         {
@@ -26130,9 +26130,9 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una prueba gratuita previo registro. La política de privacidad habla del RGPD y de que se transfieren datos por diversas partes del m u n d o d e f o r m a s e g u r a , p e r o n o e s p e c i f i c a c ó m o . P o r t a n t o , e s e s p e c i a l m e n t e n e c e s a ri o e n e s t e caso cumplir con el requisito de consulta previa a la Delegación de Protección de Datos.",
+          "otros": "Ofrece una prueba gratuita previo registro. La política de privacidad habla del RGPD y de que se transfieren datos por diversas partes del mundo de forma segura, pero no especifica cómo. Por tanto, es especialmente necesario en este caso cumplir con el requisito de consulta previa a la Delegación de Protección de Datos.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://dotstorming.com/privacy\nh t tp s :/ / do tstorming.c o m /t e r m s",
+          "politica_privacidad_texto": "https://dotstorming.com/privacy\nhttps://dotstorming.com/terms",
           "enlaces_privacidad": [
             "https://dotstorming.com/privacy",
             "https://dotstorming.com/terms"
@@ -26141,8 +26141,8 @@
           "fechas_comprobacion": [
             "27/08/2025"
           ],
-          "profesorado": "Siguiendo siempre lo establecido en los a p a rt a d o s ' A d v e rtencias' y 'O r ie n t a c io n e s ' .",
-          "alumnado": "Siempre y cuando se cumplan, referidos al a l u m n a d o , l o s re q u i si to s e s ta b l e c i d o s e n e l a p a rt a do 'P R O F E S O R A D O ’ .",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -27014,11 +27014,11 @@
           "semaforo": "VERDE",
           "software_libre": "X",
           "requiere_registro": "NO",
-          "otros": "h tt p s: / / decopy.ai/es/ai-math- so l ve r /",
+          "otros": "https://decopy.ai/es/ai-math-solver/",
           "enlaces_otros": [
             "https://decopy.ai/es/ai-math-solver/"
           ],
-          "politica_privacidad_texto": "h tt p s : // d e c opy.ai/priv ac y - p o l ic y /",
+          "politica_privacidad_texto": "https://decopy.ai/privacy-policy/",
           "enlaces_privacidad": [
             "https://decopy.ai/privacy-policy/"
           ],
@@ -27026,7 +27026,7 @@
           "fechas_comprobacion": [
             "01/09/2025"
           ],
-          "profesorado": "Siguiendo siempre lo e st a b le c i d o e n lo s ap a r ta d o s 'A d v e rt e ncias' y 'Orientaciones'.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
           "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
@@ -27041,7 +27041,7 @@
       "categoria": "MATEMÁTICAS Y LÓGICA",
       "categoria_id": "matematicas-y-logica",
       "subcategoria": null,
-      "descripcion": "Generador de hojas de c ál c u lo c o la b o ra t iv a s e n lín e a b a s a d o e n E t h e r c a l c.",
+      "descripcion": "Generador de hojas de cálculo colaborativas en línea basado en Ethercalc.",
       "pagina": 142,
       "escenarios": [
         {
@@ -27060,7 +27060,7 @@
             "01/09/2025"
           ],
           "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "Siempre y cuando se cumplan, referidos al a l u m n a d o , l o s re q u i si to s e s ta b le c i d o s e n e l a p a rt a do 'PROFESORADO’.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -27302,7 +27302,7 @@
           "requiere_registro": "SÍ (dirección de correo electrónico)",
           "otros": "En principio, parece cumplir con la legislación europea. Se ofrece una prueba gratuita que permite la descarga de la herramienta previo registro (hay que proporcionar una dirección de correo electrónico).",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://www.wiris.co\nm / e n /m at h t y p e - pr iv a c y-p o li c y /\nhttps://www.wiris.com/en/privacy-policy/",
+          "politica_privacidad_texto": "https://www.wiris.com/en/mathtype-privacy-policy/\nhttps://www.wiris.com/en/privacy-policy/",
           "enlaces_privacidad": [
             "https://www.wiris.com/en/mathtype-privacy-policy/",
             "https://www.wiris.com/en/privacy-policy/"
@@ -27311,7 +27311,7 @@
           "fechas_comprobacion": [
             "03/09/2025"
           ],
-          "profesorado": "S ig u i e n d o s i e m p r e lo es t a b l e c id o e n lo s apartados 'Advertencias' y 'Orientaciones'.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
           "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "https://www.wiris.com/en/accessibility/",
@@ -28268,7 +28268,7 @@
       "categoria": "MURALES Y PANELES COLABORATIVOS / CONVERSACIONES COLABORATIVAS / PRESENTACIONES COLABORATIVAS",
       "categoria_id": "murales-y-paneles-colaborativos-conversaciones-colaborativas-presentaciones-colaborativas",
       "subcategoria": null,
-      "descripcion": "Herramienta en línea que permite interactuar con el alumnado a través de un mural donde se puede debatir, compartir ideas, d ej a r d u d a s o c o m e nt a r i os. Se p u ed e u s a r , a de m á s , como pizarra colaborativa.",
+      "descripcion": "Herramienta en línea que permite interactuar con el alumnado a través de un mural donde se puede debatir, compartir ideas, dejar dudas o comentarios. Se puede usar, además, como pizarra colaborativa.",
       "pagina": 147,
       "escenarios": [
         {
@@ -28276,7 +28276,7 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece la posibilidad de que el alumnado acceda a los muros, pizarras y actividades colaborativas a través de un código QR, un código de acceso o un enlace (sin necesidad de r e g i s tr o ). P a r e c e c u mplir con la legislación europea.",
+          "otros": "Ofrece la posibilidad de que el alumnado acceda a los muros, pizarras y actividades colaborativas a través de un código QR, un código de acceso o un enlace (sin necesidad de registro). Parece cumplir con la legislación europea.",
           "enlaces_otros": [],
           "politica_privacidad_texto": "http://www.nordtouch.fi/privacy/",
           "enlaces_privacidad": [
@@ -28408,9 +28408,9 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Servidores en EE.UU. Menciona el R G P D y l a s c l á u s u l a s co n t ra c t u a l e s ti p o p a ra las transferencias internacionales. Opera bajo el DPF (bajo el nombre Tactivos, Inc. DBA MURAL)",
+          "otros": "Servidores en EE.UU. Menciona el RGPD y las cláusulas contractuales tipo para las transferencias internacionales. Opera bajo el DPF (bajo el nombre Tactivos, Inc. DBA MURAL)",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://www.mural.c\no / t e rm s/privacy- p o l ic y\nhttps://www.mural.c\no / t e r m s / d a ta- p r o c e s s in g - addendum",
+          "politica_privacidad_texto": "https://www.mural.co/terms/privacy-policy\nhttps://www.mural.co/terms/data-processing-addendum",
           "enlaces_privacidad": [
             "https://www.mural.co/terms/privacy-policy",
             "https://www.mural.co/terms/data-processing-addendum"
@@ -28419,8 +28419,8 @@
           "fechas_comprobacion": [
             "05/09/2025"
           ],
-          "profesorado": "S ig u i e n d o s i e m p r e lo es t a b l e c id o e n lo s apartados 'Advertencias' y 'Recomendaciones.",
-          "alumnado": "S ie m p r e y c u a n d o s e cu m p l a n , r e fe r id o s a l alumnado, los requisitos e s ta b l e ci d os en e l apartado 'P R O F E S O R A D O ’.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Recomendaciones.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
           "accesibilidad_texto": "https://www.mural.co/accessibility",
           "enlaces_accesibilidad": [
@@ -28539,7 +28539,7 @@
       "categoria": "MURALES Y PANELES COLABORATIVOS / CONVERSACIONES COLABORATIVAS / PRESENTACIONES COLABORATIVAS",
       "categoria_id": "murales-y-paneles-colaborativos-conversaciones-colaborativas-presentaciones-colaborativas",
       "subcategoria": null,
-      "descripcion": "H e r r a m i e n ta e n línea que p e r m i te c r e a r p r e s e n t a c i o n e s colaborativas. También ofrece la posibilidad de usar IA.",
+      "descripcion": "Herramienta en línea que permite crear presentaciones colaborativas. También ofrece la posibilidad de usar IA.",
       "pagina": 148,
       "escenarios": [
         {
@@ -28547,9 +28547,9 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "S e r vi d o r e s e n E E .U U . T ra n s fiere d a to s i n t e r n a c io n al m e n te , empleando cláusulas contractuales tipo.",
+          "otros": "Servidores en EE.UU. Transfiere datos internacionalmente, empleando cláusulas contractuales tipo.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h t tp s :/ /w ww.zoho.co m / sh o w /\nhttps://www.zoho.com/privacy.html",
+          "politica_privacidad_texto": "https://www.zoho.com/show/\nhttps://www.zoho.com/privacy.html",
           "enlaces_privacidad": [
             "https://www.zoho.com/show/"
           ],
@@ -28557,10 +28557,10 @@
           "fechas_comprobacion": [
             "05/09/2025"
           ],
-          "profesorado": "S ig u i e n d o s i e m p r e lo es t a b l e c id o e n lo s apartados 'Advertencias' y 'Recomendaciones.",
-          "alumnado": "S ie m p r e y c u a n d o s e c u m p l a n , r e fe r i d o s a l a l u m n a d o , l o s r e q u i s i tos establecidos en el apartado 'PROFESORADO’.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Recomendaciones.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
-          "accesibilidad_texto": "https://help.zoho.com/portal/en/kb/desk/customization/a\nc c e s s i b il it y - a n d - p r e f e r e n c e s / a r ti cle s/ u s i n g - accessibility- controls\nhttps://www.zoho.com/desk/accessibility-controls.html",
+          "accesibilidad_texto": "https://help.zoho.com/portal/en/kb/desk/customization/accessibility-and-preferences/articles/using-accessibility-controls\nhttps://www.zoho.com/desk/accessibility-controls.html",
           "enlaces_accesibilidad": [
             "https://help.zoho.com/portal/en/kb/desk/customization/accessibility-and-preferences/articles/using-accessibility-controls",
             "https://www.zoho.com/desk/accessibility-controls.html"
@@ -29687,7 +29687,7 @@
           "fechas_comprobacion": [
             "10/09/2025"
           ],
-          "profesorado": "Siguiendo siempre lo e st a b le c i d o e n lo s ap a r ta d o s 'A d v e rt e ncias' y 'Orientaciones'.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
           "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
@@ -29895,7 +29895,7 @@
             "10/09/2025"
           ],
           "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "Siempre y cuando se c u m p la n , r e fe r i d o s a l a lu m n a d o , lo s r e q u i s i tos establecidos en el apartado 'PROFESORADO’.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -30132,7 +30132,7 @@
             "08/08/2025"
           ],
           "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "Siempre y cuando se c u m p la n , r e fe r i d o s a l a lu m n a d o , lo s r e q u i s i tos establecidos en el apartado 'PROFESORADO’.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -31006,8 +31006,8 @@
           "fechas_comprobacion": [
             "12/09/2025"
           ],
-          "profesorado": "Siguiendo siempre lo establecido en los a p a rt a d o s ' A d v e rtencias' y 'O r ie n t a c io n e s ' .",
-          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos e s ta b l e ci d os en e l apartado 'P R O F E S O R A D O ’.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "SI",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -31506,7 +31506,7 @@
           "semaforo": "AMARILLO",
           "software_libre": "SI",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una versión gratuita l im it a d a , p r e v io r e g i s t r o . O pe r a b a j o D P F ( b a j o e l n ombre Digital Science & Research Solutions Inc.).",
+          "otros": "Ofrece una versión gratuita limitada, previo registro. Opera bajo DPF (bajo el nombre Digital Science & Research Solutions Inc.).",
           "enlaces_otros": [],
           "politica_privacidad_texto": "https://www.overleaf.com/legal",
           "enlaces_privacidad": [
@@ -31517,7 +31517,7 @@
             "20/11/2025"
           ],
           "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "Siempre y cuando se c u m p la n , r e fe r i d o s a l a lu m n a d o , lo s r e q u i s i tos establecidos en el apartado 'PROFESORADO’.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -33730,7 +33730,7 @@
           "requiere_registro": "Puede emplearse con y sin registro.",
           "otros": "La opción sin registro permite visualizar FlexBooks de forma gratuita.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://www.ck12info.org/privacy-policy/?_ga=2.58707370.1464084871.1588809379-224849240.1579114948&_gl=1%2A1eoop0u%2A_gcl_au%2AMTMyMTk3MDQ1OC4xN\nz U 5 O D M 2 M j I4 % 2A _ g a % 2 A N jY 1 M T Q 1O D I 5 LjE3NTk4MzYyMzA.% 2A_ga_7PBE4L0PZZ% 2AczE3NTk4MzYyMjk kbzEkZzEkdDE3NTk4 MzY1ODQkajYwJGww JGgyMTM1OTEzMjM2J GQ5R3Jib1Vua0NtM mMtWExUWE54UnBf alA0UkE4VmMwckVn\nhttps://www.ck12.org/fbbrowse/",
+          "politica_privacidad_texto": "https://www.ck12info.org/privacy-policy/?_ga=2.58707370.1464084871.1588809379-224849240.1579114948&_gl=1%2A1eoop0u%2A_gcl_au%2AMTMyMTk3MDQ1OC4xNzU5ODM2MjI4%2A_ga%2ANjY1MTQ1ODI5LjE3NTk4MzYyMzA.%2A_ga_7PBE4L0PZZ%2AczE3NTk4MzYyMjkkbzEkZzEkdDE3NTk4MzY1ODQkajYwJGwwJGgyMTM1OTEzMjM2JGQ5R3Jib1Vua0NtMmMtWExUWE54UnBfalA0UkE4VmMwckVn\nhttps://www.ck12.org/fbbrowse/",
           "enlaces_privacidad": [
             "https://www.ck12info.org/privacy-policy/?_ga=2.58707370.1464084871.1588809379-224849240.1579114948&_gl=1%2A1eoop0u%2A_gcl_au%2AMTMyMTk3MDQ1OC4xNzU5ODM2MjI4%2A_ga%2ANjY1MTQ1ODI5LjE3NTk4MzYyMzA.%2A_ga_7PBE4L0PZZ%2AczE3NTk4MzYyMjkkbzEkZzEkdDE3NTk4MzY1ODQkajYwJGwwJGgyMTM1OTEzMjM2JGQ5R3Jib1Vua0NtMmMtWExUWE54UnBfalA0UkE4VmMwckVn",
             "https://www.ck12.org/fbbrowse/"
@@ -33739,8 +33739,8 @@
           "fechas_comprobacion": [
             "07/10/2025"
           ],
-          "profesorado": "Únicamente si se emplea l a o p c ió n s i n re gi s t r o y s ig u ie n d o s i e m p r e l o establecido en los apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "S ie m p r e y c u a n d o s e cu m p l a n , r e fe r id o s a l alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
+          "profesorado": "Únicamente si se emplea la opción sin registro y siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -34209,7 +34209,7 @@
       "categoria": "REALIDAD AUMENTADA, REALIDAD VIRTUAL, 3D E IMPRESIÓN 3D",
       "categoria_id": "realidad-aumentada-realidad-virtual-3d-e-impresion-3d",
       "subcategoria": "Realidad Aumentada y/o Realidad Virtual",
-      "descripcion": "Herramienta de búsqueda del tesoro digital interactiva que aumenta literalmente la r e a l id a d a l m e j o r a r l a i n t e r a c c i ó n d e la s p e r s o nas e n l a v id a r e a l m i e n t r a s u t i l i z a n s u s t e l é f o n o s inteligentes y tabletas.",
+      "descripcion": "Herramienta de búsqueda del tesoro digital interactiva que aumenta literalmente la realidad al mejorar la interacción de las personas en la vida real mientras utilizan sus teléfonos inteligentes y tabletas.",
       "pagina": 173,
       "escenarios": [
         {
@@ -34217,9 +34217,9 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece la posibilidad de crear una cuenta personal de forma gratuita. También ofrece un periodo de p r u e b a p a r a la s ve rs i o n e E D U y P R O . Se r v i d o r e s e n A l e m a n i a . N o transfiere datos a otros países.",
+          "otros": "Ofrece la posibilidad de crear una cuenta personal de forma gratuita. También ofrece un periodo de prueba para las versione EDU y PRO. Servidores en Alemania. No transfiere datos a otros países.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://en.actionbound.com/agb\nh t t p s : // e n . a c tionbou n d . c o m / f a q - d a t e n s c h u tz",
+          "politica_privacidad_texto": "https://en.actionbound.com/agb\nhttps://en.actionbound.com/faq-datenschutz",
           "enlaces_privacidad": [
             "https://en.actionbound.com/agb",
             "https://en.actionbound.com/faq-datenschutz"
@@ -34228,10 +34228,10 @@
           "fechas_comprobacion": [
             "08/10/2025"
           ],
-          "profesorado": "Siguiendo siempre lo e s t a b l e c i d o e n l o s a p a r t a d o s ' A d v e rt e ncias' y 'O r i e n t a c i o n e s ' .",
-          "alumnado": "Siempre y cuando se cumplan, referidos al a l u m n a d o , l o s re q u i si to s e s ta b l e c i d o s e n e l a p a rt a do 'P R O F E S O R A D O ’ .",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
-          "accesibilidad_texto": "https://en.actionbo\nu n d . c om/barrierefr ei h e i t",
+          "accesibilidad_texto": "https://en.actionbound.com/barrierefreiheit",
           "enlaces_accesibilidad": [
             "https://en.actionbound.com/barrierefreiheit"
           ]
@@ -34344,7 +34344,7 @@
       "categoria": "REALIDAD AUMENTADA, REALIDAD VIRTUAL, 3D E IMPRESIÓN 3D",
       "categoria_id": "realidad-aumentada-realidad-virtual-3d-e-impresion-3d",
       "subcategoria": "Realidad Aumentada y/o Realidad Virtual",
-      "descripcion": "H e r r a m i e n t a p a ra in t r o d u c ir la r e a l id a d a u m e n t a d a e n e l aula.",
+      "descripcion": "Herramienta para introducir la realidad aumentada en el aula.",
       "pagina": 174,
       "escenarios": [
         {
@@ -34352,9 +34352,9 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una prueba gratuita y limitada, previo registro. Parece cumplir con la legislación e u r o p e a ( v e r a p a r t a d o G D P R D a t a P ri v a c y C o m p l i a n c e ) , a u n q u e n o se d e t a l l a c ó m o s e r e a l iz a l a transferencia internacional de datos. Por tanto, es especialmente necesario en este caso cumplir con el requisito de consulta previa a la Delegación de Protección de Datos.",
+          "otros": "Ofrece una prueba gratuita y limitada, previo registro. Parece cumplir con la legislación europea (ver apartado GDPR Data Privacy Compliance), aunque no se detalla cómo se realiza la transferencia internacional de datos. Por tanto, es especialmente necesario en este caso cumplir con el requisito de consulta previa a la Delegación de Protección de Datos.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h t tp s: / / q u i v e r v i s io n.c o m /p r i v a c y - p o l i c y\nhttps://quivervision.com/terms",
+          "politica_privacidad_texto": "https://quivervision.com/privacy-policy\nhttps://quivervision.com/terms",
           "enlaces_privacidad": [
             "https://quivervision.com/privacy-policy",
             "https://quivervision.com/terms"
@@ -34363,8 +34363,8 @@
           "fechas_comprobacion": [
             "21/10/2025"
           ],
-          "profesorado": "S ig u i e n d o s i e m p r e lo es t a b l e c id o e n lo s apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "S ie m p r e y c u a n d o s e c u m p l a n , r e fe r i d o s a l a l u m n a d o , l o s r e q u i s i tos establecidos en el apartado 'PROFESORADO’.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -34733,7 +34733,7 @@
           "fechas_comprobacion": [
             "09/10/2025"
           ],
-          "profesorado": "Si el docente decide usar e s ta a p l ic a c i ó n , l o h a r á a tí tu lo i n d iv i d u a l y b a j o s u responsabilidad como persona mayor de edad.",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
           "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
@@ -34814,7 +34814,7 @@
       "categoria": "REALIDAD AUMENTADA, REALIDAD VIRTUAL, 3D E IMPRESIÓN 3D",
       "categoria_id": "realidad-aumentada-realidad-virtual-3d-e-impresion-3d",
       "subcategoria": "3D",
-      "descripcion": "Herramienta de captura de movimiento para la r ea l iz a c i ó n d e a n im aciones e im p u l s a d a p o r IA .",
+      "descripcion": "Herramienta de captura de movimiento para la realización de animaciones e impulsada por IA.",
       "pagina": 176,
       "escenarios": [
         {
@@ -34822,9 +34822,9 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una versión gratuita limitada, previo registro. A pesar de mencionar el RGPD, no está claro si cumple con la legislación europea: You may provide “User Content” as defined by the TOS. Your User Content is: (a) provided subject to the applicable provisions of our TOS; and (b) posted and transmitted to o t h e r s a t y o u r o w n r i s k . P l e a s e b e a w a r e t h a t n o s e c u r i ty m e a s u re s a r e p e r f e c t o r i m p e n e t r a b l e . Additionally, we cannot control the actions of other Users of the Service with whom you share your User Content. Therefore, we cannot and do not guarantee that your User Content will not be viewed or accessed by unauthorized persons.",
+          "otros": "Ofrece una versión gratuita limitada, previo registro. A pesar de mencionar el RGPD, no está claro si cumple con la legislación europea: You may provide “User Content” as defined by the TOS. Your User Content is: (a) provided subject to the applicable provisions of our TOS; and (b) posted and transmitted to others at your own risk. Please be aware that no security measures are perfect or impenetrable. Additionally, we cannot control the actions of other Users of the Service with whom you share your User Content. Therefore, we cannot and do not guarantee that your User Content will not be viewed or accessed by unauthorized persons.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://plask.ai/docs/100001\nh tt p s :/ /p lask.ai/docs/ 10 0 0 0 2",
+          "politica_privacidad_texto": "https://plask.ai/docs/100001\nhttps://plask.ai/docs/100002",
           "enlaces_privacidad": [
             "https://plask.ai/docs/100001",
             "https://plask.ai/docs/100002"
@@ -34833,8 +34833,8 @@
           "fechas_comprobacion": [
             "09/10/2025"
           ],
-          "profesorado": "Si el docente decide usar esta aplicación, lo hará a t í t u lo in d i vi d u a l y b a jo s u r e s p o n s a b i li d a d c o m o p e r s o n a m a y o r d e e d a d .",
-          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, s i e m p r e y c u a n d o n o t e n g a n q u e r e g is t r a rs e n i c o m p a rt ir s u s d a t o s p e rs o n a l e s .",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -35062,9 +35062,9 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Existen algunos modelos 3D que pueden descargarse gratuitamente previo registro. La política de privacidad habla de transferencia de datos a EE.UU. usando el Privacy Shield, que fue i n v a l i d a d o p o r lo s tr i b u n a le s e u r o p e o s . L a ú l t i m a a c tu a li z a c i ó n d e l a política de privacidad es de 2020, por lo que no incluye referencia al DPF (sigue hablándose del Privacy Shield).",
+          "otros": "Existen algunos modelos 3D que pueden descargarse gratuitamente previo registro. La política de privacidad habla de transferencia de datos a EE.UU. usando el Privacy Shield, que fue invalidado por los tribunales europeos. La última actualización de la política de privacidad es de 2020, por lo que no incluye referencia al DPF (sigue hablándose del Privacy Shield).",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://cults3d.com/es/privacidad\nh t tp s : // w w w .t r ad e .go v/ e x p o r t-s o lu t io ns",
+          "politica_privacidad_texto": "https://cults3d.com/es/privacidad\nhttps://www.trade.gov/export-solutions",
           "enlaces_privacidad": [
             "https://cults3d.com/es/privacidad",
             "https://www.trade.gov/export-solutions"
@@ -35073,8 +35073,8 @@
           "fechas_comprobacion": [
             "22/10/2025"
           ],
-          "profesorado": "Si el docente decide usar esta aplicación, lo hará a t í t u lo in d i vi d u a l y b a jo s u r e s p o n s a b i li d a d c o m o p e r s o n a m a y o r d e e d a d .",
-          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, s i e m p r e y c u a n d o n o t e n g a n q u e r e g is t r a rs e n i c o m p a rt ir s u s d a t o s p e rs o n a l e s .",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -35921,8 +35921,8 @@
           "fechas_comprobacion": [
             "08/10/2025"
           ],
-          "profesorado": "Siguiendo siempre lo establecido en los a p a rt a d o s ' A d v e rtencias' y 'O r ie n t a c io n e s ' .",
-          "alumnado": "S ie m p r e y c u a n d o s e cu m p l a n , r e fe r id o s a l alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -35954,8 +35954,8 @@
           "fechas_comprobacion": [
             "22/10/2025"
           ],
-          "profesorado": "S ig u i e n d o s i e m p r e lo es t a b l e c id o e n lo s apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado ' P R OF E S O R A D O ’ .",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -35988,7 +35988,7 @@
             "22/10/2025"
           ],
           "profesorado": "Únicamente si se emplea la opción sin registro, y siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
-          "alumnado": "S i em p re y c u a n d o se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -37096,7 +37096,7 @@
           "fechas_comprobacion": [
             "24/10/2025"
           ],
-          "profesorado": "Únicamente si se emplea la opción sin registro, y siguiendo siempre lo establecido en los a p a rt a d o s ' A d v e rtencias' y 'O r ie n t a c io n e s ' .",
+          "profesorado": "Únicamente si se emplea la opción sin registro, y siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
           "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
@@ -38062,7 +38062,7 @@
       "categoria": "REPOSITORIOS DE VÍDEOS",
       "categoria_id": "repositorios-de-videos",
       "subcategoria": "Vídeos educativos y/o dirigidos a niños y niñas",
-      "descripcion": "Organización sin ánimo de lucro que pretende proveer una educación gratuita para cualquier persona en c u a lq u i e r lu g a r . O f re c e un re p o s it o r i o d e v í d e o s .",
+      "descripcion": "Organización sin ánimo de lucro que pretende proveer una educación gratuita para cualquier persona en cualquier lugar. Ofrece un repositorio de vídeos.",
       "pagina": 190,
       "escenarios": [
         {
@@ -38072,7 +38072,7 @@
           "requiere_registro": "Puede emplearse con y sin registro.",
           "otros": "https://khan.github.io/",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "https://www.khanacademy.org/about/privacy-policy\nh t t ps : / /w w w . k h a n a c a d e m y . o rg /a b o u t / to s",
+          "politica_privacidad_texto": "https://www.khanacademy.org/about/privacy-policy\nhttps://www.khanacademy.org/about/tos",
           "enlaces_privacidad": [
             "https://www.khanacademy.org/about/privacy-policy",
             "https://www.khanacademy.org/about/tos"
@@ -38081,9 +38081,9 @@
           "fechas_comprobacion": [
             "27/10/2025"
           ],
-          "profesorado": "Únicamente si se emplea la opción sin registro, y siguiendo siempre lo establecido en los a p a rt a d o s ' A d v e rtencias' y 'O r ie n t a c io n e s ' .",
+          "profesorado": "Únicamente si se emplea la opción sin registro, y siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
           "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
-          "embebible": "SÍ\n(los vídeos\nestán\nalojados en\nYouTube,\np o r l o q u e\np u e d e n\nembeberse)",
+          "embebible": "SÍ\n(los vídeos\nestán\nalojados en\nYouTube,\npor lo que\npueden\nembeberse)",
           "accesibilidad_texto": "https://www.khanacademy.org/about/accessibility-statement",
           "enlaces_accesibilidad": []
         }
@@ -39878,7 +39878,7 @@
       "categoria": "VÍDEO (alojamiento, creación y/o edición y visionado)",
       "categoria_id": "video-alojamiento-creacion-y-o-edicion-y-visionado",
       "subcategoria": "Creación y/o edición",
-      "descripcion": "H e r ra m ie n t a e n l ín e a para cr e a r y e d it a r v íd e o s .",
+      "descripcion": "Herramienta en línea para crear y editar vídeos.",
       "pagina": 198,
       "escenarios": [
         {
@@ -39886,9 +39886,9 @@
           "semaforo": "AMARILLO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una prueba gratuita. Los vídeos creados tienen marca de agua. S e r v i d o r e s e n E E . U U ., a u n q u e t r a n s f i e r e l a i n f o r m a c i ó n u s a n d o c l á u s u la s c o n t r a c tu a l e s t ip o . E n principio, parece cumplir con la legislación europea.",
+          "otros": "Ofrece una prueba gratuita. Los vídeos creados tienen marca de agua. Servidores en EE.UU., aunque transfiere la información usando cláusulas contractuales tipo. En principio, parece cumplir con la legislación europea.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h tt p s : / /v i m e o .c o m /le ga l /p r i v a c y/ p o li cy h t t p s : / / w w w . m a g i s t o . c o m / t o s ? p r e v _ p a t h = / p r i v a c y & v ia = f o o t e r",
+          "politica_privacidad_texto": "https://vimeo.com/legal/privacy/policy\nhttps://www.magisto.com/tos?prev_path=/privacy&via=footer",
           "enlaces_privacidad": [
             "https://vimeo.com/legal/privacy/policy",
             "https://www.magisto.com/tos?prev_path=/privacy&via=footer"
@@ -39897,8 +39897,8 @@
           "fechas_comprobacion": [
             "29/10/2025"
           ],
-          "profesorado": "Siguiendo siempre lo e s t a b l e c i d o e n l o s a p a r t a d o s ' A d v e rt e ncias' y 'O r i e n t a c i o n e s ' .",
-          "alumnado": "S ie m p r e y c u a n d o s e cu m p l a n , r e fe r id o s a l a l u m n a d o , l o s re q u i si to s e s ta b l e c i d o s e n e l a p a rt a do 'P R O F E S O R A D O ’ .",
+          "profesorado": "Siguiendo siempre lo establecido en los apartados 'Advertencias' y 'Orientaciones'.",
+          "alumnado": "Siempre y cuando se cumplan, referidos al alumnado, los requisitos establecidos en el apartado 'PROFESORADO’.",
           "embebible": "X",
           "accesibilidad_texto": "X",
           "enlaces_accesibilidad": []
@@ -39945,7 +39945,7 @@
       "categoria": "VÍDEO (alojamiento, creación y/o edición y visionado)",
       "categoria_id": "video-alojamiento-creacion-y-o-edicion-y-visionado",
       "subcategoria": "Creación y/o edición",
-      "descripcion": "H e r ra m i e n t a e n lí n e a b a s ada en IA p a r a l a c r e a c i ó n d e vídeos.",
+      "descripcion": "Herramienta en línea basada en IA para la creación de vídeos.",
       "pagina": 198,
       "escenarios": [
         {
@@ -39953,9 +39953,9 @@
           "semaforo": "ROJO",
           "software_libre": "X",
           "requiere_registro": "SÍ",
-          "otros": "Ofrece una prueba gratuita y limitada que, previo registro, permite compartir los vídeos creados mediante un enlace, pero no su descarga. L a p o l í ti c a d e p r iv ac id a d m e n c i o n a e l R G P D , a u n q ue no parece ofrecer toda la información necesaria para saber si cumple con la legislación europea. El proveedor del servicio parece tener su sede central en Israel, con varias oficinas distribuidas por todo el mundo.",
+          "otros": "Ofrece una prueba gratuita y limitada que, previo registro, permite compartir los vídeos creados mediante un enlace, pero no su descarga. La política de privacidad menciona el RGPD, aunque no parece ofrecer toda la información necesaria para saber si cumple con la legislación europea. El proveedor del servicio parece tener su sede central en Israel, con varias oficinas distribuidas por todo el mundo.",
           "enlaces_otros": [],
-          "politica_privacidad_texto": "h t t p s :/ / p r o m o.com/p ri v a c y - p o l ic y\nhttps://promo.com/terms-of-service",
+          "politica_privacidad_texto": "https://promo.com/privacy-policy\nhttps://promo.com/terms-of-service",
           "enlaces_privacidad": [
             "https://promo.com/privacy-policy",
             "https://promo.com/terms-of-service"
@@ -39964,10 +39964,10 @@
           "fechas_comprobacion": [
             "30/10/2025"
           ],
-          "profesorado": "S i e l d o c e n t e d e c i d e u s a r e s ta a p l i c a c i ó n , l o h a r á a tí t u l o i n d iv i d u a l y b a j o s u responsabilidad como persona mayor de edad.",
-          "alumnado": "NO, aunque pueden v i s u a l iz a r la s p r o d u c c i o n es c r e a d a s p o r e l d o c e n t e , siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
+          "profesorado": "Si el docente decide usar esta aplicación, lo hará a título individual y bajo su responsabilidad como persona mayor de edad.",
+          "alumnado": "NO, aunque pueden visualizar las producciones creadas por el docente, siempre y cuando no tengan que registrarse ni compartir sus datos personales.",
           "embebible": "X",
-          "accesibilidad_texto": "h t tp s : // p ro m o .com /a c c e s s ib il ity - statement",
+          "accesibilidad_texto": "https://promo.com/accessibility-statement",
           "enlaces_accesibilidad": [
             "https://promo.com/accessibility-statement"
           ]

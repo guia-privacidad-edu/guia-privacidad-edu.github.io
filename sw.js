@@ -4,7 +4,7 @@
  * Precarga la aplicación y los archivos JSON locales; actualiza en segundo plano cuando hay red.
  */
 
-const CACHE_NOMBRE = "gpe-v1.4.0";
+const CACHE_NOMBRE = "gpe-v1.4.1";
 const ARCHIVOS_BASE = [
   "./",
   "./index.html",
